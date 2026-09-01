@@ -290,7 +290,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 /* ========================================
    Signal Art — Animated SVG Graphics
    ======================================== */
-.signal-art { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: var(--dark); border-radius: 18px; overflow: hidden; }
+.signal-art { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: transparent; border-radius: 18px; overflow: hidden; }
 .signal-art__svg { width: 100%; height: 100%; }
 
 /* Ring pulse animations */
@@ -387,7 +387,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .art-twinkle--4 { animation: twinkle 2.2s ease-in-out 1.5s infinite; transform-origin: center; transform-box: fill-box; }
 
 /* Project signal art */
-.project__signal-art { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.project__signal-art { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: transparent; overflow: hidden; }
 .project__svg { width: 100%; height: 100%; }
 
 /* Art frames */
