@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RunAble — Running Community</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ SPLASH SCREEN ============ -->
+  <div id="splash" class="splash">
+    <div class="splash-content">
+      <div class="splash-logo">
+        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="38" stroke="url(#grad1)" stroke-width="4"/>
+          <path d="M28 52L36 28L44 44L52 24" stroke="url(#grad2)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="52" cy="24" r="4" fill="#FF6B35"/>
+          <defs>
+            <linearGradient id="grad1" x1="0" y1="0" x2="80" y2="80">
+              <stop stop-color="#6C63FF"/><stop offset="1" stop-color="#FF6B35"/>
+            </linearGradient>
+            <linearGradient id="grad2" x1="28" y1="24" x2="52" y2="52">
+              <stop stop-color="#6C63FF"/><stop offset="1" stop-color="#FF6B35"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <h1 class="splash-title">RunAble</h1>
+      <p class="splash-tagline">Run Together, Earn Together</p>
+      <div class="splash-loader">
+        <div class="splash-loader-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ AUTH SCREEN ============ -->
+  <div id="auth-screen" class="screen auth-screen hidden">
+    <div class="auth-container">
+      <div class="auth-header">
+        <div class="auth-logo">
+          <svg viewBox="0 0 60 60" fill="none">
+            <circle cx="30" cy="30" r="28" stroke="url(#aGrad1)" stroke-width="3"/>
+            <path d="M21 40L27 21L33 35L39 18" stroke="url(#aGrad2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="39" cy="18" r="3.5" fill="#FF6B35"/>
+            <defs>
+              <linearGradient id="aGrad1" x1="0" y1="0" x2="60" y2="60">
+                <stop stop-color="#6C63FF"/><stop offset="1" stop-color="#FF6B35"/>
+              </linearGradient>
+              <linearGradient id="aGrad2" x1="21" y1="18" x2="39" y2="40">
+                <stop stop-color="#6C63FF"/><stop offset="1" stop-color="#FF6B35"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h1>RunAble</h1>
+        <p>Join the running community</p>
+      </div>
+
+      <!-- Login Form -->
+      <form id="login-form" class="auth-form">
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <div class="input-wrapper">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M22 7l-10 6L2 7"/></svg>
+            <input type="email" id="login-email" placeholder="your@email.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <div class="input-wrapper">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            <input type="password" id="login-password" placeholder="Enter password" required>
+            <button type="button" class="toggle-pw" onclick="togglePassword('login-password', this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">
+          <span>Log In</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <p class="auth-switch">Don't have an account? <a href="#" onclick="showRegister(event)">Sign Up</a></p>
+      </form>
+
+      <!-- Register Form -->
+      <form id="register-form" class="auth-form hidden">
+        <div class="form-group">
+          <label for="reg-name">Full Name</label>
+          <div class="input-wrapper">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <input type="text" id="reg-name" placeholder="Your full name" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="reg-username">Username</label>
+          <div class="input-wrapper">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg>
+            <input type="text" id="reg-username" placeholder="Choose username" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="reg-email">Email</label>
+          <div class="input-wrapper">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M22 7l-10 6L2 7"/></svg>
+            <input type="email" id="reg-email" placeholder="your@email.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="reg-password">Password</label>
+          <div class="input-wrapper">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            <input type="password" id="reg-password" placeholder="Min 6 characters" required minlength="6">
+            <button type="button" class="toggle-pw" onclick="togglePassword('reg-password', this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">
+          <span>Create Account</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        </button>
+        <p class="auth-switch">Already have an account? <a href="#" onclick="showLogin(event)">Log In</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============ MAIN APP ============ -->
+  <div id="app" class="app hidden">
+
+    <!-- TOP NAV BAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <h1 class="topbar-title" id="page-title">Dashboard</h1>
+      </div>
+      <div class="topbar-right">
+        <button class="topbar-btn notification-btn" onclick="showNotifications()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+          <span class="notif-badge hidden" id="notif-badge">0</span>
+        </button>
+        <div class="topbar-avatar" onclick="navigateTo('profile')">
+          <span id="topbar-avatar-text">U</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ PAGE: DASHBOARD ============ -->
+    <main id="page-dashboard" class="page active">
+      <div class="page-scroll">
+        <!-- Greeting -->
+        <section class="greeting-section">
+          <div class="greeting-text">
+            <p class="greeting-label" id="greeting-label">Good Morning</p>
+            <h2 class="greeting-name" id="greeting-name">Runner!</h2>
+          </div>
+          <div class="coin-display" onclick="navigateTo('profile')">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#FFB800"/><path d="M12 6v12M9 9.5a3 3 0 014.5 0c0 1.5-2 2-2.25 3.5M12 18h.01" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span id="dash-coins">0</span>
+          </div>
+        </section>
+
+        <!-- Today Stats -->
+        <section class="stats-cards">
+          <div class="stat-card stat-card--distance">
+            <div class="stat-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <div class="stat-card-info">
+              <span class="stat-card-value" id="stat-today-distance">0.00</span>
+              <span class="stat-card-label">km today</span>
+            </div>
+          </div>
+          <div class="stat-card stat-card--calories">
+            <div class="stat-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c1 3 4 5 4 9a4 4 0 01-8 0c0-4 3-6 4-9z"/></svg>
+            </div>
+            <div class="stat-card-info">
+              <span class="stat-card-value" id="stat-today-cal">0</span>
+              <span class="stat-card-label">kcal</span>
+            </div>
+          </div>
+          <div class="stat-card stat-card--time">
+            <div class="stat-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div class="stat-card-info">
+              <span class="stat-card-value" id="stat-today-time">0:00</span>
+              <span class="stat-card-label">duration</span>
+            </div>
+          </div>
+          <div class="stat-card stat-card--runs">
+            <div class="stat-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div class="stat-card-info">
+              <span class="stat-card-value" id="stat-today-runs">0</span>
+              <span class="stat-card-label">runs</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Weekly Chart -->
+        <section class="card weekly-chart-card">
+          <div class="card-header">
+            <h3>This Week</h3>
+            <span class="card-badge" id="weekly-total">0 km</span>
+          </div>
+          <div class="weekly-chart">
+            <div class="chart-bar" data-day="Mon">
+              <div class="chart-bar-fill" id="chart-mon"></div>
+              <span class="chart-bar-label">M</span>
+            </div>
+            <div class="chart-bar" data-day="Tue">
+              <div class="chart-bar-fill" id="chart-tue"></div>
+              <span class="chart-bar-label">T</span>
+            </div>
+            <div class="chart-bar" data-day="Wed">
+              <div class="chart-bar-fill" id="chart-wed"></div>
+              <span class="chart-bar-label">W</span>
+            </div>
+            <div class="chart-bar" data-day="Thu">
+              <div class="chart-bar-fill" id="chart-thu"></div>
+              <span class="chart-bar-label">T</span>
+            </div>
+            <div class="chart-bar" data-day="Fri">
+              <div class="chart-bar-fill" id="chart-fri"></div>
+              <span class="chart-bar-label">F</span>
+            </div>
+            <div class="chart-bar" data-day="Sat">
+              <div class="chart-bar-fill" id="chart-sat"></div>
+              <span class="chart-bar-label">S</span>
+            </div>
+            <div class="chart-bar" data-day="Sun">
+              <div class="chart-bar-fill" id="chart-sun"></div>
+              <span class="chart-bar-label">S</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Active Run Button -->
+        <button class="run-cta-btn" onclick="navigateTo('tracker')">
+          <div class="run-cta-pulse"></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span>Start Running</span>
+        </button>
+
+        <!-- Leaderboard Preview -->
+        <section class="card">
+          <div class="card-header">
+            <h3>Leaderboard</h3>
+            <a href="#" class="card-link" onclick="navigateTo('activity'); event.preventDefault();">View All</a>
+          </div>
+          <div id="dashboard-leaderboard" class="leaderboard-list"></div>
+        </section>
+
+        <!-- Recent Activity Preview -->
+        <section class="card">
+          <div class="card-header">
+            <h3>Recent Runs</h3>
+            <a href="#" class="card-link" onclick="navigateTo('activity'); event.preventDefault();">View All</a>
+          </div>
+          <div id="dashboard-recent" class="recent-runs-list"></div>
+        </section>
+
+        <div class="page-bottom-spacer"></div>
+      </div>
+    </main>
+
+    <!-- ============ PAGE: ACTIVITY ============ -->
+    <main id="page-activity" class="page">
+      <div class="page-scroll">
+        <div class="activity-tabs">
+          <button class="activity-tab active" onclick="switchActivityTab('feed')">Feed</button>
+          <button class="activity-tab" onclick="switchActivityTab('leaderboard')">Leaderboard</button>
+          <button class="activity-tab" onclick="switchActivityTab('myruns')">My Runs</button>
+        </div>
+
+        <div id="activity-feed" class="activity-content active">
+          <div id="feed-list" class="feed-list"></div>
+        </div>
+
+        <div id="activity-leaderboard" class="activity-content">
+          <div class="leaderboard-header-card">
+            <div class="lb-podium">
+              <div class="lb-podium-item lb-2nd">
+                <div class="lb-podium-avatar" id="lb-pod-2-avatar">?</div>
+                <div class="lb-podium-name" id="lb-pod-2-name">-</div>
+                <div class="lb-podium-coin" id="lb-pod-2-coins">0</div>
+                <div class="lb-podium-rank">2</div>
+              </div>
+              <div class="lb-podium-item lb-1st">
+                <div class="lb-podium-crown">
+                  <svg viewBox="0 0 24 24" fill="#FFB800"><path d="M2 4l3 12h14l3-12-6 4-4-6-4 6z"/></svg>
+                </div>
+                <div class="lb-podium-avatar" id="lb-pod-1-avatar">?</div>
+                <div class="lb-podium-name" id="lb-pod-1-name">-</div>
+                <div class="lb-podium-coin" id="lb-pod-1-coins">0</div>
+                <div class="lb-podium-rank">1</div>
+              </div>
+              <div class="lb-podium-item lb-3rd">
+                <div class="lb-podium-avatar" id="lb-pod-3-avatar">?</div>
+                <div class="lb-podium-name" id="lb-pod-3-name">-</div>
+                <div class="lb-podium-coin" id="lb-pod-3-coins">0</div>
+                <div class="lb-podium-rank">3</div>
+              </div>
+            </div>
+          </div>
+          <div id="leaderboard-full" class="leaderboard-list"></div>
+        </div>
+
+        <div id="activity-myruns" class="activity-content">
+          <div id="my-runs-list" class="my-runs-list"></div>
+        </div>
+
+        <div class="page-bottom-spacer"></div>
+      </div>
+    </main>
+
+    <!-- ============ PAGE: TRACKER ============ -->
+    <main id="page-tracker" class="page">
+      <div class="page-scroll tracker-page">
+        <!-- Pre-run state -->
+        <div id="tracker-idle" class="tracker-idle">
+          <div class="tracker-mode-select">
+            <h3>Choose Mode</h3>
+            <div class="mode-options">
+              <button class="mode-btn active" data-mode="outdoor" onclick="selectMode('outdoor', this)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c-4.97 0-9-2.24-9-5v-4M3 8V5a2 2 0 012-2h2M21 8V5a2 2 0 00-2-2h-2M12 2v1M12 7v1"/><circle cx="12" cy="12" r="4"/></svg>
+                <span>Outdoor</span>
+              </button>
+              <button class="mode-btn" data-mode="indoor" onclick="selectMode('indoor', this)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M8 10h.01M16 10h.01M12 10h.01M8 14h.01M16 14h.01M12 14h.01"/></svg>
+                <span>Indoor / Treadmill</span>
+              </button>
+            </div>
+          </div>
+          <div class="tracker-target">
+            <h3>Target Distance</h3>
+            <div class="target-selector">
+              <button class="target-btn" onclick="setTarget(1)">1 km</button>
+              <button class="target-btn active" onclick="setTarget(3)">3 km</button>
+              <button class="target-btn" onclick="setTarget(5)">5 km</button>
+              <button class="target-btn" onclick="setTarget(10)">10 km</button>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-xl" onclick="startRun()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span>Start Run</span>
+          </button>
+        </div>
+
+        <!-- Active run state -->
+        <div id="tracker-active" class="tracker-active hidden">
+          <div class="tracker-ring-container">
+            <svg class="tracker-ring" viewBox="0 0 260 260">
+              <circle cx="130" cy="130" r="120" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="8"/>
+              <circle cx="130" cy="130" r="120" fill="none" stroke="url(#ringGrad)" stroke-width="8" stroke-linecap="round"
+                stroke-dasharray="754" stroke-dashoffset="754" id="tracker-progress-ring"/>
+              <defs><linearGradient id="ringGrad" x1="0" y1="0" x2="260" y2="260">
+                <stop stop-color="#6C63FF"/><stop offset="1" stop-color="#FF6B35"/>
+              </linearGradient></defs>
+            </svg>
+            <div class="tracker-center">
+              <span class="tracker-center-value" id="tracker-distance">0.00</span>
+              <span class="tracker-center-unit">km</span>
+            </div>
+          </div>
+          <div class="tracker-stats-row">
+            <div class="tracker-stat">
+              <span class="tracker-stat-val" id="tracker-pace">0:00</span>
+              <span class="tracker-stat-lbl">Pace /km</span>
+            </div>
+            <div class="tracker-stat">
+              <span class="tracker-stat-val" id="tracker-time">00:00</span>
+              <span class="tracker-stat-lbl">Duration</span>
+            </div>
+            <div class="tracker-stat">
+              <span class="tracker-stat-val" id="tracker-calories">0</span>
+              <span class="tracker-stat-lbl">Calories</span>
+            </div>
+          </div>
+          <div class="tracker-target-progress">
+            <div class="target-progress-bar">
+              <div class="target-progress-fill" id="tracker-target-fill"></div>
+            </div>
+            <span class="target-progress-label">Target: <span id="tracker-target-label">3</span> km</span>
+          </div>
+          <div class="tracker-coin-earned">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#FFB800"/><path d="M12 6v12M9 9.5a3 3 0 014.5 0c0 1.5-2 2-2.25 3.5M12 18h.01" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>+<span id="tracker-coins">0</span> Run Coins</span>
+          </div>
+          <div class="tracker-controls">
+            <button class="tracker-ctrl-btn" onclick="pauseRun()" id="btn-pause">
+              <svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+            </button>
+            <button class="tracker-ctrl-btn tracker-ctrl-stop" onclick="stopRun()">
+              <svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Run complete state -->
+        <div id="tracker-complete" class="tracker-complete hidden">
+          <div class="complete-badge">
+            <svg viewBox="0 0 80 80" fill="none">
+              <circle cx="40" cy="40" r="36" fill="url(#compGrad)"/>
+              <path d="M25 40l10 10 20-20" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs><linearGradient id="compGrad" x1="0" y1="0" x2="80" y2="80">
+                <stop stop-color="#6C63FF"/><stop offset="1" stop-color="#FF6B35"/>
+              </linearGradient></defs>
+            </svg>
+          </div>
+          <h2 class="complete-title">Run Complete!</h2>
+          <p class="complete-subtitle">Great job, <span id="complete-name">Runner</span>!</p>
+          <div class="complete-stats">
+            <div class="complete-stat">
+              <span class="complete-stat-val" id="final-distance">0.00</span>
+              <span class="complete-stat-lbl">km</span>
+            </div>
+            <div class="complete-stat">
+              <span class="complete-stat-val" id="final-time">00:00</span>
+              <span class="complete-stat-lbl">duration</span>
+            </div>
+            <div class="complete-stat">
+              <span class="complete-stat-val" id="final-cal">0</span>
+              <span class="complete-stat-lbl">kcal</span>
+            </div>
+          </div>
+          <div class="complete-coin-reward">
+            <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="#FFB800"/><text x="16" y="21" text-anchor="middle" fill="#fff" font-weight="700" font-size="12">RC</text></svg>
+            <span>+<span id="final-coins">0</span> Run Coins earned!</span>
+          </div>
+          <div class="complete-pace">
+            <span>Avg Pace: <strong id="final-pace">0:00</strong> /km</span>
+          </div>
+          <button class="btn btn-primary btn-full" onclick="navigateTo('dashboard')">Back to Dashboard</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- ============ PAGE: REWARDS ============ -->
+    <main id="page-rewards" class="page">
+      <div class="page-scroll">
+        <section class="rewards-balance">
+          <div class="rewards-balance-card">
+            <div class="rb-coins">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" fill="#FFB800"/><text x="24" y="30" text-anchor="middle" fill="#fff" font-weight="700" font-size="14">RC</text></svg>
+              <div>
+                <span class="rb-amount" id="reward-balance">0</span>
+                <span class="rb-label">Run Coins</span>
+              </div>
+            </div>
+            <div class="rb-earn-rate">
+              <svg viewBox="0 0 20 20" fill="none"><path d="M10 2l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z" fill="#FFB800"/></svg>
+              <span>100 coins per km</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="rewards-history">
+          <div class="card">
+            <div class="card-header">
+              <h3>Transaction History</h3>
+            </div>
+            <div id="transaction-list" class="transaction-list"></div>
+          </div>
+        </section>
+
+        <section class="rewards-shop">
+          <div class="card">
+            <div class="card-header">
+              <h3>Reward Shop</h3>
+            </div>
+            <div class="shop-grid" id="shop-grid">
+              <!-- Generated by JS -->
+            </div>
+          </div>
+        </section>
+
+        <div class="page-bottom-spacer"></div>
+      </div>
+    </main>
+
+    <!-- ============ PAGE: PROFILE ============ -->
+    <main id="page-profile" class="page">
+      <div class="page-scroll">
+        <section class="profile-header">
+          <div class="profile-cover"></div>
+          <div class="profile-info">
+            <div class="profile-avatar-wrap">
+              <div class="profile-avatar" id="profile-avatar">U</div>
+              <button class="profile-edit-avatar" onclick="changeAvatar()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              </button>
+            </div>
+            <h2 class="profile-name" id="profile-name">User</h2>
+            <p class="profile-username" id="profile-username">@user</p>
+            <p class="profile-bio" id="profile-bio">Running enthusiast</p>
+          </div>
+        </section>
+
+        <section class="profile-stats-grid">
+          <div class="pstat">
+            <span class="pstat-val" id="pstat-total-km">0</span>
+            <span class="pstat-label">Total KM</span>
+          </div>
+          <div class="pstat">
+            <span class="pstat-val" id="pstat-total-runs">0</span>
+            <span class="pstat-label">Total Runs</span>
+          </div>
+          <div class="pstat">
+            <span class="pstat-val" id="pstat-total-cal">0</span>
+            <span class="pstat-label">Calories</span>
+          </div>
+          <div class="pstat">
+            <span class="pstat-val" id="pstat-coins">0</span>
+            <span class="pstat-label">Run Coins</span>
+          </div>
+        </section>
+
+        <section class="profile-sections">
+          <!-- Achievements -->
+          <div class="card">
+            <div class="card-header"><h3>Achievements</h3></div>
+            <div id="achievements-list" class="achievements-grid"></div>
+          </div>
+
+          <!-- Edit Profile -->
+          <div class="card">
+            <div class="card-header"><h3>Edit Profile</h3></div>
+            <form id="edit-profile-form" class="edit-profile-form">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="edit-name" required>
+              </div>
+              <div class="form-group">
+                <label>Username</label>
+                <input type="text" id="edit-username" required>
+              </div>
+              <div class="form-group">
+                <label>Bio</label>
+                <textarea id="edit-bio" rows="3" maxlength="150" placeholder="Tell us about yourself..."></textarea>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Weight (kg)</label>
+                  <input type="number" id="edit-weight" min="30" max="200" value="70">
+                </div>
+                <div class="form-group">
+                  <label>Height (cm)</label>
+                  <input type="number" id="edit-height" min="100" max="250" value="170">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">Save Changes</button>
+            </form>
+          </div>
+
+          <!-- Settings -->
+          <div class="card">
+            <div class="card-header"><h3>Settings</h3></div>
+            <div class="settings-list">
+              <div class="setting-item">
+                <span>Dark Mode</span>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="toggle-dark" onchange="toggleDarkMode()">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="setting-item">
+                <span>Kilometers / Miles</span>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="toggle-unit" onchange="toggleUnit()">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="setting-item danger">
+                <span>Delete All Data</span>
+                <button class="btn btn-danger btn-sm" onclick="deleteAllData()">Reset</button>
+              </div>
+              <div class="setting-item danger">
+                <span>Log Out</span>
+                <button class="btn btn-danger btn-sm" onclick="logout()">Logout</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="page-bottom-spacer"></div>
+      </div>
+    </main>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+      <button class="nav-btn active" data-page="dashboard" onclick="navigateTo('dashboard')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </button>
+      <button class="nav-btn" data-page="activity" onclick="navigateTo('activity')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        <span>Activity</span>
+      </button>
+      <button class="nav-btn nav-btn-center" data-page="tracker" onclick="navigateTo('tracker')">
+        <div class="nav-btn-run">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <span>Run</span>
+      </button>
+      <button class="nav-btn" data-page="rewards" onclick="navigateTo('rewards')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M9 9.5a3 3 0 014.5 0c0 1.5-2 2-2.25 3.5M12 18h.01"/></svg>
+        <span>Rewards</span>
+      </button>
+      <button class="nav-btn" data-page="profile" onclick="navigateTo('profile')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>Profile</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- ============ MODALS ============ -->
+  <div id="modal-overlay" class="modal-overlay hidden" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3 id="modal-title">Modal</h3>
+        <button class="modal-close" onclick="closeModal()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div id="modal-body" class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

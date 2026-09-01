@@ -1,0 +1,13 @@
+{
+  "name": "signalsociety",
+  "version": "1.0.0",
+  "description": "Signal Society — Digital Infrastructure for Growing Businesses",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site — no build needed'"
+  },
+  "keywords": [],
+  "author": "Signal Society",
+  "license": "UNLICENSED"
+}
