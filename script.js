@@ -3,41 +3,20 @@
    Monolitlabs-inspired motion system
    ======================================== */
 
-// ── Nuclear Fallback: ALWAYS hide loader ──
+// ── Nuclear Fallback: ALWAYS hide loader + shutter ──
 setTimeout(() => {
     const loader = document.getElementById('pageLoader');
-    if (loader && !loader.classList.contains('loaded')) {
-        loader.classList.add('loaded');
-    }
-}, 3000);
+    const shutter = document.getElementById('shutter');
+    if (loader) loader.style.display = 'none';
+    if (shutter) shutter.style.display = 'none';
+}, 3500);
 
 window.addEventListener('error', () => {
     const loader = document.getElementById('pageLoader');
-    if (loader && !loader.classList.contains('loaded')) {
-        loader.classList.add('loaded');
-    }
+    const shutter = document.getElementById('shutter');
+    if (loader) loader.style.display = 'none';
+    if (shutter) shutter.style.display = 'none';
 });
-
-
-// Page Loader
-const pageLoader = document.getElementById('pageLoader');
-function hideLoader() {
-    if (pageLoader) pageLoader.classList.add('loaded');
-}
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(hideLoader, 300);
-});
-setTimeout(hideLoader, 2000);
-
-
-// Shutter Animation
-const shutter = document.getElementById('shutter');
-if (shutter) {
-    setTimeout(() => {
-        shutter.classList.add('done');
-        setTimeout(() => { shutter.style.display = 'none'; }, 400);
-    }, 1200);
-}
 
 
 // Supabase
@@ -284,16 +263,5 @@ if (window.matchMedia('(pointer: fine)').matches) {
 }
 
 
-// Smooth anchor offset for fixed header
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
-        const targetId = anchor.getAttribute('href');
-        if (targetId === '#') return;
-        const target = document.querySelector(targetId);
-        if (target) {
-            e.preventDefault();
-            const top = target.getBoundingClientRect().top + window.scrollY - 80;
-            window.scrollTo({ top, behavior: 'smooth' });
-        }
-    });
-});
+// Done
+

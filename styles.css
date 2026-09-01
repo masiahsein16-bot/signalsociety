@@ -82,12 +82,14 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     inset: 0;
     z-index: 10000;
     pointer-events: none;
+    animation: shutterFade 0.6s ease 1.4s forwards;
 }
 
 .shutter__veil {
     position: absolute;
     inset: 0;
     background: var(--dark);
+    animation: shutterVeilHide 0.6s ease 1.4s forwards;
 }
 
 .shutter__bars {
@@ -122,6 +124,14 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     100% { transform: scaleY(0); }
 }
 
+@keyframes shutterVeilHide {
+    to { opacity: 0; }
+}
+
+@keyframes shutterFade {
+    to { opacity: 0; visibility: hidden; }
+}
+
 .shutter__label {
     position: absolute;
     bottom: 2rem;
@@ -136,11 +146,6 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     to { opacity: 1; }
 }
 
-.shutter.done {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
 /* ========================================
    Page Loader
    ======================================== */
@@ -153,18 +158,11 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.6s ease, visibility 0.6s;
-    animation: loaderAutoHide 3s forwards;
-}
-
-.page-loader.loaded {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+    animation: loaderAutoHide 2.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @keyframes loaderAutoHide {
-    0%, 60% { opacity: 1; visibility: visible; pointer-events: all; }
+    0%, 45% { opacity: 1; visibility: visible; pointer-events: all; }
     100% { opacity: 0; visibility: hidden; pointer-events: none; }
 }
 
@@ -1389,6 +1387,15 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
     transition: opacity 0.7s cubic-bezier(0, 0, 0.2, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .reveal-lines.visible { opacity: 1; transform: translateY(0); }
+
+/* CSS-only fallback: show everything after 2s if JS hasn't added .visible */
+@keyframes revealFallback {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal, .reveal-lines {
+    animation: revealFallback 0.8s cubic-bezier(0, 0, 0.2, 1) 2s forwards;
+}
 
 /* ========================================
    Cursor Glow
