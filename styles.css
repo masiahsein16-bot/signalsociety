@@ -288,6 +288,120 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .cursor-glow.active { opacity: 1; }
 
 /* ========================================
+   Signal Art — Animated SVG Graphics
+   ======================================== */
+.signal-art { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: var(--dark); border-radius: 18px; overflow: hidden; }
+.signal-art__svg { width: 100%; height: 100%; }
+
+/* Ring pulse animations */
+@keyframes ringPulse { 0% { opacity: 0.6; transform: scale(1); } 100% { opacity: 0; transform: scale(1.4); } }
+@keyframes ringPulse2 { 0% { opacity: 0.5; transform: scale(1); } 100% { opacity: 0; transform: scale(1.3); } }
+
+.art-ring--1 { animation: ringPulse 2.5s ease-out infinite; transform-origin: center; transform-box: fill-box; }
+.art-ring--2 { animation: ringPulse 2.5s ease-out 0.5s infinite; transform-origin: center; transform-box: fill-box; }
+.art-ring--3 { animation: ringPulse 2.5s ease-out 1s infinite; transform-origin: center; transform-box: fill-box; }
+.art-ring--4 { animation: ringPulse 2.5s ease-out 1.5s infinite; transform-origin: center; transform-box: fill-box; }
+.art-ring--5 { animation: ringPulse 2.5s ease-out 2s infinite; transform-origin: center; transform-box: fill-box; }
+
+/* Node glow */
+@keyframes nodeGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.art-node--center { animation: nodeGlow 2s ease-in-out infinite; }
+.art-node--1 { animation: nodeGlow 2.2s ease-in-out 0.3s infinite; }
+.art-node--2 { animation: nodeGlow 2.4s ease-in-out 0.6s infinite; }
+.art-node--3 { animation: nodeGlow 2.6s ease-in-out 0.9s infinite; }
+.art-node--4 { animation: nodeGlow 2.8s ease-in-out 1.2s infinite; }
+.art-node--5 { animation: nodeGlow 3s ease-in-out 0.2s infinite; }
+.art-node--6 { animation: nodeGlow 2.5s ease-in-out 0.7s infinite; }
+.art-node--7 { animation: nodeGlow 2.3s ease-in-out 1.1s infinite; }
+
+/* Pulse dots (kelap-kelip) */
+@keyframes pulseDot { 0%, 100% { opacity: 0.2; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.3); } }
+.art-pulse--1 { animation: pulseDot 1.8s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.art-pulse--2 { animation: pulseDot 2.1s ease-in-out 0.4s infinite; transform-origin: center; transform-box: fill-box; }
+.art-pulse--3 { animation: pulseDot 1.6s ease-in-out 0.8s infinite; transform-origin: center; transform-box: fill-box; }
+.art-pulse--4 { animation: pulseDot 2.4s ease-in-out 1.2s infinite; transform-origin: center; transform-box: fill-box; }
+
+/* Sparkles */
+@keyframes sparkle { 0%, 100% { opacity: 0; transform: scale(0); } 50% { opacity: 1; transform: scale(1.5); } }
+.art-sparkle--1 { animation: sparkle 2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.art-sparkle--2 { animation: sparkle 2.5s ease-in-out 0.7s infinite; transform-origin: center; transform-box: fill-box; }
+.art-sparkle--3 { animation: sparkle 1.8s ease-in-out 1.3s infinite; transform-origin: center; transform-box: fill-box; }
+
+/* Growth bars */
+@keyframes barGrow { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; } }
+.art-bar--1 { animation: barGrow 3s ease-in-out infinite; }
+.art-bar--2 { animation: barGrow 3s ease-in-out 0.3s infinite; }
+.art-bar--3 { animation: barGrow 3s ease-in-out 0.6s infinite; }
+.art-bar--4 { animation: barGrow 3s ease-in-out 0.9s infinite; }
+.art-bar--5 { animation: barGrow 3s ease-in-out 1.2s infinite; }
+.art-bar--6 { animation: barGrow 3s ease-in-out 1.5s infinite; }
+
+/* Growth line draw */
+@keyframes lineDraw { 0% { stroke-dashoffset: 400; } 100% { stroke-dashoffset: 0; } }
+.art-growth-line { stroke-dasharray: 400; animation: lineDraw 3s ease-in-out infinite; }
+
+/* Dots on line */
+@keyframes dotPulse { 0%, 100% { r: 3; opacity: 0.5; } 50% { r: 6; opacity: 1; } }
+.art-dot--1 { animation: dotPulse 2s ease-in-out infinite; }
+.art-dot--2 { animation: dotPulse 2s ease-in-out 0.5s infinite; }
+.art-dot--3 { animation: dotPulse 2s ease-in-out 1s infinite; }
+
+/* Code brackets */
+@keyframes bracketPulse { 0%, 100% { opacity: 0.15; } 50% { opacity: 0.35; } }
+.art-bracket--l { animation: bracketPulse 3s ease-in-out infinite; }
+.art-bracket--r { animation: bracketPulse 3s ease-in-out 1.5s infinite; }
+
+/* Data flow */
+@keyframes flowMove { 0% { opacity: 0.3; transform: translateX(-10px); } 50% { opacity: 1; transform: translateX(10px); } 100% { opacity: 0.3; transform: translateX(-10px); } }
+.art-flow--1 { animation: flowMove 2s ease-in-out infinite; }
+.art-flow--2 { animation: flowMove 2.5s ease-in-out 0.5s infinite; }
+.art-flow--3 { animation: flowMove 1.8s ease-in-out 1s infinite; }
+.art-flow--4 { animation: flowMove 2.2s ease-in-out 1.5s infinite; }
+
+/* Satellites orbit */
+@keyframes satOrbit { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
+.art-sat--1 { animation: satOrbit 2s ease-in-out infinite; }
+.art-sat--2 { animation: satOrbit 2.3s ease-in-out 0.3s infinite; }
+.art-sat--3 { animation: satOrbit 2.6s ease-in-out 0.6s infinite; }
+.art-sat--4 { animation: satOrbit 2.9s ease-in-out 0.9s infinite; }
+.art-sat--5 { animation: satOrbit 2.1s ease-in-out 1.2s infinite; }
+.art-sat--6 { animation: satOrbit 2.4s ease-in-out 1.5s infinite; }
+
+/* Connection lines */
+@keyframes connPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+.art-conn--1 { animation: connPulse 2s ease-in-out infinite; }
+.art-conn--2 { animation: connPulse 2.3s ease-in-out 0.3s infinite; }
+.art-conn--3 { animation: connPulse 2.6s ease-in-out 0.6s infinite; }
+.art-conn--4 { animation: connPulse 2.9s ease-in-out 0.9s infinite; }
+.art-conn--5 { animation: connPulse 2.1s ease-in-out 1.2s infinite; }
+.art-conn--6 { animation: connPulse 2.4s ease-in-out 1.5s infinite; }
+
+/* Particles traveling */
+@keyframes particleTravel { 0% { offset-distance: 0%; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
+
+/* Twinkle stars */
+@keyframes twinkle { 0%, 100% { opacity: 0; transform: scale(0.5); } 50% { opacity: 1; transform: scale(1.5); } }
+.art-twinkle--1 { animation: twinkle 2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.art-twinkle--2 { animation: twinkle 2.5s ease-in-out 0.5s infinite; transform-origin: center; transform-box: fill-box; }
+.art-twinkle--3 { animation: twinkle 1.8s ease-in-out 1s infinite; transform-origin: center; transform-box: fill-box; }
+.art-twinkle--4 { animation: twinkle 2.2s ease-in-out 1.5s infinite; transform-origin: center; transform-box: fill-box; }
+
+/* Project signal art */
+.project__signal-art { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.project__svg { width: 100%; height: 100%; }
+
+/* Art frames */
+@keyframes framePulse { 0%, 100% { opacity: 0.8; } 50% { opacity: 0.4; } }
+.art-frame { animation: framePulse 3s ease-in-out infinite; }
+
+/* Art dashes */
+@keyframes dashMove { to { stroke-dashoffset: -16; } }
+.art-dash { animation: dashMove 1s linear infinite; }
+
+/* Art small nodes */
+.art-node-sm { animation: nodeGlow 2s ease-in-out infinite; }
+
+/* ========================================
    Responsive — Tablet
    ======================================== */
 @media (max-width: 1024px) {
