@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=8">
+    <link rel="stylesheet" href="styles.css?v=9">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
@@ -16,28 +16,16 @@
     <!-- Grain Overlay -->
     <div class="grain" aria-hidden="true"></div>
 
-    <!-- Shutter Loading Animation -->
+    <!-- Shutter -->
     <div class="shutter" aria-hidden="true" id="shutter">
         <div class="shutter__veil"></div>
         <div class="shutter__bars">
-            <i class="shutter__col"></i>
-            <i class="shutter__col"></i>
-            <i class="shutter__col"></i>
-            <i class="shutter__col"></i>
-            <i class="shutter__col"></i>
-            <i class="shutter__col"></i>
-            <i class="shutter__col"></i>
-            <i class="shutter__col"></i>
-            <i class="shutter__col"></i>
-            <i class="shutter__col"></i>
+            <i class="shutter__col"></i><i class="shutter__col"></i><i class="shutter__col"></i><i class="shutter__col"></i><i class="shutter__col"></i><i class="shutter__col"></i><i class="shutter__col"></i><i class="shutter__col"></i><i class="shutter__col"></i><i class="shutter__col"></i>
         </div>
-        <span class="shutter__label mono-label"></span>
     </div>
 
     <!-- Page Loader -->
-    <div class="page-loader" id="pageLoader">
-        <div class="page-loader__dot"></div>
-    </div>
+    <div class="page-loader" id="pageLoader"><div class="page-loader__dot"></div></div>
 
     <!-- Cursor Glow -->
     <div class="cursor-glow" id="cursorGlow"></div>
@@ -46,7 +34,7 @@
     <div class="telemetry" id="telemetry" aria-hidden="true">
         <span class="mono-label">SCRL 000%</span>
         <span class="mono-label">X 0000 · Y 0000</span>
-        <span class="mono-label">BALI --:--:--</span>
+        <span class="mono-label">ID --:--:--</span>
         <span class="mono-label telemetry__ok">SYS <i>●</i> OK</span>
     </div>
 
@@ -58,17 +46,14 @@
                 <span class="brand__text">Signal Society</span>
             </a>
             <nav class="site-header__nav" id="navLinks">
-                <a href="#about" class="site-header__link" data-transition-label="ABOUT">About</a>
-                <a href="#packages" class="site-header__link" data-transition-label="FOUR WAYS IN">Packages</a>
-                <a href="#services" class="site-header__link" data-transition-label="WHAT WE BUILD">Capabilities</a>
-                <a href="#work" class="site-header__link" data-transition-label="SELECTED WORK">Work</a>
-                <a href="#team" class="site-header__link" data-transition-label="OUR PEOPLE">Team</a>
-                <a href="#faq" class="site-header__link" data-transition-label="FAQS">FAQs</a>
+                <a href="#about" class="site-header__link">About</a>
+                <a href="#services" class="site-header__link">Services</a>
+                <a href="#work" class="site-header__link">Work</a>
+                <a href="#faq" class="site-header__link">FAQs</a>
             </nav>
-            <a href="#contact" class="btn btn--accent site-header__cta" data-transition-label="START A CONVERSATION">Start a Conversation <span class="arrow">&rarr;</span></a>
+            <a href="#contact" class="btn btn--accent site-header__cta">Start a Conversation <span class="arrow">&rarr;</span></a>
             <button class="menu-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-                <span></span>
-                <span></span>
+                <span></span><span></span>
             </button>
         </div>
     </header>
@@ -77,10 +62,8 @@
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
         <div class="mobile-menu__inner">
             <a href="#about" class="mobile-menu__link">About</a>
-            <a href="#packages" class="mobile-menu__link">Packages</a>
-            <a href="#services" class="mobile-menu__link">Capabilities</a>
+            <a href="#services" class="mobile-menu__link">Services</a>
             <a href="#work" class="mobile-menu__link">Work</a>
-            <a href="#team" class="mobile-menu__link">Team</a>
             <a href="#faq" class="mobile-menu__link">FAQs</a>
             <a href="#contact" class="btn btn--solid mobile-menu__cta">Start a Conversation <span class="arrow">&rarr;</span></a>
         </div>
@@ -100,14 +83,14 @@
         </div>
         <div class="container hero__container">
             <div class="hero__meta mono-label reveal">
-                <span>01 / SYSTEMS STUDIO</span>
+                <span>01 / DIGITAL INFRASTRUCTURE</span>
                 <span class="hero__meta-sep">·</span>
-                <span>BALI, INDONESIA</span>
+                <span>INDONESIA</span>
             </div>
-            <h1 class="section-title hero__headline reveal reveal-lines">SYSTEMS THAT RUN<br>THE <span class="accent">BUSINESS.</span></h1>
-            <p class="section-sub hero__sub reveal">Signal Society designs and builds websites, applications, automations and operational platforms for businesses that have outgrown disconnected tools and manual work.</p>
+            <h1 class="section-title hero__headline reveal">WE BUILD THE<br><span class="accent">INFRASTRUCTURE</span><br>BEHIND YOUR GROWTH.</h1>
+            <p class="section-sub hero__sub reveal">Websites, platforms, automations and operational systems — engineered so your business runs on signal, not noise.</p>
             <div class="hero__actions reveal">
-                <a href="#packages" class="btn btn--solid btn--large">Explore the Packages <span class="arrow">&rarr;</span></a>
+                <a href="#services" class="btn btn--solid btn--large">Explore Services <span class="arrow">&rarr;</span></a>
                 <a href="#contact" class="btn btn--line btn--large">Start a Conversation <span class="arrow">&rarr;</span></a>
             </div>
             <div class="hero__scroll reveal">
@@ -122,183 +105,91 @@
         <div class="container about__container">
             <div class="about__text">
                 <span class="mono-label section-head reveal">02 / PHILOSOPHY</span>
-                <h2 class="section-title about__headline reveal reveal-lines">Every business has a signal.</h2>
+                <h2 class="section-title about__headline reveal">Every business has a signal.</h2>
                 <p class="section-sub about__body reveal">What your customers see. What your team needs. What your data tells you. What you're building toward.</p>
                 <blockquote class="about__emphasis reveal">
                     We help you listen to those signals — then turn them into digital systems that move your business forward.
                 </blockquote>
             </div>
-            <div class="about__media" aria-hidden="true">
-                <svg viewBox="0 0 420 360" class="network-svg">
-                    <g class="network-lines">
-                        <line x1="170" y1="170" x2="70" y2="70" class="net-line"/>
-                        <line x1="170" y1="170" x2="250" y2="70" class="net-line"/>
-                        <line x1="170" y1="170" x2="330" y2="160" class="net-line"/>
-                        <line x1="170" y1="170" x2="300" y2="280" class="net-line"/>
-                        <line x1="170" y1="170" x2="110" y2="280" class="net-line"/>
-                        <line x1="170" y1="170" x2="60" y2="190" class="net-line"/>
-                        <line x1="70" y1="70" x2="250" y2="70" class="net-line"/>
-                        <line x1="60" y1="190" x2="110" y2="280" class="net-line"/>
-                        <line x1="300" y1="280" x2="330" y2="160" class="net-line"/>
-                    </g>
-                    <circle cx="170" cy="170" r="56" class="net-ring"/>
-                    <circle cx="170" cy="170" r="88" class="net-ring net-ring--2"/>
-                    <circle cx="170" cy="170" r="122" class="net-ring net-ring--3"/>
-                    <circle cx="170" cy="170" r="16" class="net-hub"/>
-                    <circle cx="70" cy="70" r="10" class="net-node"/>
-                    <circle cx="250" cy="70" r="8" class="net-node net-node--sm"/>
-                    <circle cx="330" cy="160" r="10" class="net-node"/>
-                    <circle cx="300" cy="280" r="8" class="net-node net-node--sm"/>
-                    <circle cx="110" cy="280" r="10" class="net-node"/>
-                    <circle cx="60" cy="190" r="8" class="net-node net-node--sm"/>
-                </svg>
+            <div class="about__media reveal">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Data dashboard and analytics" class="about__img" loading="lazy">
             </div>
         </div>
     </section>
 
-    <!-- 3. Packages -->
-    <section class="packages section" id="packages">
-        <div class="container">
-            <div class="section-header">
-                <span class="mono-label section-head reveal">03 / PACKAGES</span>
-                <h2 class="section-title reveal reveal-lines">Four ways in.</h2>
-                <p class="section-sub reveal">The Audit is fixed. Every build begins with discovery, then receives its own scope, timeline and investment.</p>
-            </div>
-            <div class="packages__grid">
-
-                <!-- Package 01 -->
-                <div class="pkg reveal">
-                    <div class="pkg__head">
-                        <span class="mono-label pkg__tag">PKG / 01</span>
-                        <h3 class="pkg__name">Operations<br>Audit &amp; Roadmap</h3>
-                        <div class="pkg__price">
-                            <span class="pkg__price-amount">$1,200</span>
-                            <span class="mono-label pkg__price-meta">FIXED · 2 WEEKS</span>
-                        </div>
-                    </div>
-                    <p class="pkg__desc">Find where time, money and attention are being lost. Leave with a clear order of action.</p>
-                    <ul class="pkg__list">
-                        <li>Review of the operation, workflows and current tools</li>
-                        <li>Map of bottlenecks, risks and opportunities</li>
-                        <li>Prioritized roadmap with recommended next investment</li>
-                    </ul>
-                    <p class="pkg__for">For you if: The operation feels inefficient, but the first move is not clear.</p>
-                    <a href="#contact" class="pkg__cta">Book the Audit <span class="arrow">&rarr;</span></a>
-                </div>
-
-                <!-- Package 02 -->
-                <div class="pkg reveal">
-                    <div class="pkg__head">
-                        <span class="mono-label pkg__tag">PKG / 02</span>
-                        <h3 class="pkg__name">The Digital<br>Front Desk</h3>
-                        <div class="pkg__price">
-                            <span class="pkg__price-amount">FROM $3,000</span>
-                            <span class="mono-label pkg__price-meta">SCOPED AFTER DISCOVERY</span>
-                        </div>
-                    </div>
-                    <p class="pkg__desc">Build a reliable path from first enquiry to qualified conversation, booking or handoff.</p>
-                    <ul class="pkg__list">
-                        <li>Website and enquiry experience</li>
-                        <li>Qualification, booking and follow-up</li>
-                        <li>Connected customer communication and reporting</li>
-                    </ul>
-                    <p class="pkg__for">For you if: Enquiries arrive through different channels and follow-up depends on memory.</p>
-                    <a href="#contact" class="pkg__cta">Discuss the Front Desk <span class="arrow">&rarr;</span></a>
-                </div>
-
-                <!-- Package 03 -->
-                <div class="pkg reveal">
-                    <div class="pkg__head">
-                        <span class="mono-label pkg__tag">PKG / 03</span>
-                        <h3 class="pkg__name">Operations<br>Platform</h3>
-                        <div class="pkg__price">
-                            <span class="pkg__price-amount">FROM $8,000</span>
-                            <span class="mono-label pkg__price-meta">SCOPED AFTER DISCOVERY</span>
-                        </div>
-                    </div>
-                    <p class="pkg__desc">Replace a fragmented core workflow with one system the team can see, run and control.</p>
-                    <ul class="pkg__list">
-                        <li>Operational workflows and internal interfaces</li>
-                        <li>Approvals, handoffs and system connections</li>
-                        <li>Dashboards, reporting and automation</li>
-                    </ul>
-                    <p class="pkg__for">For you if: A critical operation runs through spreadsheets, repeated administration and disconnected tools.</p>
-                    <a href="#contact" class="pkg__cta">Discuss the Operation <span class="arrow">&rarr;</span></a>
-                </div>
-
-                <!-- Package 04 -->
-                <div class="pkg pkg--ink reveal">
-                    <div class="pkg__head">
-                        <span class="mono-label pkg__tag">PKG / 04</span>
-                        <h3 class="pkg__name">Custom<br>Build</h3>
-                        <div class="pkg__price">
-                            <span class="pkg__price-amount">FROM $15,000</span>
-                            <span class="mono-label pkg__price-meta">SCOPED AFTER DISCOVERY</span>
-                        </div>
-                    </div>
-                    <p class="pkg__desc">Build the product or platform that off-the-shelf software cannot provide.</p>
-                    <ul class="pkg__list">
-                        <li>Custom web and mobile applications</li>
-                        <li>Business-specific workflows and system connections</li>
-                        <li>Product strategy, design and engineering</li>
-                    </ul>
-                    <p class="pkg__for">For you if: The business needs a system shaped around a distinct product, model or operation.</p>
-                    <a href="#contact" class="pkg__cta">Discuss a Custom Build <span class="arrow">&rarr;</span></a>
-                </div>
-
-            </div>
-            <p class="pkg-note reveal">"From" indicates the minimum engagement. After discovery, we define the final scope, timeline and investment.</p>
-        </div>
-    </section>
-
-    <!-- 4. Capabilities -->
+    <!-- 3. Services -->
     <section class="services section" id="services">
         <div class="container">
             <div class="section-header">
-                <span class="mono-label section-head reveal">04 / CAPABILITIES</span>
-                <h2 class="section-title reveal reveal-lines">What we build.</h2>
-                <p class="section-sub reveal">Signal Society provides web design, custom software development and business automation. We shape websites, applications, operational platforms and AI-assisted workflows around the way each business actually works.</p>
+                <span class="mono-label section-head reveal">03 / SERVICES</span>
+                <h2 class="section-title reveal">Three ways to build.</h2>
+                <p class="section-sub reveal">Every engagement starts with understanding the problem. Then we shape the right system around it.</p>
             </div>
             <div class="services__grid">
-                <div class="svc-card reveal">
-                    <span class="mono-label svc-card__number">01</span>
-                    <h3 class="svc-card__name">Websites &amp; Landing Pages</h3>
-                    <p class="svc-card__desc">Conversion-focused websites built around business goals — not templates. Designed to turn visitors into qualified leads.</p>
+
+                <div class="svc-card svc-card--visual reveal">
+                    <div class="svc-card__img-wrap">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Growth strategy" class="svc-card__img" loading="lazy">
+                    </div>
+                    <div class="svc-card__content">
+                        <span class="mono-label svc-card__number">01</span>
+                        <h3 class="svc-card__name">Signal Grow</h3>
+                        <p class="svc-card__desc">Brand strategy, websites, landing pages and digital campaigns. We build the front door that turns attention into qualified conversations.</p>
+                        <ul class="svc-card__list">
+                            <li>Brand identity and positioning</li>
+                            <li>Conversion-focused websites</li>
+                            <li>Digital campaigns and performance marketing</li>
+                            <li>Content strategy and production</li>
+                        </ul>
+                        <a href="#contact" class="pkg__cta">Discuss Signal Grow <span class="arrow">&rarr;</span></a>
+                    </div>
                 </div>
-                <div class="svc-card reveal">
-                    <span class="mono-label svc-card__number">02</span>
-                    <h3 class="svc-card__name">Custom Web Applications</h3>
-                    <p class="svc-card__desc">Internal tools, dashboards, and platforms built for how your team actually works. Replacing spreadsheets with systems.</p>
+
+                <div class="svc-card svc-card--visual reveal">
+                    <div class="svc-card__img-wrap">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&q=80" alt="Custom software development" class="svc-card__img" loading="lazy">
+                    </div>
+                    <div class="svc-card__content">
+                        <span class="mono-label svc-card__number">02</span>
+                        <h3 class="svc-card__name">Signal Build</h3>
+                        <p class="svc-card__desc">Custom web applications, dashboards, ERP, POS and product platforms. Systems shaped around how your business actually works.</p>
+                        <ul class="svc-card__list">
+                            <li>Custom web and mobile applications</li>
+                            <li>Internal tools and dashboards</li>
+                            <li>ERP, POS and operations software</li>
+                            <li>Product strategy, design and engineering</li>
+                        </ul>
+                        <a href="#contact" class="pkg__cta">Discuss Signal Build <span class="arrow">&rarr;</span></a>
+                    </div>
                 </div>
-                <div class="svc-card reveal">
-                    <span class="mono-label svc-card__number">03</span>
-                    <h3 class="svc-card__name">ERP, POS &amp; Operations</h3>
-                    <p class="svc-card__desc">Point-of-sale, inventory management, and enterprise resource planning — custom-built for your operation.</p>
+
+                <div class="svc-card svc-card--visual reveal">
+                    <div class="svc-card__img-wrap">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80" alt="System integration and automation" class="svc-card__img" loading="lazy">
+                    </div>
+                    <div class="svc-card__content">
+                        <span class="mono-label svc-card__number">03</span>
+                        <h3 class="svc-card__name">Signal Operate</h3>
+                        <p class="svc-card__desc">Automation, AI workflows and system integration. Connect your tools, remove manual work and give your team better information.</p>
+                        <ul class="svc-card__list">
+                            <li>Workflow automation and AI integration</li>
+                            <li>CRM, booking and messaging connections</li>
+                            <li>Document handling and decision support</li>
+                            <li>Monitoring, maintenance and support</li>
+                        </ul>
+                        <a href="#contact" class="pkg__cta">Discuss Signal Operate <span class="arrow">&rarr;</span></a>
+                    </div>
                 </div>
-                <div class="svc-card reveal">
-                    <span class="mono-label svc-card__number">04</span>
-                    <h3 class="svc-card__name">AI Automations</h3>
-                    <p class="svc-card__desc">Document handling, decision support, and workflow automation. Used where it improves response, not as decoration.</p>
-                </div>
-                <div class="svc-card reveal">
-                    <span class="mono-label svc-card__number">05</span>
-                    <h3 class="svc-card__name">Brand &amp; Digital Growth</h3>
-                    <p class="svc-card__desc">Strategy, content, campaigns and performance marketing — all designed to help you reach the right people.</p>
-                </div>
-                <div class="svc-card reveal">
-                    <span class="mono-label svc-card__number">06</span>
-                    <h3 class="svc-card__name">System Integration</h3>
-                    <p class="svc-card__desc">Connect your existing tools into a coherent workflow. CRM, booking, messaging, reporting — one system, not five.</p>
-                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- 5. AI Philosophy -->
+    <!-- 4. AI Philosophy -->
     <section class="quote section">
         <div class="container">
             <div class="quote__inner reveal">
-                <span class="mono-label section-head" style="color: var(--orange);">05 / INTELLIGENCE</span>
+                <span class="mono-label section-head" style="color: var(--orange);">04 / INTELLIGENCE</span>
                 <blockquote class="quote__text">
                     AI does not make a weak system strong. We use it where it removes repeated work, improves response or gives people better information. When a simpler system is more reliable, we build <em class="accent">the simpler system.</em>
                 </blockquote>
@@ -306,20 +197,18 @@
         </div>
     </section>
 
-    <!-- 6. Work -->
+    <!-- 5. Work -->
     <section class="projects section" id="work">
         <div class="container">
             <div class="section-header">
-                <span class="mono-label section-head reveal">06 / WORK</span>
-                <h2 class="section-title reveal reveal-lines">Selected work.</h2>
-                <p class="section-sub reveal">Selected work across legal services, wholesale commerce and digital marketing.</p>
+                <span class="mono-label section-head reveal">05 / WORK</span>
+                <h2 class="section-title reveal">Selected work.</h2>
+                <p class="section-sub reveal">Selected projects across legal services, wholesale commerce and digital marketing.</p>
             </div>
             <div class="projects__grid">
                 <a href="#" class="project project--wide reveal">
                     <div class="project__visual">
-                        <div class="project__placeholder" style="background: linear-gradient(135deg, var(--blue), #4444ff);">
-                            <span class="project__placeholder-label">P-01</span>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80" alt="E-Commerce Platform" class="project__img" loading="lazy">
                     </div>
                     <div class="project__info">
                         <span class="mono-label project__tag">CASE P-01 / UX/UI · WEB DEV</span>
@@ -329,9 +218,7 @@
                 </a>
                 <a href="#" class="project project--tall reveal">
                     <div class="project__visual">
-                        <div class="project__placeholder" style="background: linear-gradient(135deg, var(--orange), #ff8833);">
-                            <span class="project__placeholder-label">P-02</span>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=80" alt="Corporate Website" class="project__img" loading="lazy">
                     </div>
                     <div class="project__info">
                         <span class="mono-label project__tag">CASE P-02 / BRAND · WEB DEV</span>
@@ -341,9 +228,7 @@
                 </a>
                 <a href="#" class="project reveal">
                     <div class="project__visual">
-                        <div class="project__placeholder" style="background: linear-gradient(135deg, #1a1a2e, #2d2d44);">
-                            <span class="project__placeholder-label">P-03</span>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=600&q=80" alt="Restaurant POS" class="project__img" loading="lazy">
                     </div>
                     <div class="project__info">
                         <span class="mono-label project__tag">CASE P-03 / POS · SYSTEM</span>
@@ -353,33 +238,27 @@
                 </a>
                 <a href="#" class="project reveal">
                     <div class="project__visual">
-                        <div class="project__placeholder" style="background: linear-gradient(135deg, var(--dark), #333);">
-                            <span class="project__placeholder-label">P-04</span>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="SaaS Dashboard" class="project__img" loading="lazy">
                     </div>
                     <div class="project__info">
-                        <span class="mono-label project__tag">CASE P-04 / ERP · INFRASTRUCTURE</span>
-                        <h3 class="project__name">ERP Integration</h3>
-                        <p class="project__type">Unified operations platform replacing disconnected spreadsheets.</p>
-                    </div>
-                </a>
-                <a href="#" class="project project--wide reveal">
-                    <div class="project__visual">
-                        <div class="project__placeholder" style="background: linear-gradient(135deg, #0a3d62, #38ada9);">
-                            <span class="project__placeholder-label">P-05</span>
-                        </div>
-                    </div>
-                    <div class="project__info">
-                        <span class="mono-label project__tag">CASE P-05 / DASHBOARD · AI</span>
+                        <span class="mono-label project__tag">CASE P-04 / DASHBOARD · AI</span>
                         <h3 class="project__name">SaaS Dashboard</h3>
                         <p class="project__type">Analytics platform with AI-powered decision support layer.</p>
                     </div>
                 </a>
+                <a href="#" class="project project--wide reveal">
+                    <div class="project__visual">
+                        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80" alt="ERP Integration" class="project__img" loading="lazy">
+                    </div>
+                    <div class="project__info">
+                        <span class="mono-label project__tag">CASE P-05 / ERP · INFRASTRUCTURE</span>
+                        <h3 class="project__name">ERP Integration</h3>
+                        <p class="project__type">Unified operations platform replacing disconnected spreadsheets.</p>
+                    </div>
+                </a>
                 <a href="#" class="project project--tall reveal">
                     <div class="project__visual">
-                        <div class="project__placeholder" style="background: linear-gradient(135deg, #6c5ce7, #a29bfe);">
-                            <span class="project__placeholder-label">P-06</span>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80" alt="Social Campaign" class="project__img" loading="lazy">
                     </div>
                     <div class="project__info">
                         <span class="mono-label project__tag">CASE P-06 / CAMPAIGN · GROWTH</span>
@@ -391,136 +270,12 @@
         </div>
     </section>
 
-    <!-- 7. Testimonials -->
-    <section class="testimonial section" id="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <span class="mono-label section-head reveal">07 / TESTIMONIALS</span>
-                <h2 class="section-title reveal reveal-lines">Verified testimonials.</h2>
-            </div>
-            <div class="t-carousel" id="tCarousel" aria-live="polite">
-                <div class="tc-clip" id="tcPreviewClip">
-                    <div class="tc-plate tc-plate--preview" data-ir-delay="0.25">
-                        <div class="tc-plate__scan" id="tcScan"></div>
-                    </div>
-                </div>
-                <div class="tc-entries" id="tcEntries">
-                    <div class="tc-entry" data-tc-entry="0">
-                        <div class="tc-head">
-                            <span class="mono-label tc-ref">REF-01</span>
-                            <span class="mono-label tc-stamp">VERIFIED</span>
-                        </div>
-                        <blockquote class="tc-plate--main quote__text">
-                            "Signal Society took our operational chaos and turned it into a system that simply runs. Design, automation, dashboards. One team, one standard, zero hand-holding required."
-                        </blockquote>
-                        <div class="tc-foot">
-                            <span class="tc-name">Wayne Thompson</span>
-                            <span class="mono-label tc-role">CEO &amp; Founder · Buyamia</span>
-                        </div>
-                    </div>
-                    <div class="tc-entry" data-tc-entry="1" hidden>
-                        <div class="tc-head">
-                            <span class="mono-label tc-ref">REF-02</span>
-                            <span class="mono-label tc-stamp">VERIFIED</span>
-                        </div>
-                        <blockquote class="tc-plate--main quote__text">
-                            "We are incredibly grateful to have found this company. What they do exactly like we asked for. The website turned out exactly like we imagined. Thank you guys so much for bringing this to life!"
-                        </blockquote>
-                        <div class="tc-foot">
-                            <span class="tc-name">Faizah Khoiroh Hazmi</span>
-                            <span class="mono-label tc-role">Attorney/Director · Ilot Legal</span>
-                        </div>
-                    </div>
-                    <div class="tc-entry" data-tc-entry="2" hidden>
-                        <div class="tc-head">
-                            <span class="mono-label tc-ref">REF-03</span>
-                            <span class="mono-label tc-stamp">VERIFIED</span>
-                        </div>
-                        <blockquote class="tc-plate--main quote__text">
-                            "Two projects, zero friction. Whether it was standing up an AI automation workflow or designing our client's e-commerce store, they moved fast and stayed flexible the whole way through."
-                        </blockquote>
-                        <div class="tc-foot">
-                            <span class="tc-name">Roham Taadoli</span>
-                            <span class="mono-label tc-role">Head of Growth · Reform Digital</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="tc-tap-hint" id="tcTapHint">
-                    <button class="testimonials__btn" id="nextTestimonial" aria-label="Next testimonial">&rarr;</button>
-                </div>
-            </div>
-            <div class="testimonials__nav">
-                <button class="testimonials__btn" id="prevTestimonial" aria-label="Previous testimonial">&larr;</button>
-                <span class="mono-label testimonials__counter"><span id="testimonialIndex">01</span> / 03</span>
-                <button class="testimonials__btn" id="nextTestimonialDesktop" aria-label="Next testimonial">&rarr;</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- 8. Team -->
-    <section class="team section" id="team">
-        <div class="container">
-            <div class="section-header">
-                <span class="mono-label section-head reveal">08 / PERSONNEL</span>
-                <h2 class="section-title reveal reveal-lines">Our people.</h2>
-                <p class="section-sub reveal">A focused team across product, growth, AI, design and sales. Every system we ship has an owner in this room.</p>
-            </div>
-            <div class="team__grid">
-                <div class="team-card reveal">
-                    <div class="team-card__avatar" style="background: linear-gradient(135deg, var(--blue), #4444ff);">
-                        <span class="team-card__initials">SH</span>
-                    </div>
-                    <span class="mono-label team-card__code">OP-01</span>
-                    <h3 class="team-card__name">Shahab</h3>
-                    <p class="mono-label team-card__role">Director of Products &amp; Ops</p>
-                    <p class="team-card__bio">Directs product and operations. Architects modern websites, applications, and intelligent systems that streamline operations and give businesses full visibility.</p>
-                </div>
-                <div class="team-card reveal">
-                    <div class="team-card__avatar" style="background: linear-gradient(135deg, var(--orange), #ff8833);">
-                        <span class="team-card__initials">MX</span>
-                    </div>
-                    <span class="mono-label team-card__code">OP-02</span>
-                    <h3 class="team-card__name">Max</h3>
-                    <p class="mono-label team-card__role">Head of Growth</p>
-                    <p class="team-card__bio">Owns growth strategy: positioning, offers, and the pipeline behind how Signal Society attracts and converts clients.</p>
-                </div>
-                <div class="team-card reveal">
-                    <div class="team-card__avatar" style="background: linear-gradient(135deg, #1a1a2e, #2d2d44);">
-                        <span class="team-card__initials">PY</span>
-                    </div>
-                    <span class="mono-label team-card__code">OP-03</span>
-                    <h3 class="team-card__name">Dr. Pouya</h3>
-                    <p class="mono-label team-card__role">AI Specialist</p>
-                    <p class="team-card__bio">Leads enterprise-scale data platform strategy and architectures. Builds production MLOps and real-time streaming infrastructure.</p>
-                </div>
-                <div class="team-card reveal">
-                    <div class="team-card__avatar" style="background: linear-gradient(135deg, #6c5ce7, #a29bfe);">
-                        <span class="team-card__initials">AM</span>
-                    </div>
-                    <span class="mono-label team-card__code">OP-04</span>
-                    <h3 class="team-card__name">Amin</h3>
-                    <p class="mono-label team-card__role">Creative Lead</p>
-                    <p class="team-card__bio">Owns brand identity and product design. Leads 3D and 2D motion for engaging digital experiences with high-impact visual storytelling.</p>
-                </div>
-                <div class="team-card reveal">
-                    <div class="team-card__avatar" style="background: linear-gradient(135deg, #0a3d62, #38ada9);">
-                        <span class="team-card__initials">AP</span>
-                    </div>
-                    <span class="mono-label team-card__code">OP-05</span>
-                    <h3 class="team-card__name">Alejandro</h3>
-                    <p class="mono-label team-card__role">Sales Manager</p>
-                    <p class="team-card__bio">Leads sales team, directing market targeting, outbound pipeline creation, qualification, and commercial forecasting.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 9. FAQ -->
+    <!-- 6. FAQ -->
     <section class="faq section" id="faq">
         <div class="container">
             <div class="section-header">
-                <span class="mono-label section-head reveal">09 / FAQS</span>
-                <h2 class="section-title reveal reveal-lines">Frequently asked questions.</h2>
+                <span class="mono-label section-head reveal">06 / FAQS</span>
+                <h2 class="section-title reveal">Frequently asked questions.</h2>
                 <p class="section-sub reveal">Can't find what you're looking for? <a href="#contact" class="faq__link">Start a Conversation.</a></p>
             </div>
             <div class="faq__grid">
@@ -530,19 +285,15 @@
                         <span>What does Signal Society build?</span>
                         <span class="faq-item__icon">+</span>
                     </button>
-                    <div class="faq-item__body">
-                        <p>We design and build websites, web and mobile applications, operational platforms, integrations and business automation. The format follows the problem, not the other way around. AI is used where it genuinely improves response, retrieval, document handling or decision support, and conventional software where it's more reliable.</p>
-                    </div>
+                    <div class="faq-item__body"><p>We design and build websites, web and mobile applications, operational platforms, integrations and business automation. The format follows the problem, not the other way around. AI is used where it genuinely improves response, retrieval, document handling or decision support, and conventional software where it's more reliable.</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <button class="faq-item__q" aria-expanded="false">
                         <span class="mono-label faq-item__num">Q.02</span>
-                        <span>Are the package prices fixed?</span>
+                        <span>What's the difference between Signal Grow, Build and Operate?</span>
                         <span class="faq-item__icon">+</span>
                     </button>
-                    <div class="faq-item__body">
-                        <p>The Operations Audit &amp; Roadmap is fixed at $1,200 and takes two weeks. The other packages show minimum engagement levels. Final scope, timeline and investment are defined after discovery.</p>
-                    </div>
+                    <div class="faq-item__body"><p><strong>Signal Grow</strong> covers brand, marketing and the digital front door — websites, campaigns, landing pages. <strong>Signal Build</strong> is custom software — applications, dashboards, ERP, POS and product platforms. <strong>Signal Operate</strong> handles automation, AI workflows and system integration — connecting your tools and removing manual work. Many clients start with one and expand into others.</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <button class="faq-item__q" aria-expanded="false">
@@ -550,9 +301,7 @@
                         <span>Do you use AI in every project?</span>
                         <span class="faq-item__icon">+</span>
                     </button>
-                    <div class="faq-item__body">
-                        <p>No. We use AI when it improves response, retrieval, document handling or decision support. When conventional software is more reliable, we use conventional software. Discovery establishes which case you are in.</p>
-                    </div>
+                    <div class="faq-item__body"><p>No. We use AI when it improves response, retrieval, document handling or decision support. When conventional software is more reliable, we use conventional software. Discovery establishes which case you are in.</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <button class="faq-item__q" aria-expanded="false">
@@ -560,9 +309,7 @@
                         <span>Can you work with our current tools?</span>
                         <span class="faq-item__icon">+</span>
                     </button>
-                    <div class="faq-item__body">
-                        <p>Yes, when those tools support the right system. Discovery determines what should stay, what should connect and what should be replaced. Most businesses already own more capability than they use.</p>
-                    </div>
+                    <div class="faq-item__body"><p>Yes, when those tools support the right system. Discovery determines what should stay, what should connect and what should be replaced. Most businesses already own more capability than they use.</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <button class="faq-item__q" aria-expanded="false">
@@ -570,19 +317,15 @@
                         <span>Will we own what you build?</span>
                         <span class="faq-item__icon">+</span>
                     </button>
-                    <div class="faq-item__body">
-                        <p>Ownership, access and handover are defined in the proposal. After full payment you own the deliverables and source code created uniquely for your business. We retain our pre-existing tools, templates and frameworks.</p>
-                    </div>
+                    <div class="faq-item__body"><p>Ownership, access and handover are defined in the proposal. After full payment you own the deliverables and source code created uniquely for your business. We retain our pre-existing tools, templates and frameworks.</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <button class="faq-item__q" aria-expanded="false">
                         <span class="mono-label faq-item__num">Q.06</span>
-                        <span>How is the final project price determined?</span>
+                        <span>How is the project price determined?</span>
                         <span class="faq-item__icon">+</span>
                     </button>
-                    <div class="faq-item__body">
-                        <p>Price follows the outcome, scope, system connections, delivery risk and support required. After a fit and discovery call, we research the likely approach and send a commercial proposal stating the recommended scope, milestones and final price.</p>
-                    </div>
+                    <div class="faq-item__body"><p>Price follows the outcome, scope, system connections, delivery risk and support required. After a discovery call, we research the likely approach and send a proposal stating the recommended scope, milestones and investment. There are no hidden fees.</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <button class="faq-item__q" aria-expanded="false">
@@ -590,19 +333,15 @@
                         <span>Do you provide ongoing support?</span>
                         <span class="faq-item__icon">+</span>
                     </button>
-                    <div class="faq-item__body">
-                        <p>Yes. Maintenance, support and future improvements are scoped according to the system and the client's internal capacity. Support covers monitoring, fixes, dependency and platform updates.</p>
-                    </div>
+                    <div class="faq-item__body"><p>Yes. Maintenance, support and future improvements are scoped according to the system and your team's capacity. Support covers monitoring, fixes, dependency and platform updates. We also offer retainer agreements for continuous improvement.</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <button class="faq-item__q" aria-expanded="false">
                         <span class="mono-label faq-item__num">Q.08</span>
-                        <span>Do you work with businesses outside Bali?</span>
+                        <span>Do you work with businesses outside Indonesia?</span>
                         <span class="faq-item__icon">+</span>
                     </button>
-                    <div class="faq-item__body">
-                        <p>Yes. Signal Society is based in Bali, Indonesia, and works with businesses across Southeast Asia and beyond. Discovery, design reviews and delivery can be handled remotely.</p>
-                    </div>
+                    <div class="faq-item__body"><p>Yes. Signal Society is based in Indonesia and works with businesses across Southeast Asia and beyond. Discovery, design reviews and delivery can be handled remotely.</p></div>
                 </div>
                 <div class="faq-item reveal">
                     <button class="faq-item__q" aria-expanded="false">
@@ -610,21 +349,35 @@
                         <span>How long does a project take?</span>
                         <span class="faq-item__icon">+</span>
                     </button>
-                    <div class="faq-item__body">
-                        <p>Timelines depend on scope, integrations and delivery risk. The Operations Audit takes two weeks. Website, automation and custom software schedules are defined after discovery with clear milestones and launch criteria.</p>
-                    </div>
+                    <div class="faq-item__body"><p>Timelines depend on scope, integrations and delivery risk. Website projects typically take 4-8 weeks. Custom platforms and operational systems are defined after discovery with clear milestones and launch criteria.</p></div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-item__q" aria-expanded="false">
+                        <span class="mono-label faq-item__num">Q.10</span>
+                        <span>What happens after the project is delivered?</span>
+                        <span class="faq-item__icon">+</span>
+                    </button>
+                    <div class="faq-item__body"><p>We don't disappear after launch. Every project includes a handover period with documentation, training and bug fixes. After that, you can choose a support plan or engage us for future phases. Most clients continue working with us on new features and improvements.</p></div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-item__q" aria-expanded="false">
+                        <span class="mono-label faq-item__num">Q.11</span>
+                        <span>How do we get started?</span>
+                        <span class="faq-item__icon">+</span>
+                    </button>
+                    <div class="faq-item__body"><p>Start with a discovery call. We'll discuss your business, the challenges you're facing and what you're trying to achieve. From there, we'll recommend the right service and define scope, timeline and investment. No commitment required for the initial conversation.</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 10. Contact -->
+    <!-- 7. Contact -->
     <section class="contact section" id="contact">
         <div class="container">
             <div class="contact__grid">
                 <div class="contact__left">
-                    <span class="mono-label section-head reveal">10 / CONTACT</span>
-                    <h2 class="section-title contact__headline reveal reveal-lines">Got a project in mind?<br>Let's make it happen.</h2>
+                    <span class="mono-label section-head reveal">07 / CONTACT</span>
+                    <h2 class="section-title contact__headline reveal">Got a project in mind?<br>Let's make it happen.</h2>
                     <p class="section-sub contact__sub reveal">Tell us what you're working on. We'll figure out the best way to help — and build it together.</p>
                 </div>
                 <div class="contact__right reveal">
@@ -647,10 +400,9 @@
                             <label class="mono-label form__label" for="service">How can we help?</label>
                             <select class="form__input form__select" id="service" name="service">
                                 <option value="" disabled selected>Pick a service</option>
-                                <option value="audit">Operations Audit & Roadmap</option>
-                                <option value="front-desk">The Digital Front Desk</option>
-                                <option value="platform">Operations Platform</option>
-                                <option value="custom">Custom Build</option>
+                                <option value="signal-grow">Signal Grow</option>
+                                <option value="signal-build">Signal Build</option>
+                                <option value="signal-operate">Signal Operate</option>
                                 <option value="multiple">Not sure yet · let's figure it out</option>
                             </select>
                         </div>
@@ -676,15 +428,13 @@
                 <div class="footer__brand">
                     <img src="logosignalsociety/logosignalsociety.png" alt="Signal Society" class="footer__logo-img">
                     <span class="mono-label footer__logo-text">Signal Society</span>
-                    <p class="footer__tagline">Systems that run the business.</p>
+                    <p class="footer__tagline">Infrastructure behind your growth.</p>
                 </div>
                 <div class="footer__col">
                     <h4 class="mono-label footer__heading">Navigation</h4>
                     <a href="#about" class="footer__link">About</a>
-                    <a href="#packages" class="footer__link">Packages</a>
-                    <a href="#services" class="footer__link">Capabilities</a>
+                    <a href="#services" class="footer__link">Services</a>
                     <a href="#work" class="footer__link">Work</a>
-                    <a href="#team" class="footer__link">Team</a>
                     <a href="#faq" class="footer__link">FAQs</a>
                     <a href="#contact" class="footer__link">Contact</a>
                 </div>
@@ -696,8 +446,8 @@
                 <div class="footer__col">
                     <h4 class="mono-label footer__heading">Contact</h4>
                     <a href="mailto:hello@signalsociety.co" class="footer__link">hello@signalsociety.co</a>
-                    <a href="tel:+6281234567890" class="footer__link">+62 812-3456-7890</a>
-                    <span class="footer__link footer__link--static">Bali, Indonesia</span>
+                    <a href="tel:+6289648598272" class="footer__link">+62 896-4859-8272</a>
+                    <span class="footer__link footer__link--static">Indonesia</span>
                 </div>
             </div>
             <div class="footer__bottom">
@@ -706,6 +456,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=8"></script>
+    <script src="script.js?v=9"></script>
 </body>
 </html>
