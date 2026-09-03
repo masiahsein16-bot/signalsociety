@@ -7,7 +7,7 @@ Signal Society is a digital infrastructure company website. Static HTML/CSS/JS s
 - **Frontend**: HTML5, CSS3 (custom properties, BEM naming), Vanilla JS
 - **Backend**: Supabase (PostgreSQL + Row Level Security)
 - **Deployment**: Vercel (static site)
-- **Font**: Inter (Google Fonts)
+- **Font**: Space Mono (Google Fonts, monospace only)
 
 ## File Structure
 ```
@@ -37,8 +37,12 @@ signalsociety/
 - `--blue: #1A1AFF`
 - `--orange: #FF6600`
 - `--dark: #0A0A0A`
+- `--dark-surface: #111111`
+- `--dark-elevated: #1a1a1a`
+- `--dark-border: #1f1f1f`
+- `--gray: #6B6B6B`
+- `--gray-light: #999999`
 - `--white: #FFFFFF`
-- `--off-white: #F7F7F5`
 
 ## Supabase Setup
 1. Run `supabase-setup.sql` in Supabase SQL Editor
