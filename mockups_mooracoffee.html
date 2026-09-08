@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moora POS — Device Mockups</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:#0f0f0f;color:#fff;min-height:100vh;overflow-x:hidden}
+.hero{text-align:center;padding:80px 20px 60px;background:linear-gradient(180deg,#1a1410 0%,#0f0f0f 100%)}
+.hero h1{font-size:48px;font-weight:800;background:linear-gradient(135deg,#C89660,#EBD9C1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
+.hero p{font-size:18px;color:#999;max-width:500px;margin:0 auto}
+.hero .tag{display:inline-block;padding:6px 16px;background:rgba(200,150,96,.15);color:#C89660;border-radius:20px;font-size:13px;font-weight:600;margin-bottom:20px}
+.section{max-width:1200px;margin:0 auto;padding:40px 20px 80px}
+.section-title{text-align:center;margin-bottom:50px}
+.section-title h2{font-size:32px;font-weight:700;margin-bottom:8px}
+.section-title p{color:#888;font-size:15px}
+
+/* LAPTOP MOCKUP */
+.laptop-wrap{display:flex;justify-content:center;margin-bottom:40px}
+.laptop{position:relative;width:900px}
+.laptop-screen{background:#1a1a1a;border-radius:16px 16px 0 0;border:3px solid #333;border-bottom:none;padding:8px 8px 0;overflow:hidden;aspect-ratio:16/10;position:relative}
+.laptop-screen .notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:24px;background:#1a1a1a;border-radius:0 0 12px 12px;z-index:2}
+.laptop-screen .cam{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:8px;height:8px;background:#333;border-radius:50%;z-index:3}
+.laptop-screen iframe,.laptop-screen .mock{width:100%;height:100%;border:none;border-radius:0;background:#FAF7F2}
+.laptop-base{height:16px;background:linear-gradient(180deg,#444,#333);border-radius:0 0 12px 12px;position:relative}
+.laptop-base::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:4px;background:#555;border-radius:0 0 4px 4px}
+.laptop-label{text-align:center;margin-top:16px;font-size:14px;color:#666;font-weight:500}
+
+/* TABLET MOCKUP */
+.tablet-wrap{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-bottom:40px}
+.tablet{position:relative}
+.tablet-device{background:#1a1a1a;border-radius:20px;border:4px solid #333;padding:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.tablet-device.portrait{width:320px;height:440px}
+.tablet-device.landscape{width:520px;height:360px}
+.tablet-device .screen{width:100%;height:100%;border-radius:4px;background:#FAF7F2;overflow:hidden;position:relative}
+.tablet-label{text-align:center;margin-top:12px;font-size:13px;color:#666;font-weight:500}
+
+/* PHONE MOCKUP */
+.phone-wrap{display:flex;justify-content:center;gap:30px;flex-wrap:wrap}
+.phone{position:relative}
+.phone-device{background:#1a1a1a;border-radius:32px;border:4px solid #333;padding:10px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);width:260px;height:540px;position:relative}
+.phone-device .notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:80px;height:22px;background:#1a1a1a;border-radius:12px;z-index:2}
+.phone-device .cam{position:absolute;top:15px;left:50%;transform:translateX(-50%);width:6px;height:6px;background:#333;border-radius:50%;z-index:3}
+.phone-device .screen{width:100%;height:100%;border-radius:22px;background:#FAF7F2;overflow:hidden}
+.phone-device .home{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);width:80px;height:4px;background:#444;border-radius:2px}
+.phone-label{text-align:center;margin-top:12px;font-size:13px;color:#666;font-weight:500}
+
+/* SOCIAL MEDIA CARDS */
+.social-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:20px}
+.social-card{background:#1a1a1a;border-radius:16px;overflow:hidden;border:1px solid #222}
+.social-card .header{padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #222}
+.social-card .avatar{width:36px;height:36px;background:linear-gradient(135deg,#B07A42,#C89660);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px}
+.social-card .uname{font-weight:600;font-size:14px}.social-card .sub{font-size:11px;color:#888}
+.social-card .content{padding:0;aspect-ratio:1;background:#FAF7F2}
+.social-card .actions{padding:12px 16px;display:flex;gap:16px}
+.social-card .actions span{font-size:20px;cursor:pointer}
+.social-card .caption{padding:0 16px 14px;font-size:13px;color:#ccc;line-height:1.5}
+.social-card .caption strong{color:#fff}
+
+/* MOCK SCREENS (CSS-only) */
+.mock-dashboard{padding:14px;font-size:8px;color:#2A2A2A;height:100%}
+.mock-dashboard .hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.mock-dashboard .hdr h3{font-size:11px;font-weight:700}.mock-dashboard .hdr p{font-size:7px;color:#888}
+.mock-dots{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-bottom:10px}
+.mock-dot{background:#fff;border-radius:6px;padding:6px;text-align:center;border:1px solid #eee}
+.mock-dot .val{font-size:10px;font-weight:700}.mock-dot .lbl{font-size:5px;color:#888}
+.mock-rows{display:flex;flex-direction:column;gap:4px}
+.mock-row{background:#fff;border-radius:4px;padding:5px 8px;display:flex;justify-content:space-between;align-items:center;border:1px solid #eee}
+.mock-row .nm{font-size:7px;font-weight:600}.mock-row .vl{font-size:7px;font-weight:700;color:#B07A42}
+
+.mock-pos{display:flex;height:100%;font-size:7px;color:#2A2A2A}
+.mock-pos .left{flex:1;padding:6px}
+.mock-pos .search{background:#F5EDE0;border-radius:4px;padding:4px 8px;margin-bottom:6px;font-size:6px;color:#888}
+.mock-pos .cats{display:flex;gap:3px;margin-bottom:6px;flex-wrap:wrap}
+.mock-pos .cat{padding:2px 6px;border-radius:8px;font-size:5px;background:#eee}
+.mock-pos .cat.on{background:#B07A42;color:#fff}
+.mock-pos .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.mock-pos .item{background:#fff;border-radius:4px;padding:4px;text-align:center;border:1px solid #eee}
+.mock-pos .item .em{font-size:14px}.mock-pos .item .nm{font-size:5px;font-weight:600;margin-top:2px}.mock-pos .item .pr{font-size:6px;font-weight:700;color:#8E5F34}
+.mock-pos .right{width:35%;background:#fff;border-left:1px solid #eee;padding:6px}
+.mock-pos .right h4{font-size:7px;font-weight:700;margin-bottom:4px}
+.mock-pos .cart-i{background:#FAF7F2;border-radius:3px;padding:3px 4px;margin-bottom:3px;font-size:5px;display:flex;justify-content:space-between}
+.mock-pos .total{border-top:1px solid #eee;padding-top:4px;margin-top:4px;font-size:7px;font-weight:700;display:flex;justify-content:space-between}
+.mock-pos .pay-btn{background:#B07A42;color:#fff;border:none;width:100%;padding:4px;border-radius:4px;font-size:6px;font-weight:600;margin-top:6px;cursor:pointer}
+
+.mock-tables{padding:8px;font-size:7px;color:#2A2A2A;height:100%}
+.mock-tables h4{font-size:9px;font-weight:700;margin-bottom:6px}
+.mock-tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.mock-tc{border-radius:6px;padding:8px;text-align:center;font-size:7px}
+.mock-tc .num{font-size:14px;font-weight:700}.mock-tc .cap{font-size:5px}
+.mock-tc.av{background:#ecfdf5;color:#166534;border:1px solid #86efac}
+.mock-tc.oc{background:#fef2f2;color:#991b1b;border:1px solid #fca5a5}
+.mock-tc.re{background:#fefce8;color:#854d0e;border:1px solid #fde047}
+
+.mock-orders{padding:8px;font-size:7px;color:#2A2A2A;height:100%}
+.mock-orders h4{font-size:9px;font-weight:700;margin-bottom:6px}
+.mock-oi{background:#fff;border:1px solid #eee;border-radius:6px;padding:6px;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center}
+.mock-oi .info .on{font-weight:700;font-size:7px}.mock-oi .info .ct{font-size:5px;color:#888}
+.mock-st{padding:2px 5px;border-radius:8px;font-size:5px;font-weight:600}
+.mock-st.pr{background:#dbeafe;color:#1e40af}.mock-st.rd{background:#d1fae5;color:#065f46}.mock-st.pd{background:#fef3c7;color:#92400e}
+
+.mock-reports{padding:8px;font-size:7px;color:#2A2A2A;height:100%}
+.mock-reports h4{font-size:9px;font-weight:700;margin-bottom:6px}
+.mock-bars{display:flex;align-items:end;gap:3px;height:50px;margin-bottom:8px}
+.mock-bar{background:linear-gradient(0deg,#C89660,#EBD9C1);border-radius:2px 2px 0 0;flex:1;min-height:2px}
+.mock-bar-lbl{font-size:4px;text-align:center;color:#888;margin-top:2px}
+.mock-list{display:flex;flex-direction:column;gap:3px}
+.mock-list .li{display:flex;justify-content:space-between;align-items:center;padding:3px 0;border-bottom:1px solid #f0f0f0;font-size:6px}
+
+.footer{text-align:center;padding:40px 20px;color:#444;font-size:13px;border-top:1px solid #1a1a1a}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="tag">☕ Moora Coffee</div>
+  <h1>Moora POS</h1>
+  <p>Simple operations. Better coffee. — Device Mockups & Presentation</p>
+</div>
+
+<!-- LAPTOP -->
+<div class="section">
+  <div class="section-title"><h2>Laptop</h2><p>Desktop POS terminal view</p></div>
+  <div class="laptop-wrap">
+    <div class="laptop">
+      <div class="laptop-screen">
+        <div class="notch"><div class="cam"></div></div>
+        <div class="mock-pos">
+          <div class="left">
+            <div class="search">🔍 Search products...</div>
+            <div class="cats">
+              <span class="cat on">All</span><span class="cat">☕ Coffee</span><span class="cat">🥤 Non-Coffee</span><span class="cat">🍵 Tea</span><span class="cat">🍽️ Food</span><span class="cat">🥐 Pastry</span>
+            </div>
+            <div class="grid">
+              <div class="item"><div class="em">☕</div><div class="nm">Espresso</div><div class="pr">Rp 28.000</div></div>
+              <div class="item"><div class="em">☕</div><div class="nm">Americano</div><div class="pr">Rp 32.000</div></div>
+              <div class="item"><div class="em">☕</div><div class="nm">Cappuccino</div><div class="pr">Rp 38.000</div></div>
+              <div class="item"><div class="em">☕</div><div class="nm">Latte</div><div class="pr">Rp 38.000</div></div>
+              <div class="item"><div class="em">☕</div><div class="nm">Flat White</div><div class="pr">Rp 42.000</div></div>
+              <div class="item"><div class="em">☕</div><div class="nm">Mocha</div><div class="pr">Rp 42.000</div></div>
+              <div class="item"><div class="em">🍵</div><div class="nm">Matcha Latte</div><div class="pr">Rp 38.000</div></div>
+              <div class="item"><div class="em">🥐</div><div class="nm">Croissant</div><div class="pr">Rp 22.000</div></div>
+              <div class="item"><div class="em">🥑</div><div class="nm">Avocado Toast</div><div class="pr">Rp 55.000</div></div>
+            </div>
+          </div>
+          <div class="right">
+            <h4>🛒 Order <span style="background:#eee;padding:1px 4px;border-radius:6px;font-size:5px">2</span></h4>
+            <div style="display:flex;gap:3px;margin-bottom:4px">
+              <div style="flex:1;background:#FAF7F2;border-radius:3px;padding:3px;font-size:5px">🪑 Table 3</div>
+              <div style="flex:1;background:#FAF7F2;border-radius:3px;padding:3px;font-size:5px">👤 Budi S.</div>
+            </div>
+            <div class="cart-i"><span>2x Cappuccino</span><span>Rp 76.000</span></div>
+            <div class="cart-i"><span>1x Croissant</span><span>Rp 22.000</span></div>
+            <div class="total"><span>Subtotal</span><span>Rp 98.000</span></div>
+            <div class="total" style="font-size:6px;color:#888"><span>Tax (10%)</span><span>Rp 9.800</span></div>
+            <div class="total" style="font-size:8px"><span>Total</span><span>Rp 107.800</span></div>
+            <button class="pay-btn">Pay →</button>
+          </div>
+        </div>
+      </div>
+      <div class="laptop-base"></div>
+    </div>
+  </div>
+  <div class="laptop-label">POS Terminal — MacBook Pro 14"</div>
+</div>
+
+<!-- TABLETS -->
+<div class="section">
+  <div class="section-title"><h2>Tablet</h2><p>iPad / Android tablet — Orders view with sidebar navigation</p></div>
+  <div class="tablet-wrap">
+    <!-- Landscape with Sidebar -->
+    <div>
+      <div class="tablet-device landscape">
+        <div class="screen" style="display:flex;overflow:hidden">
+          <!-- Sidebar -->
+          <div style="width:60px;background:#1A1A1A;display:flex;flex-direction:column;align-items:center;padding:8px 0;flex-shrink:0">
+            <div style="width:28px;height:28px;background:#B07A42;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;margin-bottom:12px">☕</div>
+            <div style="display:flex;flex-direction:column;gap:4px;width:100%;align-items:center">
+              <div style="width:36px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#666;cursor:pointer">📊</div>
+              <div style="width:36px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#666;cursor:pointer">🛒</div>
+              <div style="width:36px;height:30px;border-radius:8px;background:rgba(200,150,96,.15);display:flex;align-items:center;justify-content:center;font-size:10px;color:#C89660;cursor:pointer">📋</div>
+              <div style="width:36px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#666;cursor:pointer">📦</div>
+              <div style="width:36px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#666;cursor:pointer">📦</div>
+              <div style="width:36px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#666;cursor:pointer">🪑</div>
+              <div style="width:36px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#666;cursor:pointer">👤</div>
+              <div style="width:36px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#666;cursor:pointer">📈</div>
+              <div style="width:36px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#666;cursor:pointer">⚙️</div>
+            </div>
+          </div>
+          <!-- Orders Content -->
+          <div style="flex:1;display:flex;flex-direction:column;background:#FAF7F2;overflow:hidden">
+            <div style="padding:8px 12px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee">
+              <div><h3 style="font-size:11px;font-weight:700">Orders</h3><p style="font-size:6px;color:#888">8 total orders</p></div>
+              <div style="background:#fff;border:1px solid #ddd;border-radius:4px;padding:3px 8px;font-size:6px;color:#888">🔍 Search orders...</div>
+            </div>
+            <!-- Status Tabs -->
+            <div style="display:flex;gap:3px;padding:6px 12px;border-bottom:1px solid #eee;flex-wrap:wrap">
+              <span style="padding:3px 8px;border-radius:6px;font-size:6px;font-weight:600;background:#B07A42;color:#fff">All 8</span>
+              <span style="padding:3px 8px;border-radius:6px;font-size:6px;font-weight:600;background:#fff;border:1px solid #ddd;color:#666">Pending 1</span>
+              <span style="padding:3px 8px;border-radius:6px;font-size:6px;font-weight:600;background:#fff;border:1px solid #ddd;color:#666">Preparing 1</span>
+              <span style="padding:3px 8px;border-radius:6px;font-size:6px;font-weight:600;background:#fff;border:1px solid #ddd;color:#666">Ready 1</span>
+              <span style="padding:3px 8px;border-radius:6px;font-size:6px;font-weight:600;background:#fff;border:1px solid #ddd;color:#666">Completed 4</span>
+              <span style="padding:3px 8px;border-radius:6px;font-size:6px;font-weight:600;background:#fff;border:1px solid #ddd;color:#666">Cancelled 1</span>
+            </div>
+            <!-- Order Cards Grid -->
+            <div style="flex:1;overflow-y:auto;padding:8px 12px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;align-content:start">
+              <!-- Order 1 - Preparing -->
+              <div style="background:#fff;border:1px solid #eee;border-radius:8px;padding:8px;position:relative;overflow:hidden">
+                <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#3b82f6"></div>
+                <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:6px">
+                  <div><div style="font-size:7px;font-weight:700">ORD-20260909-001</div><div style="font-size:5px;color:#888">2 min ago</div></div>
+                  <span class="mock-st pr">preparing</span>
+                </div>
+                <div style="font-size:5px;color:#666;margin-bottom:4px">
+                  <div style="display:flex;justify-content:space-between"><span>2x Cappuccino</span><span>Rp 76.000</span></div>
+                  <div style="display:flex;justify-content:space-between"><span>1x Croissant</span><span>Rp 22.000</span></div>
+                </div>
+                <div style="border-top:1px solid #f0f0f0;padding-top:4px;display:flex;justify-content:space-between;align-items:center">
+                  <div style="font-size:7px;font-weight:700">Rp 107.800</div>
+                  <div style="font-size:5px;color:#888">Andi W. • T2</div>
+                </div>
+                <div style="margin-top:4px"><button style="background:#B07A42;color:#fff;border:none;width:100%;padding:3px;border-radius:4px;font-size:5px;font-weight:600;cursor:pointer">→ Ready</button></div>
+              </div>
+              <!-- Order 2 - Ready -->
+              <div style="background:#fff;border:1px solid #eee;border-radius:8px;padding:8px;position:relative;overflow:hidden">
+                <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#10b981"></div>
+                <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:6px">
+                  <div><div style="font-size:7px;font-weight:700">ORD-20260909-002</div><div style="font-size:5px;color:#888">5 min ago</div></div>
+                  <span class="mock-st rd">ready</span>
+                </div>
+                <div style="font-size:5px;color:#666;margin-bottom:4px">
+                  <div style="display:flex;justify-content:space-between"><span>1x Latte (Large)</span><span>Rp 46.000</span></div>
+                </div>
+                <div style="border-top:1px solid #f0f0f0;padding-top:4px;display:flex;justify-content:space-between;align-items:center">
+                  <div style="font-size:7px;font-weight:700">Rp 50.600</div>
+                  <div style="font-size:5px;color:#888">Walk-in • Takeaway</div>
+                </div>
+                <div style="margin-top:4px"><button style="background:#10b981;color:#fff;border:none;width:100%;padding:3px;border-radius:4px;font-size:5px;font-weight:600;cursor:pointer">✓ Complete</button></div>
+              </div>
+              <!-- Order 3 - Pending -->
+              <div style="background:#fff;border:1px solid #eee;border-radius:8px;padding:8px;position:relative;overflow:hidden">
+                <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#f59e0b"></div>
+                <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:6px">
+                  <div><div style="font-size:7px;font-weight:700">ORD-20260909-004</div><div style="font-size:5px;color:#888">Just now</div></div>
+                  <span class="mock-st pd">pending</span>
+                </div>
+                <div style="font-size:5px;color:#666;margin-bottom:4px">
+                  <div style="display:flex;justify-content:space-between"><span>2x Matcha (Large)</span><span>Rp 92.000</span></div>
+                  <div style="display:flex;justify-content:space-between"><span>1x Blueberry Muffin</span><span>Rp 25.000</span></div>
+                </div>
+                <div style="border-top:1px solid #f0f0f0;padding-top:4px;display:flex;justify-content:space-between;align-items:center">
+                  <div style="font-size:7px;font-weight:700">Rp 128.700</div>
+                  <div style="font-size:5px;color:#888">Sari D. • T1</div>
+                </div>
+                <div style="margin-top:4px"><button style="background:#B07A42;color:#fff;border:none;width:100%;padding:3px;border-radius:4px;font-size:5px;font-weight:600;cursor:pointer">→ Preparing</button></div>
+              </div>
+              <!-- Order 4 - Completed -->
+              <div style="background:#fff;border:1px solid #eee;border-radius:8px;padding:8px;position:relative;overflow:hidden;opacity:.7">
+                <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#888"></div>
+                <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:6px">
+                  <div><div style="font-size:7px;font-weight:700">ORD-20260909-003</div><div style="font-size:5px;color:#888">15 min ago</div></div>
+                  <span class="mock-st" style="background:#e5e7eb;color:#374151">completed</span>
+                </div>
+                <div style="font-size:5px;color:#666;margin-bottom:4px">
+                  <div style="display:flex;justify-content:space-between"><span>1x Flat White</span><span>Rp 42.000</span></div>
+                  <div style="display:flex;justify-content:space-between"><span>1x Avocado Toast</span><span>Rp 65.000</span></div>
+                </div>
+                <div style="border-top:1px solid #f0f0f0;padding-top:4px;display:flex;justify-content:space-between;align-items:center">
+                  <div style="font-size:7px;font-weight:700">Rp 112.200</div>
+                  <div style="font-size:5px;color:#888">Budi S. • T3</div>
+                </div>
+              </div>
+              <!-- Order 5 - Completed -->
+              <div style="background:#fff;border:1px solid #eee;border-radius:8px;padding:8px;position:relative;overflow:hidden;opacity:.7">
+                <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#888"></div>
+                <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:6px">
+                  <div><div style="font-size:7px;font-weight:700">ORD-20260909-005</div><div style="font-size:5px;color:#888">30 min ago</div></div>
+                  <span class="mock-st" style="background:#e5e7eb;color:#374151">completed</span>
+                </div>
+                <div style="font-size:5px;color:#666;margin-bottom:4px">
+                  <div style="display:flex;justify-content:space-between"><span>2x Espresso (Double)</span><span>Rp 76.000</span></div>
+                </div>
+                <div style="border-top:1px solid #f0f0f0;padding-top:4px;display:flex;justify-content:space-between;align-items:center">
+                  <div style="font-size:7px;font-weight:700">Rp 83.600</div>
+                  <div style="font-size:5px;color:#888">Walk-in • Takeaway</div>
+                </div>
+              </div>
+              <!-- Order 6 - Cancelled -->
+              <div style="background:#fff;border:1px solid #eee;border-radius:8px;padding:8px;position:relative;overflow:hidden;opacity:.5">
+                <div style="position:absolute;top:0;left:0;right:0;height:2px;background:#ef4444"></div>
+                <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:6px">
+                  <div><div style="font-size:7px;font-weight:700">ORD-20260909-006</div><div style="font-size:5px;color:#888">1h ago</div></div>
+                  <span class="mock-st" style="background:#fee2e2;color:#991b1b">cancelled</span>
+                </div>
+                <div style="font-size:5px;color:#666;margin-bottom:4px">
+                  <div style="display:flex;justify-content:space-between"><span>1x Orange Juice</span><span>Rp 35.000</span></div>
+                </div>
+                <div style="border-top:1px solid #f0f0f0;padding-top:4px;display:flex;justify-content:space-between;align-items:center">
+                  <div style="font-size:7px;font-weight:700">Rp 38.500</div>
+                  <div style="font-size:5px;color:#888">Maya P.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tablet-label">Orders — Landscape with Sidebar</div>
+    </div>
+    <!-- Portrait with Sidebar -->
+    <div>
+      <div class="tablet-device portrait">
+        <div class="screen" style="display:flex;overflow:hidden">
+          <!-- Sidebar -->
+          <div style="width:50px;background:#1A1A1A;display:flex;flex-direction:column;align-items:center;padding:8px 0;flex-shrink:0">
+            <div style="width:26px;height:26px;background:#B07A42;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;margin-bottom:10px">☕</div>
+            <div style="display:flex;flex-direction:column;gap:3px;width:100%;align-items:center">
+              <div style="width:32px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:9px;color:#666">📊</div>
+              <div style="width:32px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:9px;color:#666">🛒</div>
+              <div style="width:32px;height:28px;border-radius:7px;background:rgba(200,150,96,.15);display:flex;align-items:center;justify-content:center;font-size:9px;color:#C89660">📋</div>
+              <div style="width:32px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:9px;color:#666">📦</div>
+              <div style="width:32px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:9px;color:#666">📦</div>
+              <div style="width:32px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:9px;color:#666">🪑</div>
+              <div style="width:32px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:9px;color:#666">👤</div>
+              <div style="width:32px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:9px;color:#666">📈</div>
+            </div>
+          </div>
+          <!-- Orders Content -->
+          <div style="flex:1;display:flex;flex-direction:column;background:#FAF7F2;overflow:hidden">
+            <div style="padding:8px 10px;border-bottom:1px solid #eee">
+              <h3 style="font-size:10px;font-weight:700">Orders</h3>
+              <div style="background:#fff;border:1px solid #ddd;border-radius:4px;padding:3px 6px;font-size:5px;color:#888;margin-top:4px">🔍 Search...</div>
+              <div style="display:flex;gap:2px;margin-top:5px;flex-wrap:wrap">
+                <span style="padding:2px 5px;border-radius:5px;font-size:5px;font-weight:600;background:#B07A42;color:#fff">All</span>
+                <span style="padding:2px 5px;border-radius:5px;font-size:5px;background:#fff;border:1px solid #ddd;color:#666">Pending</span>
+                <span style="padding:2px 5px;border-radius:5px;font-size:5px;background:#fff;border:1px solid #ddd;color:#666">Preparing</span>
+                <span style="padding:2px 5px;border-radius:5px;font-size:5px;background:#fff;border:1px solid #ddd;color:#666">Ready</span>
+              </div>
+            </div>
+            <!-- Order Cards Stacked -->
+            <div style="flex:1;overflow-y:auto;padding:6px 10px">
+              <!-- Order 1 -->
+              <div style="background:#fff;border:1px solid #eee;border-radius:6px;padding:6px;margin-bottom:5px;position:relative;overflow:hidden">
+                <div style="position:absolute;top:0;left:0;bottom:0;width:2px;background:#3b82f6"></div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+                  <div style="font-size:6px;font-weight:700">ORD-001</div>
+                  <span class="mock-st pr">preparing</span>
+                </div>
+                <div style="font-size:5px;color:#666;display:flex;justify-content:space-between"><span>2x Cappuccino</span><span>Rp 76K</span></div>
+                <div style="font-size:5px;color:#666;display:flex;justify-content:space-between"><span>1x Croissant</span><span>Rp 22K</span></div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px;border-top:1px solid #f0f0f0;padding-top:3px">
+                  <span style="font-size:6px;font-weight:700">Rp 107.800</span>
+                  <button style="background:#B07A42;color:#fff;border:none;padding:2px 6px;border-radius:3px;font-size:5px;font-weight:600;cursor:pointer">→ Ready</button>
+                </div>
+              </div>
+              <!-- Order 2 -->
+              <div style="background:#fff;border:1px solid #eee;border-radius:6px;padding:6px;margin-bottom:5px;position:relative;overflow:hidden">
+                <div style="position:absolute;top:0;left:0;bottom:0;width:2px;background:#10b981"></div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+                  <div style="font-size:6px;font-weight:700">ORD-002</div>
+                  <span class="mock-st rd">ready</span>
+                </div>
+                <div style="font-size:5px;color:#666;display:flex;justify-content:space-between"><span>1x Latte (Large)</span><span>Rp 46K</span></div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px;border-top:1px solid #f0f0f0;padding-top:3px">
+                  <span style="font-size:6px;font-weight:700">Rp 50.600</span>
+                  <button style="background:#10b981;color:#fff;border:none;padding:2px 6px;border-radius:3px;font-size:5px;font-weight:600;cursor:pointer">✓ Done</button>
+                </div>
+              </div>
+              <!-- Order 3 -->
+              <div style="background:#fff;border:1px solid #eee;border-radius:6px;padding:6px;margin-bottom:5px;position:relative;overflow:hidden">
+                <div style="position:absolute;top:0;left:0;bottom:0;width:2px;background:#f59e0b"></div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+                  <div style="font-size:6px;font-weight:700">ORD-004</div>
+                  <span class="mock-st pd">pending</span>
+                </div>
+                <div style="font-size:5px;color:#666;display:flex;justify-content:space-between"><span>2x Matcha (L)</span><span>Rp 92K</span></div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px;border-top:1px solid #f0f0f0;padding-top:3px">
+                  <span style="font-size:6px;font-weight:700">Rp 128.700</span>
+                  <button style="background:#B07A42;color:#fff;border:none;padding:2px 6px;border-radius:3px;font-size:5px;font-weight:600;cursor:pointer">→ Start</button>
+                </div>
+              </div>
+              <!-- Order 4 -->
+              <div style="background:#fff;border:1px solid #eee;border-radius:6px;padding:6px;margin-bottom:5px;position:relative;overflow:hidden;opacity:.6">
+                <div style="position:absolute;top:0;left:0;bottom:0;width:2px;background:#888"></div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+                  <div style="font-size:6px;font-weight:700">ORD-003</div>
+                  <span class="mock-st" style="background:#e5e7eb;color:#374151">done</span>
+                </div>
+                <div style="font-size:5px;color:#666;display:flex;justify-content:space-between"><span>1x Flat White</span><span>Rp 42K</span></div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px;border-top:1px solid #f0f0f0;padding-top:3px">
+                  <span style="font-size:6px;font-weight:700">Rp 112.200</span>
+                  <span style="font-size:5px;color:#888">Budi S.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tablet-label">Orders — Portrait with Sidebar</div>
+    </div>
+  </div>
+</div>
+
+<!-- PHONE -->
+<div class="section">
+  <div class="section-title"><h2>Mobile</h2><p>Phone views — POS & Social Media</p></div>
+  <div class="phone-wrap">
+    <!-- POS Phone -->
+    <div>
+      <div class="phone-device">
+        <div class="notch"><div class="cam"></div></div>
+        <div class="screen">
+          <div class="mock-pos" style="flex-direction:column">
+            <div style="padding:20px 6px 6px">
+              <div style="background:#F5EDE0;border-radius:4px;padding:3px 6px;font-size:6px;color:#888;margin-bottom:4px">🔍 Search...</div>
+              <div style="display:flex;gap:2px;flex-wrap:wrap;margin-bottom:4px">
+                <span style="padding:2px 5px;border-radius:6px;font-size:5px;background:#B07A42;color:#fff">All</span>
+                <span style="padding:2px 5px;border-radius:6px;font-size:5px;background:#eee">☕</span>
+                <span style="padding:2px 5px;border-radius:6px;font-size:5px;background:#eee">🍵</span>
+                <span style="padding:2px 5px;border-radius:6px;font-size:5px;background:#eee">🍽️</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3px">
+                <div style="background:#fff;border-radius:4px;padding:3px;text-align:center;border:1px solid #eee"><div style="font-size:12px">☕</div><div style="font-size:4px;font-weight:600">Espresso</div><div style="font-size:5px;color:#8E5F34;font-weight:700">28K</div></div>
+                <div style="background:#fff;border-radius:4px;padding:3px;text-align:center;border:1px solid #eee"><div style="font-size:12px">☕</div><div style="font-size:4px;font-weight:600">Latte</div><div style="font-size:5px;color:#8E5F34;font-weight:700">38K</div></div>
+                <div style="background:#fff;border-radius:4px;padding:3px;text-align:center;border:1px solid #eee"><div style="font-size:12px">☕</div><div style="font-size:4px;font-weight:600">Mocha</div><div style="font-size:5px;color:#8E5F34;font-weight:700">42K</div></div>
+                <div style="background:#fff;border-radius:4px;padding:3px;text-align:center;border:1px solid #eee"><div style="font-size:12px">🍵</div><div style="font-size:4px;font-weight:600">Matcha</div><div style="font-size:5px;color:#8E5F34;font-weight:700">38K</div></div>
+                <div style="background:#fff;border-radius:4px;padding:3px;text-align:center;border:1px solid #eee"><div style="font-size:12px">🥐</div><div style="font-size:4px;font-weight:600">Croissant</div><div style="font-size:5px;color:#8E5F34;font-weight:700">22K</div></div>
+                <div style="background:#fff;border-radius:4px;padding:3px;text-align:center;border:1px solid #eee"><div style="font-size:12px">🥑</div><div style="font-size:4px;font-weight:600">Avo Toast</div><div style="font-size:5px;color:#8E5F34;font-weight:700">55K</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="home"></div>
+      </div>
+      <div class="phone-label">POS Menu</div>
+    </div>
+
+    <!-- Orders Phone -->
+    <div>
+      <div class="phone-device">
+        <div class="notch"><div class="cam"></div></div>
+        <div class="screen">
+          <div class="mock-orders">
+            <h4 style="margin-top:18px">Orders</h4>
+            <div style="display:flex;gap:2px;margin-bottom:4px;flex-wrap:wrap">
+              <span style="padding:2px 5px;border-radius:6px;font-size:5px;background:#B07A42;color:#fff">All</span>
+              <span style="padding:2px 5px;border-radius:6px;font-size:5px;background:#eee">Pending</span>
+              <span style="padding:2px 5px;border-radius:6px;font-size:5px;background:#eee">Ready</span>
+            </div>
+            <div class="mock-oi">
+              <div class="info"><div class="on">ORD-20260909-001</div><div class="ct">Andi W. • Table 2</div></div>
+              <span class="mock-st pr">preparing</span>
+            </div>
+            <div class="mock-oi">
+              <div class="info"><div class="on">ORD-20260909-002</div><div class="ct">Walk-in • Takeaway</div></div>
+              <span class="mock-st rd">ready</span>
+            </div>
+            <div class="mock-oi">
+              <div class="info"><div class="on">ORD-20260909-003</div><div class="ct">Budi S. • Table 3</div></div>
+              <span class="mock-st" style="background:#e5e7eb;color:#374151">completed</span>
+            </div>
+            <div class="mock-oi">
+              <div class="info"><div class="on">ORD-20260909-004</div><div class="ct">Sari D. • Table 1</div></div>
+              <span class="mock-st pd">pending</span>
+            </div>
+            <div class="mock-oi">
+              <div class="info"><div class="on">ORD-20260909-005</div><div class="ct">Walk-in • Takeaway</div></div>
+              <span class="mock-st rd">ready</span>
+            </div>
+          </div>
+        </div>
+        <div class="home"></div>
+      </div>
+      <div class="phone-label">Order Tracking</div>
+    </div>
+
+    <!-- Reports Phone -->
+    <div>
+      <div class="phone-device">
+        <div class="notch"><div class="cam"></div></div>
+        <div class="screen">
+          <div class="mock-reports">
+            <h4 style="margin-top:18px">Reports</h4>
+            <div style="display:flex;gap:2px;margin-bottom:6px">
+              <span style="padding:2px 5px;border-radius:6px;font-size:5px;background:#B07A42;color:#fff">Today</span>
+              <span style="padding:2px 5px;border-radius:6px;font-size:5px;background:#eee">Week</span>
+              <span style="padding:2px 5px;border-radius:6px;font-size:5px;background:#eee">Month</span>
+            </div>
+            <div class="mock-dots" style="grid-template-columns:1fr 1fr">
+              <div class="mock-dot"><div class="val">Rp 2.4M</div><div class="lbl">Revenue</div></div>
+              <div class="mock-dot"><div class="val">28</div><div class="lbl">Orders</div></div>
+            </div>
+            <div style="background:#fff;border-radius:4px;padding:5px;border:1px solid #eee;margin-bottom:4px">
+              <div style="font-size:6px;font-weight:700;margin-bottom:3px">Hourly Sales</div>
+              <div class="mock-bars">
+                <div class="mock-bar" style="height:20%"></div>
+                <div class="mock-bar" style="height:35%"></div>
+                <div class="mock-bar" style="height:60%"></div>
+                <div class="mock-bar" style="height:90%"></div>
+                <div class="mock-bar" style="height:100%"></div>
+                <div class="mock-bar" style="height:75%"></div>
+                <div class="mock-bar" style="height:50%"></div>
+                <div class="mock-bar" style="height:30%"></div>
+              </div>
+              <div style="display:flex;justify-content:space-between"><div class="mock-bar-lbl">8am</div><div class="mock-bar-lbl">9</div><div class="mock-bar-lbl">10</div><div class="mock-bar-lbl">11</div><div class="mock-bar-lbl">12</div><div class="mock-bar-lbl">1pm</div><div class="mock-bar-lbl">2</div><div class="mock-bar-lbl">3</div></div>
+            </div>
+            <div style="background:#fff;border-radius:4px;padding:5px;border:1px solid #eee">
+              <div style="font-size:6px;font-weight:700;margin-bottom:3px">Top Products</div>
+              <div class="mock-list">
+                <div class="li"><span>1. ☕ Cappuccino</span><span style="font-weight:700">24</span></div>
+                <div class="li"><span>2. ☕ Latte</span><span style="font-weight:700">18</span></div>
+                <div class="li"><span>3. 🍵 Matcha</span><span style="font-weight:700">12</span></div>
+                <div class="li"><span>4. 🥐 Croissant</span><span style="font-weight:700">10</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="home"></div>
+      </div>
+      <div class="phone-label">Reports</div>
+    </div>
+  </div>
+</div>
+
+<!-- SOCIAL MEDIA -->
+<div class="section">
+  <div class="section-title"><h2>Social Media</h2><p>Instagram / Facebook post mockups</p></div>
+  <div class="social-wrap">
+    <!-- Instagram Post -->
+    <div class="social-card">
+      <div class="header">
+        <div class="avatar">☕</div>
+        <div><div class="uname">moora.coffee</div><div class="sub">Sponsored</div></div>
+      </div>
+      <div class="content">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#2D1E10 0%,#6B4728 50%,#B07A42 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px">
+          <div style="font-size:48px;margin-bottom:8px">☕</div>
+          <div style="font-size:28px;font-weight:800;color:#fff;margin-bottom:4px">Moora POS</div>
+          <div style="font-size:12px;color:#EBD9C1;margin-bottom:16px">Simple operations. Better coffee.</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;width:80%">
+            <div style="background:rgba(255,255,255,.15);border-radius:8px;padding:10px"><div style="font-size:20px;font-weight:700;color:#fff">24+</div><div style="font-size:9px;color:#EBD9C1">Products</div></div>
+            <div style="background:rgba(255,255,255,.15);border-radius:8px;padding:10px"><div style="font-size:20px;font-weight:700;color:#fff">4</div><div style="font-size:9px;color:#EBD9C1">Payment Methods</div></div>
+            <div style="background:rgba(255,255,255,.15);border-radius:8px;padding:10px"><div style="font-size:20px;font-weight:700;color:#fff">9</div><div style="font-size:9px;color:#EBD9C1">Modules</div></div>
+            <div style="background:rgba(255,255,255,.15);border-radius:8px;padding:10px"><div style="font-size:20px;font-weight:700;color:#fff">100%</div><div style="font-size:9px;color:#EBD9C1">Free & Local</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="actions"><span>♡</span><span>💬</span><span>↗</span></div>
+      <div class="caption"><strong>moora.coffee</strong> Meet Moora POS — the simplest way to manage your coffee shop ☕ Fast, beautiful, and works offline. No server needed. #MooraPOS #CoffeeShop #POS</div>
+    </div>
+
+    <!-- Instagram Story -->
+    <div class="social-card">
+      <div class="header">
+        <div class="avatar">☕</div>
+        <div><div class="uname">moora.coffee</div><div class="sub">Story</div></div>
+      </div>
+      <div class="content" style="aspect-ratio:9/16;max-height:360px">
+        <div style="width:100%;height:100%;background:linear-gradient(180deg,#1a1410,#2D1E10 30%,#B07A42 100%);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:24px 16px;text-align:center">
+          <div style="font-size:10px;color:#EBD9C1;letter-spacing:3px;text-transform:uppercase">Launching</div>
+          <div>
+            <div style="font-size:42px;margin-bottom:8px">☕</div>
+            <div style="font-size:32px;font-weight:800;color:#fff;line-height:1.1">Moora<br>POS</div>
+            <div style="font-size:13px;color:#EBD9C1;margin-top:8px">for specialty<br>coffee shops</div>
+          </div>
+          <div>
+            <div style="background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:8px 20px;font-size:11px;font-weight:600;color:#fff;display:inline-block">Swipe up to try →</div>
+            <div style="font-size:9px;color:#EBD9C1;margin-top:8px">100% Free • Works Offline</div>
+          </div>
+        </div>
+      </div>
+      <div class="actions"><span>♡</span><span>💬</span><span>↗</span></div>
+      <div class="caption"><strong>moora.coffee</strong> New POS system built for baristas 🫡 Swipe up to learn more! #CoffeeTech #Barista</div>
+    </div>
+
+    <!-- Facebook Post -->
+    <div class="social-card">
+      <div class="header">
+        <div class="avatar">☕</div>
+        <div><div class="uname">Moora Coffee</div><div class="sub">September 9</div></div>
+      </div>
+      <div class="content" style="aspect-ratio:16/9">
+        <div style="width:100%;height:100%;background:#FAF7F2;display:flex;overflow:hidden">
+          <div style="flex:1;padding:16px;display:flex;flex-direction:column;justify-content:center">
+            <div style="font-size:8px;color:#B07A42;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px">Introducing</div>
+            <div style="font-size:20px;font-weight:800;color:#2A2A2A;line-height:1.2">Moora POS</div>
+            <div style="font-size:10px;color:#888;margin-top:4px;line-height:1.4">The complete café management system. From orders to inventory, all in one place.</div>
+            <div style="display:flex;gap:6px;margin-top:10px">
+              <div style="background:#B07A42;color:#fff;padding:4px 10px;border-radius:6px;font-size:8px;font-weight:600">☕ POS</div>
+              <div style="background:#F5EDE0;color:#8E5F34;padding:4px 10px;border-radius:6px;font-size:8px;font-weight:600">📊 Reports</div>
+              <div style="background:#F5EDE0;color:#8E5F34;padding:4px 10px;border-radius:6px;font-size:8px;font-weight:600">📦 Inventory</div>
+            </div>
+          </div>
+          <div style="width:40%;background:linear-gradient(135deg,#2D1E10,#6B4728);display:flex;align-items:center;justify-content:center">
+            <div style="text-align:center"><div style="font-size:36px">☕</div><div style="font-size:14px;font-weight:700;color:#fff;margin-top:4px">Moora</div><div style="font-size:9px;color:#EBD9C1">POS</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="actions"><span>👍</span><span>💬</span><span>↗</span></div>
+      <div class="caption"><strong>Moora Coffee</strong> We're excited to share our new POS system — built from the ground up for specialty coffee shops. Fast, beautiful, and 100% free. Try it now! ☕✨ #MooraPOS #CoffeeShop #SmallBusiness</div>
+    </div>
+
+    <!-- Twitter/X Post -->
+    <div class="social-card">
+      <div class="header">
+        <div class="avatar">☕</div>
+        <div><div class="uname">@mooracoffee</div><div class="sub">moora.coffee</div></div>
+      </div>
+      <div class="content" style="aspect-ratio:auto;padding:16px;background:#000;color:#fff;font-size:14px;line-height:1.5">
+        <p>We built a POS system for our coffee shop and it turned out pretty good ☕</p>
+        <p style="margin-top:10px">Features:</p>
+        <p>→ Product management (24+ items)</p>
+        <p>→ Real-time order tracking</p>
+        <p>→ Inventory management</p>
+        <p>→ 4 payment methods</p>
+        <p>→ Table management</p>
+        <p>→ Customer loyalty</p>
+        <p>→ Sales reports</p>
+        <p>→ Staff & shift management</p>
+        <p style="margin-top:10px">All in a single HTML file. No server needed. 🔥</p>
+        <div style="margin-top:12px;background:#1a1a1a;border-radius:8px;padding:12px;border:1px solid #333">
+          <div style="display:flex;gap:8px;align-items:center"><span style="font-size:24px">☕</span><div><div style="font-weight:700;font-size:13px">Moora POS</div><div style="font-size:11px;color:#888">Simple operations. Better coffee.</div></div></div>
+        </div>
+      </div>
+      <div class="actions"><span>♡ 2.4K</span><span>🔁 891</span><span>💬 124</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- BRAND COLORS SECTION -->
+<div class="section">
+  <div class="section-title"><h2>Brand Identity</h2><p>Moora Coffee design system</p></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;max-width:900px;margin:0 auto">
+    <div style="background:linear-gradient(135deg,#FAF7F2,#F5EDE0);border-radius:16px;padding:24px;text-align:center">
+      <div style="font-size:24px;margin-bottom:8px">☕</div>
+      <div style="font-size:13px;font-weight:700;color:#2A2A2A">Cream</div>
+      <div style="font-size:11px;color:#888">#FAF7F2</div>
+    </div>
+    <div style="background:linear-gradient(135deg,#EBD9C1,#DFC4A0);border-radius:16px;padding:24px;text-align:center">
+      <div style="font-size:24px;margin-bottom:8px">🫘</div>
+      <div style="font-size:13px;font-weight:700;color:#2A2A2A">Latte</div>
+      <div style="font-size:11px;color:#2A2A2A">#EBD9C1</div>
+    </div>
+    <div style="background:linear-gradient(135deg,#C89660,#B07A42);border-radius:16px;padding:24px;text-align:center">
+      <div style="font-size:24px;margin-bottom:8px">✨</div>
+      <div style="font-size:13px;font-weight:700;color:#fff">Caramel</div>
+      <div style="font-size:11px;color:rgba(255,255,255,.8)">#C89660</div>
+    </div>
+    <div style="background:linear-gradient(135deg,#8E5F34,#6B4728);border-radius:16px;padding:24px;text-align:center">
+      <div style="font-size:24px;margin-bottom:8px">🍫</div>
+      <div style="font-size:13px;font-weight:700;color:#fff">Espresso</div>
+      <div style="font-size:11px;color:rgba(255,255,255,.8)">#8E5F34</div>
+    </div>
+    <div style="background:linear-gradient(135deg,#2A2A2A,#1A1A1A);border-radius:16px;padding:24px;text-align:center">
+      <div style="font-size:24px;margin-bottom:8px">🌑</div>
+      <div style="font-size:13px;font-weight:700;color:#fff">Charcoal</div>
+      <div style="font-size:11px;color:rgba(255,255,255,.8)">#2A2A2A</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>☕ Moora POS — Simple operations. Better coffee.</p>
+  <p style="margin-top:4px;color:#555">Built for Moora Coffee specialty coffee shop</p>
+</div>
+
+</body>
+</html>

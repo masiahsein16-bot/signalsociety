@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorelle Skincare — E-Commerce Platform | Signal Society</title>
+    <meta name="description" content="Conversion-focused e-commerce platform for Sorelle Skincare. UX/UI design, web development, and payment integration.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=10">
+    <style>
+        .work-hero { padding: 8rem 0 3rem; background: var(--dark); }
+        .work-hero__tag { display: inline-block; color: var(--orange); margin-bottom: 1rem; }
+        .work-hero__title { font-family: var(--mono); font-size: clamp(1.8rem, 5vw, 3.2rem); font-weight: 700; text-transform: uppercase; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 1rem; }
+        .work-hero__sub { font-size: clamp(0.82rem, 1.1vw, 0.92rem); color: var(--gray); max-width: 560px; line-height: 1.7; margin-bottom: 2rem; }
+        .work-hero__meta { display: flex; gap: 2rem; flex-wrap: wrap; }
+        .work-hero__meta-item { display: flex; flex-direction: column; gap: 0.25rem; }
+        .work-hero__meta-label { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray); }
+        .work-hero__meta-value { font-size: 0.82rem; color: var(--white); }
+
+        .work-mockup { background: var(--dark-surface); padding: 3rem 0; border-top: 1px solid var(--dark-border); border-bottom: 1px solid var(--dark-border); }
+        .work-mockup__frame { max-width: 1100px; margin: 0 auto; border-radius: 12px; overflow: hidden; border: 1px solid var(--dark-border); background: var(--dark-elevated); }
+        .work-mockup__frame iframe { width: 100%; height: 70vh; min-height: 500px; border: none; display: block; }
+
+        .work-detail { padding: 5rem 0; background: var(--dark); }
+        .work-detail__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .work-detail__heading { font-family: var(--mono); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); margin-bottom: 1.25rem; }
+        .work-detail__text { font-size: 0.85rem; color: var(--gray-light); line-height: 1.8; margin-bottom: 1.5rem; }
+        .work-detail__list { list-style: none; }
+        .work-detail__list li { font-size: 0.82rem; color: var(--gray); line-height: 1.65; padding: 0.4rem 0 0.4rem 1.25rem; position: relative; }
+        .work-detail__list li::before { content: '▸'; position: absolute; left: 0; top: 50%; transform: translateY(-50%); color: var(--orange); font-size: 0.7rem; }
+
+        .work-cta { padding: 4rem 0 6rem; background: var(--dark); text-align: center; }
+        .work-cta__title { font-family: var(--mono); font-size: clamp(1.2rem, 2.5vw, 1.8rem); font-weight: 700; text-transform: uppercase; margin-bottom: 1rem; }
+        .work-cta__sub { font-size: 0.82rem; color: var(--gray); margin-bottom: 2rem; }
+
+        .back-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray); transition: color 0.25s ease; margin-bottom: 2rem; }
+        .back-link:hover { color: var(--orange); }
+        .back-link .arrow { transition: transform 0.25s ease; }
+        .back-link:hover .arrow { transform: translateX(-3px); }
+
+        @media (max-width: 768px) {
+            .work-detail__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .work-mockup__frame iframe { height: 50vh; min-height: 350px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <header class="site-header site-header--scrolled" id="siteHeader">
+        <div class="site-header__inner">
+            <a href="index.html#home" class="brand" aria-label="Signal Society home">
+                <img src="logosignalsociety/logosignalsociety.png" alt="Signal Society" class="brand__logo">
+                <span class="brand__text">Signal Society</span>
+            </a>
+            <nav class="site-header__nav" id="navLinks">
+                <a href="index.html#about" class="site-header__link">About</a>
+                <a href="index.html#why" class="site-header__link">Why Us</a>
+                <a href="index.html#services" class="site-header__link">Services</a>
+                <a href="index.html#work" class="site-header__link">Work</a>
+                <a href="index.html#faq" class="site-header__link">FAQs</a>
+            </nav>
+            <a href="index.html#contact" class="btn btn--accent site-header__cta">Start a project <span class="arrow">→</span></a>
+            <button class="menu-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <div class="mobile-menu__inner">
+            <a href="index.html#about" class="mobile-menu__link">About</a>
+            <a href="index.html#why" class="mobile-menu__link">Why Us</a>
+            <a href="index.html#services" class="mobile-menu__link">Services</a>
+            <a href="index.html#work" class="mobile-menu__link">Work</a>
+            <a href="index.html#faq" class="mobile-menu__link">FAQs</a>
+            <a href="index.html#contact" class="btn btn--solid mobile-menu__cta">Start a project <span class="arrow">→</span></a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="work-hero">
+        <div class="container">
+            <a href="index.html#work" class="back-link"><span class="arrow">←</span> Back to Work</a>
+            <span class="mono-label work-hero__tag">SIGNAL GROW</span>
+            <h1 class="work-hero__title">Sorelle Skincare</h1>
+            <p class="work-hero__sub">A conversion-focused e-commerce platform for a premium skincare brand. From product discovery to checkout, every interaction is designed to build trust and drive purchase.</p>
+            <div class="work-hero__meta">
+                <div class="work-hero__meta-item">
+                    <span class="mono-label work-hero__meta-label">Service</span>
+                    <span class="work-hero__meta-value">E-Commerce Platform</span>
+                </div>
+                <div class="work-hero__meta-item">
+                    <span class="mono-label work-hero__meta-label">Scope</span>
+                    <span class="work-hero__meta-value">UX/UI · Web Dev · Payments</span>
+                </div>
+                <div class="work-hero__meta-item">
+                    <span class="mono-label work-hero__meta-label">Industry</span>
+                    <span class="work-hero__meta-value">Beauty & Skincare</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mockup -->
+    <section class="work-mockup">
+        <div class="container">
+            <div class="work-mockup__frame">
+                <iframe src="mockup-all_sorelleskincare.html" title="Sorelle Skincare Mockups" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details -->
+    <section class="work-detail">
+        <div class="container">
+            <div class="work-detail__grid">
+                <div>
+                    <h2 class="work-detail__heading">The Challenge</h2>
+                    <p class="work-detail__text">Sorelle Skincare needed more than a template store. They needed a digital experience that matched the premium quality of their products — one that guides customers from curiosity to checkout without friction.</p>
+                    <p class="work-detail__text">The existing setup lacked brand consistency, mobile optimization, and the backend infrastructure to scale with growing demand.</p>
+                </div>
+                <div>
+                    <h2 class="work-detail__heading">What We Built</h2>
+                    <ul class="work-detail__list">
+                        <li>Brand-aligned UX/UI design system</li>
+                        <li>Responsive e-commerce frontend</li>
+                        <li>Product catalog with filtering and search</li>
+                        <li>Secure payment gateway integration</li>
+                        <li>Inventory management dashboard</li>
+                        <li>Order tracking and customer portal</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="work-cta">
+        <div class="container">
+            <h2 class="work-cta__title">Have a project in mind?</h2>
+            <p class="work-cta__sub">Let's build the infrastructure behind your growth.</p>
+            <a href="index.html#contact" class="btn btn--solid btn--large">Start a project <span class="arrow">→</span></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__bottom">
+                <p class="mono-label">© 2026 Signal Society. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        navToggle?.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            mobileMenu.setAttribute('aria-hidden', !mobileMenu.classList.contains('active'));
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+        document.querySelectorAll('.mobile-menu__link, .mobile-menu__cta').forEach(link => {
+            link.addEventListener('click', () => { navToggle.classList.remove('active'); mobileMenu.classList.remove('active'); mobileMenu.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; });
+        });
+    </script>
+</body>
+</html>

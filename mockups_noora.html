@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noora Nexus — Device Mockups</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#09090b;color:#fff}
+
+.hero{text-align:center;padding:48px 20px 24px}
+.hero h1{font-size:32px;font-weight:700;letter-spacing:-1px}
+.hero h1 span{color:#10b981}
+.hero p{color:#6b7280;font-size:13px;margin-top:6px}
+
+.section{padding:24px 32px 56px}
+.section-head{text-align:center;margin-bottom:28px}
+.section-head h2{font-size:18px;font-weight:600}
+.section-head h2 span{color:#10b981}
+.section-head p{font-size:11px;color:#52525b;margin-top:2px}
+
+/* ===== LAPTOP ===== */
+.laptop-wrap{display:flex;justify-content:center}
+.laptop{position:relative;display:inline-block}
+.laptop-lid{background:linear-gradient(180deg,#2a2a2e,#1f1f23);border-radius:16px 16px 0 0;border:1px solid #3f3f46;padding:16px 16px 0 16px;position:relative}
+.laptop-lid::before{content:'';position:absolute;top:7px;left:50%;transform:translateX(-50%);width:6px;height:6px;border-radius:50%;background:#52525b}
+.laptop-lid::after{content:'';position:absolute;top:7px;left:calc(50% + 14px);width:2px;height:2px;border-radius:50%;background:#3f3f46}
+.laptop-screen{width:1440px;height:820px;border-radius:4px 4px 0 0;overflow:hidden;background:#f8f9fa;position:relative}
+.laptop-screen iframe{width:1440px;height:900px;border:none;display:block;transform-origin:top left}
+.laptop-chin{height:28px;background:linear-gradient(180deg,#2a2a2e,#232326);border-left:1px solid #3f3f46;border-right:1px solid #3f3f46;display:flex;align-items:center;justify-content:center}
+.laptop-chin .notch{width:100px;height:4px;border-radius:2px;background:#3f3f46}
+.laptop-base{height:12px;background:linear-gradient(180deg,#232326,#1a1a1e);border-radius:0 0 12px 12px;position:relative;margin:0 40px}
+.laptop-base::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60px;height:4px;background:#3f3f46;border-radius:0 0 3px 3px}
+.laptop-shadow{margin:0 60px -20px;height:20px;background:radial-gradient(ellipse at center,rgba(0,0,0,.5) 0%,transparent 70%);filter:blur(8px)}
+
+/* ===== TABLET ===== */
+.tablets-row{display:flex;justify-content:center;gap:40px;align-items:flex-end;flex-wrap:wrap}
+
+.tablet-portrait{position:relative;display:inline-block}
+.tablet-portrait .frame{background:linear-gradient(180deg,#2a2a2e,#1f1f23);border-radius:20px;border:1px solid #3f3f46;padding:20px 14px}
+.tablet-portrait .frame::before{content:'';position:absolute;top:10px;right:16px;width:4px;height:4px;border-radius:50%;background:#52525b}
+.tablet-portrait .screen{border-radius:6px;overflow:hidden;background:#f8f9fa;width:768px;height:1024px;position:relative}
+.tablet-portrait .screen iframe{width:1440px;height:900px;border:none;display:block;transform-origin:top left;transform:scale(0.5333)}
+.tablet-portrait .home{display:flex;justify-content:center;padding:12px 0 0}
+.tablet-portrait .home .dot{width:10px;height:10px;border-radius:50%;border:1.5px solid #3f3f46}
+
+.tablet-landscape{position:relative;display:inline-block}
+.tablet-landscape .frame{background:linear-gradient(180deg,#2a2a2e,#1f1f23);border-radius:16px;border:1px solid #3f3f46;padding:14px 14px 14px 14px}
+.tablet-landscape .frame::before{content:'';position:absolute;top:8px;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:50%;background:#52525b}
+.tablet-landscape .screen{border-radius:4px;overflow:hidden;background:#f8f9fa;width:1024px;height:768px;position:relative}
+.tablet-landscape .screen iframe{width:1440px;height:900px;border:none;display:block;transform-origin:top left;transform:scale(0.7111)}
+.tablet-landscape .home{display:flex;justify-content:center;padding:8px 0 0}
+.tablet-landscape .home .bar{width:40px;height:4px;border-radius:2px;background:#3f3f46}
+
+/* ===== PHONE ===== */
+.phones-row{display:flex;justify-content:center;gap:32px;align-items:flex-end;flex-wrap:wrap}
+
+.phone{position:relative;display:inline-block}
+.phone .frame{background:linear-gradient(180deg,#2a2a2e,#1f1f23);border-radius:36px;border:1px solid #3f3f46;padding:14px 8px}
+.phone .frame::before{content:'';position:absolute;top:12px;left:50%;transform:translateX(-50%);width:60px;height:6px;border-radius:3px;background:#3f3f46}
+.phone .screen{border-radius:24px;overflow:hidden;background:#f8f9fa;width:390px;height:844px;position:relative}
+.phone .screen iframe{width:1440px;height:900px;border:none;display:block;transform-origin:top left;transform:scale(0.2708)}
+.phone .home{display:flex;justify-content:center;padding:10px 0 0}
+.phone .home .bar{width:44px;height:5px;border-radius:3px;background:#3f3f46}
+
+.phone-small{position:relative;display:inline-block}
+.phone-small .frame{background:linear-gradient(180deg,#2a2a2e,#1f1f23);border-radius:32px;border:1px solid #3f3f46;padding:12px 7px}
+.phone-small .frame::before{content:'';position:absolute;top:10px;left:50%;transform:translateX(-50%);width:50px;height:5px;border-radius:3px;background:#3f3f46}
+.phone-small .screen{border-radius:22px;overflow:hidden;background:#f8f9fa;width:360px;height:780px;position:relative}
+.phone-small .screen iframe{width:1440px;height:900px;border:none;display:block;transform-origin:top left;transform:scale(0.25)}
+.phone-small .home{display:flex;justify-content:center;padding:8px 0 0}
+.phone-small .home .bar{width:36px;height:4px;border-radius:2px;background:#3f3f46}
+
+/* Labels */
+.dev-label{text-align:center;margin-top:14px}
+.dev-label h3{font-size:12px;font-weight:600;color:#d4d4d8}
+.dev-label p{font-size:10px;color:#52525b;margin-top:1px}
+.dev-label .tags{display:flex;justify-content:center;gap:4px;margin-top:6px;flex-wrap:wrap}
+.dev-label .tag{padding:2px 8px;border-radius:10px;font-size:9px;font-weight:500;background:#18181b;border:1px solid #27272a;color:#71717a}
+.dev-label .tag.g{border-color:#10b98130;color:#10b981}
+
+.footer{text-align:center;padding:32px;border-top:1px solid #18181b;color:#3f3f46;font-size:10px;margin-top:20px}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Noora<span>Nexus</span></h1>
+  <p>Enterprise ERP Integration Platform — Responsive Device Mockups</p>
+</div>
+
+<!-- LAPTOP 1440 -->
+<div class="section">
+  <div class="section-head">
+    <h2>Laptop <span>1440px</span></h2>
+    <p>Full desktop view with expanded sidebar · 13 modules visible</p>
+  </div>
+  <div class="laptop-wrap">
+    <div class="laptop">
+      <div class="laptop-lid">
+        <div class="laptop-screen">
+          <iframe src="index.html" style="transform:scale(1)"></iframe>
+        </div>
+      </div>
+      <div class="laptop-chin"><div class="notch"></div></div>
+      <div class="laptop-base"></div>
+      <div class="laptop-shadow"></div>
+    </div>
+  </div>
+  <div style="display:flex;justify-content:center;gap:6px;margin-top:14px">
+    <span class="tag g" style="padding:3px 10px;border-radius:10px;font-size:10px;font-weight:500;background:#18181b;border:1px solid #10b98130;color:#10b981">Sidebar 260px</span>
+    <span class="tag" style="padding:3px 10px;border-radius:10px;font-size:10px;font-weight:500;background:#18181b;border:1px solid #27272a;color:#71717a">Header 64px</span>
+    <span class="tag" style="padding:3px 10px;border-radius:10px;font-size:10px;font-weight:500;background:#18181b;border:1px solid #27272a;color:#71717a">13 Modules</span>
+  </div>
+</div>
+
+<!-- TABLET -->
+<div class="section">
+  <div class="section-head">
+    <h2>Tablet <span>iPad Pro</span></h2>
+    <p>Portrait & landscape with responsive sidebar collapse</p>
+  </div>
+  <div class="tablets-row">
+    <div>
+      <div class="tablet-portrait">
+        <div class="frame">
+          <div class="screen">
+            <iframe src="index.html"></iframe>
+          </div>
+        </div>
+        <div class="home"><div class="dot"></div></div>
+      </div>
+      <div class="dev-label">
+        <h3>Portrait · 768×1024</h3>
+        <p>Sidebar collapsed to 72px icons</p>
+        <div class="tags">
+          <span class="tag g">72px sidebar</span>
+          <span class="tag">Icons only</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="tablet-landscape">
+        <div class="frame">
+          <div class="screen">
+            <iframe src="index.html"></iframe>
+          </div>
+        </div>
+        <div class="home"><div class="bar"></div></div>
+      </div>
+      <div class="dev-label">
+        <h3>Landscape · 1024×768</h3>
+        <p>Full sidebar with labels</p>
+        <div class="tags">
+          <span class="tag g">Full sidebar</span>
+          <span class="tag">Touch UI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHONE -->
+<div class="section">
+  <div class="section-head">
+    <h2>Phone <span>iPhone & Android</span></h2>
+    <p>Mobile responsive with hidden sidebar and stacked layout</p>
+  </div>
+  <div class="phones-row">
+    <div>
+      <div class="phone">
+        <div class="frame">
+          <div class="screen">
+            <iframe src="index.html"></iframe>
+          </div>
+        </div>
+        <div class="home"><div class="bar"></div></div>
+      </div>
+      <div class="dev-label">
+        <h3>iPhone 14 Pro · 390×844</h3>
+        <p>Full mobile layout</p>
+        <div class="tags">
+          <span class="tag g">Hidden sidebar</span>
+          <span class="tag">Stacked cards</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="phone-small">
+        <div class="frame">
+          <div class="screen">
+            <iframe src="index.html"></iframe>
+          </div>
+        </div>
+        <div class="home"><div class="bar"></div></div>
+      </div>
+      <div class="dev-label">
+        <h3>Samsung Galaxy · 360×780</h3>
+        <p>Compact mobile view</p>
+        <div class="tags">
+          <span class="tag g">Hamburger menu</span>
+          <span class="tag">Bottom nav</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  Noora Nexus · ERP Integration Platform · "All of our business systems are finally talking to each other."
+</div>
+
+</body>
+</html>

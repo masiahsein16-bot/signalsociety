@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindPulse — Device Mockups</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{background:#0a0a0b;color:#fafafa;min-height:100vh;overflow-x:hidden}
+
+/* Page Layout */
+.mockup-page{padding:60px 40px;max-width:1600px;margin:0 auto}
+.mockup-hero{text-align:center;margin-bottom:60px}
+.mockup-hero h1{font-size:42px;font-weight:800;letter-spacing:-.03em;background:linear-gradient(135deg,#818cf8,#6366f1,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+.mockup-hero p{font-size:16px;color:#71717a;max-width:500px;margin:0 auto}
+.mockup-hero .tag{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);color:#818cf8;font-size:12px;font-weight:600;margin-bottom:16px}
+.section-label{font-size:11px;font-weight:600;color:#52525b;text-transform:uppercase;letter-spacing:.1em;margin-bottom:32px;text-align:center}
+
+/* Device Frames */
+.device-row{display:flex;align-items:flex-end;justify-content:center;gap:60px;margin-bottom:80px;flex-wrap:wrap}
+
+/* Laptop */
+.laptop{position:relative}
+.laptop-screen{width:960px;height:600px;border-radius:12px;border:2px solid #27272a;overflow:hidden;background:#09090b;box-shadow:0 0 0 1px rgba(255,255,255,.03),0 25px 60px -12px rgba(0,0,0,.8),0 0 120px -40px rgba(99,102,241,.15)}
+.laptop-base{width:1060px;height:16px;background:linear-gradient(180deg,#27272a,#18181b);border-radius:0 0 12px 12px;margin:0 auto;position:relative}
+.laptop-base::before{content:'';position:absolute;top:4px;left:50%;transform:translateX(-50%);width:120px;height:4px;background:#3f3f46;border-radius:2px}
+.laptop-notch{width:180px;height:8px;background:#18181b;border-radius:0 0 8px 8px;margin:0 auto;position:relative;z-index:2}
+
+/* Tablet */
+.tablet{position:relative}
+.tablet-frame{width:520px;height:700px;border-radius:24px;border:3px solid #27272a;background:#09090b;overflow:hidden;box-shadow:0 25px 60px -12px rgba(0,0,0,.7),0 0 80px -30px rgba(99,102,241,.1);position:relative}
+.tablet-frame::before{content:'';position:absolute;top:10px;left:50%;transform:translateX(-50%);width:8px;height:8px;background:#27272a;border-radius:50%;z-index:10}
+.tablet-home{width:40px;height:4px;background:#3f3f46;border-radius:2px;position:absolute;bottom:8px;left:50%;transform:translateX(-50%)}
+
+/* Phone */
+.phone{position:relative}
+.phone-frame{width:280px;height:580px;border-radius:36px;border:3px solid #27272a;background:#09090b;overflow:hidden;box-shadow:0 25px 60px -12px rgba(0,0,0,.7),0 0 60px -20px rgba(99,102,241,.1);position:relative;padding:0}
+.phone-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:28px;background:#09090b;border-radius:0 0 16px 16px;z-index:20}
+.phone-notch::before{content:'';position:absolute;top:8px;left:50%;transform:translateX(-50%);width:50px;height:5px;background:#27272a;border-radius:3px}
+.phone-home{width:100px;height:4px;background:#3f3f46;border-radius:2px;position:absolute;bottom:6px;left:50%;transform:translateX(-50%);z-index:20}
+
+/* Device Labels */
+.device-label{text-align:center;margin-top:20px}
+.device-label h3{font-size:15px;font-weight:600;color:#fafafa;margin-bottom:2px}
+.device-label span{font-size:11px;color:#52525b}
+
+/* ========================= SCREEN CONTENT (shared styles) ========================= */
+.s-layout{display:flex;height:100%;overflow:hidden}
+.s-sidebar{background:rgba(9,9,11,.95);border-right:1px solid #1e1e21;display:flex;flex-direction:column;overflow:hidden}
+.s-sidebar-w{width:180px}
+.s-sidebar-w.tablet-sidebar{width:0;border-right:none}
+.s-main{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.s-header{height:44px;border-bottom:1px solid #1e1e21;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:rgba(9,9,11,.8);backdrop-filter:blur(12px);flex-shrink:0}
+.s-content{flex:1;overflow-y:auto;padding:16px}
+
+/* Sidebar mini */
+.s-logo{display:flex;align-items:center;gap:8px;padding:12px;border-bottom:1px solid #1e1e21}
+.s-logo-icon{width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#6366f1,#818cf8);display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;flex-shrink:0}
+.s-logo-text{font-size:11px;font-weight:700;color:#fafafa;white-space:nowrap}
+.s-nav{padding:8px;flex:1;overflow:hidden}
+.s-nav-item{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;color:#71717a;font-size:10px;font-weight:500;text-decoration:none;margin-bottom:2px;white-space:nowrap}
+.s-nav-item.active{background:rgba(99,102,241,.1);color:#6366f1}
+.s-nav-item .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+
+/* Header mini */
+.s-search{height:28px;width:160px;border-radius:6px;border:1px solid #1e1e21;background:#18181b;padding:0 8px 0 28px;color:#fafafa;font-size:10px;outline:none}
+.s-search-wrap{position:relative}
+.s-search-wrap svg{position:absolute;left:8px;top:50%;transform:translateY(-50%);width:12px;height:12px;color:#52525b}
+.s-avatar{width:24px;height:24px;border-radius:50%;background:rgba(99,102,241,.2);color:#6366f1;font-size:9px;font-weight:600;display:flex;align-items:center;justify-content:center}
+
+/* Cards mini */
+.s-card{background:#111113;border:1px solid #1e1e21;border-radius:8px;padding:12px;margin-bottom:10px}
+.s-card-title{font-size:10px;font-weight:600;color:#fafafa;margin-bottom:8px}
+.s-card-sub{font-size:9px;color:#52525b;margin-bottom:8px}
+
+/* Metric mini */
+.s-metric{background:#111113;border:1px solid #1e1e21;border-radius:8px;padding:10px}
+.s-metric-label{font-size:8px;color:#52525b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.s-metric-val{font-size:16px;font-weight:700;color:#fafafa}
+.s-metric-chg{font-size:9px;font-weight:600;color:#10b981;margin-top:3px}
+
+/* Chart placeholder */
+.s-chart{height:80px;background:linear-gradient(135deg,rgba(99,102,241,.05),rgba(99,102,241,.02));border-radius:6px;display:flex;align-items:flex-end;padding:8px;gap:3px}
+.s-chart-bar{background:rgba(99,102,241,.4);border-radius:3px 3px 0 0;flex:1;transition:height .3s}
+
+/* Health ring mini */
+.s-health{display:flex;align-items:center;justify-content:center;padding:12px}
+.s-health svg{transform:rotate(-90deg)}
+.s-health-center{position:absolute;text-align:center}
+.s-health-score{font-size:20px;font-weight:800;color:#fafafa;line-height:1}
+.s-health-sub{font-size:8px;color:#52525b}
+
+/* Platform mini card */
+.s-plat{background:#111113;border:1px solid #1e1e21;border-radius:6px;padding:8px}
+.s-plat-header{display:flex;align-items:center;gap:6px;margin-bottom:8px}
+.s-plat-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.s-plat-name{font-size:9px;font-weight:600;color:#fafafa}
+.s-plat-stat{font-size:8px;color:#52525b}
+.s-plat-val{font-size:10px;font-weight:600;color:#fafafa}
+
+/* Table mini */
+.s-table{width:100%;border-collapse:collapse}
+.s-table th{font-size:8px;color:#52525b;text-transform:uppercase;letter-spacing:.04em;padding:6px 8px;text-align:left;border-bottom:1px solid #1e1e21}
+.s-table td{font-size:9px;color:#a1a1aa;padding:6px 8px;border-bottom:1px solid rgba(30,30,33,.5)}
+
+/* Insight mini */
+.s-insight{border-left:3px solid;padding:10px;background:#111113;border-radius:0 8px 8px 0;border:1px solid #1e1e21;border-left:3px solid;margin-bottom:8px}
+.s-insight-text{font-size:9px;font-weight:600;color:#fafafa;line-height:1.4;margin-bottom:4px}
+.s-insight-sub{font-size:8px;color:#71717a;line-height:1.4}
+.s-insight-tag{display:inline-block;padding:1px 6px;border-radius:100px;font-size:7px;font-weight:600;border:1px solid;margin-bottom:4px}
+
+/* Mobile-only elements */
+.s-mobile-nav{display:none;height:48px;background:#111113;border-top:1px solid #1e1e21;align-items:center;justify-content:space-around;padding:0 8px;flex-shrink:0}
+.s-mobile-nav-item{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:7px;color:#52525b}
+.s-mobile-nav-item.active{color:#6366f1}
+.s-mobile-nav-item svg{width:14px;height:14px}
+
+/* Responsive grid helpers */
+.s-g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.s-g3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.s-g4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.s-g5{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+
+/* ========================= LAPTOP SCREEN ========================= */
+.lap-sidebar{width:160px}
+.lap-nav-item{font-size:10px;padding:6px 10px}
+.lap-content{padding:16px}
+.lap-metric{padding:12px}
+.lap-metric-val{font-size:18px}
+.lap-card{padding:14px}
+.lap-chart{height:100px}
+
+/* ========================= TABLET SCREEN ========================= */
+.tab-sidebar{display:none}
+.tab-content{padding:14px}
+.tab-metric{padding:10px}
+.tab-metric-val{font-size:14px}
+.tab-card{padding:10px}
+.tab-chart{height:80px}
+
+/* ========================= PHONE SCREEN ========================= */
+.ph-content{padding:10px}
+.ph-metric{padding:8px}
+.ph-metric-val{font-size:13px}
+.ph-card{padding:8px}
+.ph-chart{height:60px}
+.ph-header{padding:0 10px}
+
+/* Responsive */
+@media(max-width:1200px){
+  .laptop-screen{width:720px;height:480px}
+  .laptop-base{width:800px}
+  .tablet-frame{width:420px;height:580px}
+}
+@media(max-width:900px){
+  .device-row{gap:40px}
+  .laptop-screen{width:560px;height:400px}
+  .laptop-base{width:640px}
+  .tablet-frame{width:340px;height:500px}
+  .phone-frame{width:240px;height:500px}
+  .mockup-hero h1{font-size:28px}
+}
+@media(max-width:600px){
+  .mockup-page{padding:30px 16px}
+  .device-row{flex-direction:column;align-items:center;gap:50px}
+  .laptop-screen{width:100%;max-width:500px;aspect-ratio:16/10;height:auto}
+  .laptop-base{width:calc(100% + 60px);max-width:560px}
+  .tablet-frame{width:100%;max-width:360px;height:auto;aspect-ratio:3/4}
+  .phone-frame{width:100%;max-width:260px;height:auto;aspect-ratio:9/18}
+}
+</style>
+</head>
+<body>
+
+<div class="mockup-page">
+  <div class="mockup-hero">
+    <div class="tag">&#10024; MindPulse by Mind Creative</div>
+    <h1>Marketing Intelligence Platform</h1>
+    <p>Turn social data into clear decisions. See how MindPulse looks across every device.</p>
+  </div>
+
+  <!-- ===== LAPTOP ===== -->
+  <div class="section-label">Desktop / Laptop</div>
+  <div class="device-row">
+    <div class="laptop">
+      <div class="laptop-notch"></div>
+      <div class="laptop-screen">
+        <div class="s-layout">
+          <!-- Sidebar -->
+          <div class="s-sidebar lap-sidebar">
+            <div class="s-logo"><div class="s-logo-icon">&#10024;</div><div class="s-logo-text">MindPulse</div></div>
+            <div class="s-nav">
+              <div class="s-nav-item active"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Overview</div>
+              <div class="s-nav-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>Platforms</div>
+              <div class="s-nav-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Content</div>
+              <div class="s-nav-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>Mind Signals</div>
+              <div class="s-nav-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Competitors</div>
+              <div class="s-nav-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Campaigns</div>
+              <div class="s-nav-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Clients</div>
+              <div class="s-nav-item"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/></svg>Reports</div>
+              <div style="height:8px"></div>
+              <div class="s-nav-item"><div class="dot" style="background:#E1306C"></div>Instagram</div>
+              <div class="s-nav-item"><div class="dot" style="background:#696969"></div>TikTok</div>
+              <div class="s-nav-item"><div class="dot" style="background:#1877F2"></div>Facebook</div>
+              <div class="s-nav-item"><div class="dot" style="background:#0A66C2"></div>LinkedIn</div>
+              <div class="s-nav-item"><div class="dot" style="background:#FF0000"></div>YouTube</div>
+            </div>
+          </div>
+          <!-- Main -->
+          <div class="s-main">
+            <div class="s-header">
+              <div class="s-search-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><input class="s-search" placeholder="Search..." readonly></div>
+              <div class="flex items-center gap-2"><div class="s-avatar">MC</div></div>
+            </div>
+            <div class="s-content lap-content">
+              <!-- Title -->
+              <div style="margin-bottom:14px"><div style="font-size:14px;font-weight:700;color:#fafafa">Dashboard</div><div style="font-size:9px;color:#52525b">Marketing intelligence overview for Luxe Beauty Co</div></div>
+              <!-- Health + Metrics Row -->
+              <div style="display:flex;gap:12px;margin-bottom:12px">
+                <!-- Health -->
+                <div class="s-card" style="width:180px;display:flex;align-items:center;justify-content:center;padding:16px;flex-shrink:0">
+                  <div style="position:relative">
+                    <svg width="90" height="90"><circle cx="45" cy="45" r="38" fill="none" stroke="#27272a" stroke-width="7"/><circle cx="45" cy="45" r="38" fill="none" stroke="#f59e0b" stroke-width="7" stroke-linecap="round" stroke-dasharray="239" stroke-dashoffset="53" transform="rotate(-90 45 45)"/></svg>
+                    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-size:20px;font-weight:800;color:#fafafa">78</span><span style="font-size:7px;color:#52525b">out of 100</span></div>
+                  </div>
+                </div>
+                <!-- Metrics -->
+                <div style="flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+                  <div class="s-metric"><div class="s-metric-label">Total Reach</div><div class="s-metric-val">2.8M</div><div class="s-metric-chg">&#8593; 12.4%</div></div>
+                  <div class="s-metric"><div class="s-metric-label">Eng. Rate</div><div class="s-metric-val">4.82%</div><div class="s-metric-chg">&#8593; 0.3%</div></div>
+                  <div class="s-metric"><div class="s-metric-label">Engagement</div><div class="s-metric-val">187K</div><div class="s-metric-chg">&#8593; 8.7%</div></div>
+                  <div class="s-metric"><div class="s-metric-label">Followers</div><div class="s-metric-val">12.4K</div><div class="s-metric-chg">&#8593; 15.2%</div></div>
+                  <div class="s-metric"><div class="s-metric-label">Content Score</div><div class="s-metric-val">78</div><div class="s-metric-chg">&#8593; 3.1</div></div>
+                  <div class="s-metric"><div class="s-metric-label">Sentiment</div><div class="s-metric-val">84</div><div class="s-metric-chg">&#8593; 2.8</div></div>
+                  <div class="s-metric"><div class="s-metric-label">Content ROI</div><div class="s-metric-val">3.4x</div><div class="s-metric-chg">&#8593; 11.2%</div></div>
+                  <div class="s-metric"><div class="s-metric-label">Campaigns</div><div class="s-metric-val">3</div><div class="s-metric-chg" style="color:#52525b">Active</div></div>
+                </div>
+              </div>
+              <!-- Chart -->
+              <div class="s-card lap-card" style="margin-bottom:12px">
+                <div class="s-card-title">Performance Trend</div>
+                <div class="s-chart lap-chart" id="lapChart"></div>
+              </div>
+              <!-- Platforms + Content -->
+              <div style="display:flex;gap:12px">
+                <div style="flex:1">
+                  <div style="font-size:10px;font-weight:600;color:#fafafa;margin-bottom:8px">Platform Overview</div>
+                  <div class="s-g5" id="lapPlatforms"></div>
+                </div>
+                <div style="width:280px">
+                  <div class="s-card lap-card">
+                    <div class="s-card-title">Top Content</div>
+                    <table class="s-table">
+                      <thead><tr><th>Content</th><th>Platform</th><th>Reach</th></tr></thead>
+                      <tbody>
+                        <tr><td style="color:#fafafa;font-weight:500">Morning Skincare</td><td><span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#E1306C"></span> IG</td><td>245K</td></tr>
+                        <tr><td style="color:#fafafa;font-weight:500">Skincare Myths</td><td><span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#696969"></span> TT</td><td>189K</td></tr>
+                        <tr><td style="color:#fafafa;font-weight:500">Vitamin C Guide</td><td><span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#E1306C"></span> IG</td><td>156K</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- Mind Signals -->
+              <div style="margin-top:12px">
+                <div style="font-size:10px;font-weight:600;color:#fafafa;margin-bottom:8px">Mind Signals</div>
+                <div style="display:flex;gap:8px">
+                  <div class="s-insight" style="border-left-color:#ef4444;flex:1">
+                    <div class="s-insight-tag badge-emerald" style="background:rgba(16,185,129,.1);color:#10b981;border-color:rgba(16,185,129,.2)">high confidence</div>
+                    <div class="s-insight-text">Carousel posts generate 34% higher saves than static posts</div>
+                    <div class="s-insight-sub">Increase carousel frequency to 3x per week.</div>
+                  </div>
+                  <div class="s-insight" style="border-left-color:#f59e0b;flex:1">
+                    <div class="s-insight-tag" style="background:rgba(16,185,129,.1);color:#10b981;border-color:rgba(16,185,129,.2)">high confidence</div>
+                    <div class="s-insight-text">Educational content performs best between 7–9 PM</div>
+                    <div class="s-insight-sub">Schedule educational posts between 7–9 PM.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="laptop-base"></div>
+    </div>
+  </div>
+  <div class="device-label"><h3>Desktop / Laptop</h3><span>1440 × 900 — Full dashboard with sidebar navigation</span></div>
+
+  <div style="height:60px"></div>
+
+  <!-- ===== TABLET ===== -->
+  <div class="section-label">Tablet / iPad</div>
+  <div class="device-row">
+    <div class="tablet">
+      <div class="tablet-frame">
+        <div class="s-layout">
+          <div class="s-main">
+            <div class="s-header">
+              <div class="flex items-center gap-2"><div class="s-logo-icon" style="width:20px;height:20px;font-size:8px">&#10024;</div><span style="font-size:10px;font-weight:700;color:#fafafa">MindPulse</span></div>
+              <div class="s-search-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><input class="s-search" style="width:120px" placeholder="Search..." readonly></div>
+              <div class="s-avatar">MC</div>
+            </div>
+            <div class="s-content tab-content">
+              <div style="margin-bottom:12px"><div style="font-size:13px;font-weight:700;color:#fafafa">Dashboard</div><div style="font-size:8px;color:#52525b">Luxe Beauty Co</div></div>
+              <!-- Top nav tabs -->
+              <div style="display:flex;gap:4px;margin-bottom:12px;overflow-x:auto">
+                <span style="padding:4px 10px;border-radius:6px;background:rgba(99,102,241,.1);color:#6366f1;font-size:9px;font-weight:600;white-space:nowrap">Overview</span>
+                <span style="padding:4px 10px;border-radius:6px;color:#52525b;font-size:9px;font-weight:500;white-space:nowrap">Platforms</span>
+                <span style="padding:4px 10px;border-radius:6px;color:#52525b;font-size:9px;font-weight:500;white-space:nowrap">Content</span>
+                <span style="padding:4px 10px;border-radius:6px;color:#52525b;font-size:9px;font-weight:500;white-space:nowrap">Signals</span>
+                <span style="padding:4px 10px;border-radius:6px;color:#52525b;font-size:9px;font-weight:500;white-space:nowrap">Campaigns</span>
+              </div>
+              <!-- Health + Metrics -->
+              <div style="display:flex;gap:10px;margin-bottom:10px">
+                <div class="s-card" style="width:120px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                  <div style="position:relative">
+                    <svg width="70" height="70"><circle cx="35" cy="35" r="30" fill="none" stroke="#27272a" stroke-width="6"/><circle cx="35" cy="35" r="30" fill="none" stroke="#f59e0b" stroke-width="6" stroke-linecap="round" stroke-dasharray="188" stroke-dashoffset="42" transform="rotate(-90 35 35)"/></svg>
+                    <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-size:16px;font-weight:800;color:#fafafa">78</span><span style="font-size:6px;color:#52525b">/100</span></div>
+                  </div>
+                </div>
+                <div style="flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+                  <div class="s-metric"><div class="s-metric-label">Reach</div><div class="s-metric-val tab-metric-val">2.8M</div><div class="s-metric-chg">&#8593; 12.4%</div></div>
+                  <div class="s-metric"><div class="s-metric-label">Eng. Rate</div><div class="s-metric-val tab-metric-val">4.82%</div><div class="s-metric-chg">&#8593; 0.3%</div></div>
+                  <div class="s-metric"><div class="s-metric-label">Engagement</div><div class="s-metric-val tab-metric-val">187K</div><div class="s-metric-chg">&#8593; 8.7%</div></div>
+                  <div class="s-metric"><div class="s-metric-label">Followers</div><div class="s-metric-val tab-metric-val">12.4K</div><div class="s-metric-chg">&#8593; 15.2%</div></div>
+                </div>
+              </div>
+              <!-- Chart -->
+              <div class="s-card tab-card" style="margin-bottom:10px">
+                <div class="s-card-title">Performance Trend</div>
+                <div class="s-chart tab-chart" id="tabChart"></div>
+              </div>
+              <!-- Platforms -->
+              <div style="font-size:10px;font-weight:600;color:#fafafa;margin-bottom:6px">Platforms</div>
+              <div class="s-g5" style="margin-bottom:10px" id="tabPlatforms"></div>
+              <!-- Content + Signals -->
+              <div style="display:flex;gap:10px">
+                <div style="flex:1">
+                  <div class="s-card tab-card">
+                    <div class="s-card-title">Top Content</div>
+                    <table class="s-table">
+                      <thead><tr><th>Content</th><th>Reach</th></tr></thead>
+                      <tbody>
+                        <tr><td style="color:#fafafa;font-weight:500">Morning Skincare</td><td>245K</td></tr>
+                        <tr><td style="color:#fafafa;font-weight:500">Skincare Myths</td><td>189K</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div style="flex:1">
+                  <div class="s-insight" style="border-left-color:#ef4444">
+                    <div class="s-insight-tag" style="background:rgba(16,185,129,.1);color:#10b981;border-color:rgba(16,185,129,.2)">high</div>
+                    <div class="s-insight-text">Carousel posts generate 34% higher saves</div>
+                    <div class="s-insight-sub">Increase carousel frequency to 3x per week.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tablet-home"></div>
+      </div>
+    </div>
+  </div>
+  <div class="device-label"><h3>Tablet / iPad</h3><span>1024 × 768 — Adapted layout with top navigation tabs</span></div>
+
+  <div style="height:60px"></div>
+
+  <!-- ===== PHONE ===== -->
+  <div class="section-label">Mobile / Phone</div>
+  <div class="device-row">
+    <div class="phone">
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="s-layout" style="flex-direction:column">
+          <div class="s-main" style="flex:1">
+            <div class="s-header ph-header" style="height:40px">
+              <div class="flex items-center gap-2"><div class="s-logo-icon" style="width:18px;height:18px;font-size:7px">&#10024;</div><span style="font-size:10px;font-weight:700;color:#fafafa">MindPulse</span></div>
+              <div class="s-avatar" style="width:20px;height:20px;font-size:8px">MC</div>
+            </div>
+            <div class="s-content ph-content" style="padding:10px">
+              <div style="margin-bottom:10px"><div style="font-size:12px;font-weight:700;color:#fafafa">Dashboard</div><div style="font-size:7px;color:#52525b">Luxe Beauty Co</div></div>
+              <!-- Health compact -->
+              <div class="s-card ph-card" style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+                <div style="position:relative;flex-shrink:0">
+                  <svg width="50" height="50"><circle cx="25" cy="25" r="20" fill="none" stroke="#27272a" stroke-width="5"/><circle cx="25" cy="25" r="20" fill="none" stroke="#f59e0b" stroke-width="5" stroke-linecap="round" stroke-dasharray="126" stroke-dashoffset="28" transform="rotate(-90 25 25)"/></svg>
+                  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-size:12px;font-weight:800;color:#fafafa">78</span></div>
+                </div>
+                <div><div style="font-size:9px;font-weight:600;color:#f59e0b">Good</div><div style="font-size:7px;color:#52525b">Marketing Health</div></div>
+              </div>
+              <!-- Metrics 2x2 -->
+              <div class="s-g2" style="margin-bottom:8px">
+                <div class="s-metric ph-metric"><div class="s-metric-label">Reach</div><div class="s-metric-val ph-metric-val">2.8M</div><div class="s-metric-chg">&#8593; 12.4%</div></div>
+                <div class="s-metric ph-metric"><div class="s-metric-label">Eng. Rate</div><div class="s-metric-val ph-metric-val">4.82%</div><div class="s-metric-chg">&#8593; 0.3%</div></div>
+                <div class="s-metric ph-metric"><div class="s-metric-label">Engagement</div><div class="s-metric-val ph-metric-val">187K</div><div class="s-metric-chg">&#8593; 8.7%</div></div>
+                <div class="s-metric ph-metric"><div class="s-metric-label">Followers</div><div class="s-metric-val ph-metric-val">12.4K</div><div class="s-metric-chg">&#8593; 15.2%</div></div>
+              </div>
+              <!-- Chart -->
+              <div class="s-card ph-card" style="margin-bottom:8px">
+                <div class="s-card-title">Performance</div>
+                <div class="s-chart ph-chart" id="phChart"></div>
+              </div>
+              <!-- Platform list -->
+              <div style="font-size:9px;font-weight:600;color:#fafafa;margin-bottom:6px">Platforms</div>
+              <div style="margin-bottom:8px" id="phPlatforms"></div>
+              <!-- Top content -->
+              <div class="s-card ph-card" style="margin-bottom:8px">
+                <div class="s-card-title">Top Content</div>
+                <div style="display:flex;gap:8px;margin-top:6px">
+                  <div style="width:28px;height:28px;border-radius:6px;background:#18181b;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0">&#9654;</div>
+                  <div><div style="font-size:9px;font-weight:500;color:#fafafa">Morning Skincare</div><div style="font-size:7px;color:#52525b">Education · Reel</div></div>
+                </div>
+                <div style="display:flex;gap:8px;margin-top:6px">
+                  <div style="width:28px;height:28px;border-radius:6px;background:#18181b;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0">&#9654;</div>
+                  <div><div style="font-size:9px;font-weight:500;color:#fafafa">Skincare Myths</div><div style="font-size:7px;color:#52525b">Education · Short</div></div>
+                </div>
+              </div>
+              <!-- Insight -->
+              <div class="s-insight" style="border-left-color:#ef4444;margin-bottom:8px">
+                <div class="s-insight-tag" style="background:rgba(16,185,129,.1);color:#10b981;border-color:rgba(16,185,129,.2)">high</div>
+                <div class="s-insight-text">Carousel posts generate 34% higher saves</div>
+              </div>
+              <!-- Extra metrics -->
+              <div class="s-g2">
+                <div class="s-metric ph-metric"><div class="s-metric-label">Content Score</div><div class="s-metric-val ph-metric-val">78</div></div>
+                <div class="s-metric ph-metric"><div class="s-metric-label">Sentiment</div><div class="s-metric-val ph-metric-val">84</div></div>
+              </div>
+            </div>
+          </div>
+          <!-- Mobile bottom nav -->
+          <div class="s-mobile-nav" style="display:flex">
+            <div class="s-mobile-nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Home</div>
+            <div class="s-mobile-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>Stats</div>
+            <div class="s-mobile-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>Signals</div>
+            <div class="s-mobile-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>Reports</div>
+            <div class="s-mobile-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>More</div>
+          </div>
+        </div>
+        <div class="phone-home"></div>
+      </div>
+    </div>
+  </div>
+  <div class="device-label"><h3>Mobile / Phone</h3><span>375 × 812 — Compact layout with bottom navigation</span></div>
+
+</div>
+
+<script>
+// Mini chart bars
+function makeBars(id,count,minH,maxH){
+  const el=document.getElementById(id);if(!el)return;
+  let html='';
+  for(let i=0;i<count;i++){
+    const h=minH+Math.random()*(maxH-minH);
+    const opacity=.2+Math.random()*.6;
+    html+=`<div class="s-chart-bar" style="height:${h}%;opacity:${opacity}"></div>`;
+  }
+  el.innerHTML=html;
+}
+
+// Platform mini cards
+function makePlatforms(id,count){
+  const el=document.getElementById(id);if(!el)return;
+  const plats=[
+    {n:'IG',c:'#E1306C',f:'124K',r:'1.2M'},
+    {n:'TT',c:'#696969',f:'89K',r:'892K'},
+    {n:'FB',c:'#1877F2',f:'67K',r:'423K'},
+    {n:'LI',c:'#0A66C2',f:'34K',r:'198K'},
+    {n:'YT',c:'#FF0000',f:'23K',r:'89K'}
+  ].slice(0,count);
+  el.innerHTML=plats.map(p=>`
+    <div class="s-plat">
+      <div class="s-plat-header"><div class="s-plat-dot" style="background:${p.c}"></div><div><div class="s-plat-name">${p.n}</div><div class="s-plat-stat">${p.f} followers</div></div></div>
+      <div class="s-plat-val">${p.r}</div>
+    </div>`).join('');
+}
+
+// Platform list (mobile)
+function makePlatformList(id){
+  const el=document.getElementById(id);if(!el)return;
+  const plats=[
+    {n:'Instagram',c:'#E1306C',f:'124K'},
+    {n:'TikTok',c:'#696969',f:'89K'},
+    {n:'Facebook',c:'#1877F2',f:'67K'},
+    {n:'LinkedIn',c:'#0A66C2',f:'34K'},
+    {n:'YouTube',c:'#FF0000',f:'23K'}
+  ];
+  el.innerHTML=plats.map(p=>`
+    <div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid #1e1e21">
+      <div style="width:8px;height:8px;border-radius:50%;background:${p.c};flex-shrink:0"></div>
+      <div style="flex:1"><div style="font-size:9px;font-weight:500;color:#fafafa">${p.n}</div></div>
+      <div style="font-size:9px;color:#a1a1aa">${p.f}</div>
+    </div>`).join('');
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  makeBars('lapChart',30,20,90);
+  makeBars('tabChart',24,15,85);
+  makeBars('phChart',18,10,80);
+  makePlatforms('lapPlatforms',5);
+  makePlatforms('tabPlatforms',5);
+  makePlatformList('phPlatforms');
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FLEUR — Wear Your Becoming | Brand Campaign Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cream: #FDF8F3;
+      --soft-pink: #F5E6E0;
+      --burgundy: #8B2252;
+      --warm-beige: #E8DDD3;
+      --muted-green: #A8B5A0;
+      --charcoal: #2D2D2D;
+      --blush: #F9E8E0;
+      --rose: #D4A5A5;
+      --sage: #9CAF88;
+      --latte: #C4A77D;
+      --dusty-rose: #C9A9A6;
+      --deep-wine: #5C1A33;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.6;
+    }
+
+    /* ===== SLIDE ===== */
+    .slide {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+      position: relative;
+    }
+
+    .slide-inner {
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .slide-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(139, 34, 82, 0.15), transparent);
+    }
+
+    /* ===== SLIDE 1: COVER ===== */
+    .cover { background: var(--cream); }
+
+    .cover-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .cover-content { grid-template-columns: 1fr 1.2fr; gap: 3rem; }
+    }
+
+    .cover-left { position: relative; }
+
+    .cover-number {
+      position: absolute;
+      top: -1.5rem;
+      left: -0.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 7rem;
+      font-weight: 300;
+      color: rgba(139, 34, 82, 0.06);
+      line-height: 1;
+      z-index: 0;
+    }
+
+    .cover-badge {
+      display: inline-block;
+      padding: 0.35rem 0.9rem;
+      border: 1px solid var(--burgundy);
+      color: var(--burgundy);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 8vw, 5.5rem);
+      font-weight: 300;
+      color: var(--burgundy);
+      line-height: 0.95;
+      margin-bottom: 0.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover-title em {
+      font-style: italic;
+      display: block;
+      font-size: 0.55em;
+      color: var(--charcoal);
+      font-weight: 400;
+    }
+
+    .cover-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover-desc {
+      font-size: 0.8rem;
+      color: rgba(45, 45, 45, 0.65);
+      line-height: 1.8;
+      max-width: 380px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Phone Mockup */
+    .phone-mockup {
+      width: 260px;
+      height: 520px;
+      background: var(--charcoal);
+      border-radius: 36px;
+      padding: 12px;
+      margin: 0 auto;
+      box-shadow: 0 25px 60px rgba(45, 45, 45, 0.2);
+      position: relative;
+      z-index: 1;
+    }
+
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      background: var(--soft-pink);
+      border-radius: 26px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .phone-notch {
+      width: 100px;
+      height: 24px;
+      background: var(--charcoal);
+      border-radius: 0 0 14px 14px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .phone-content {
+      padding: 1rem 1rem 1.5rem;
+      text-align: center;
+      height: calc(100% - 24px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .phone-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--burgundy);
+      margin-bottom: 0.5rem;
+    }
+
+    .phone-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+    }
+
+    .phone-image-placeholder {
+      width: 180px;
+      height: 220px;
+      background: linear-gradient(135deg, var(--warm-beige), var(--blush));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .phone-image-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .phone-image-placeholder svg {
+      width: 40px;
+      height: 40px;
+      opacity: 0.3;
+    }
+
+    .phone-cta {
+      padding: 0.5rem 1.5rem;
+      background: var(--burgundy);
+      color: var(--cream);
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .cover-footer {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .cover-footer-text {
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: rgba(45, 45, 45, 0.5);
+    }
+
+    .cover-footer-line {
+      width: 30px;
+      height: 1px;
+      background: var(--burgundy);
+      margin-bottom: 0.4rem;
+    }
+
+    /* ===== SLIDE 2: ABOUT ===== */
+    .about { background: var(--cream); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 900px) {
+      .about-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .section-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--burgundy);
+    }
+
+    .about-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 400;
+      color: var(--charcoal);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-title em {
+      font-style: italic;
+      color: var(--burgundy);
+    }
+
+    .stamp {
+      width: 100px;
+      height: 100px;
+      border: 1.5px solid var(--burgundy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0.75rem;
+      position: relative;
+    }
+
+    .stamp::before {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      border: 1px solid var(--burgundy);
+      border-radius: 50%;
+      opacity: 0.4;
+    }
+
+    .stamp-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.7rem;
+      font-style: italic;
+      color: var(--burgundy);
+      line-height: 1.3;
+    }
+
+    .info-card {
+      background: rgba(232, 221, 211, 0.35);
+      padding: 1.5rem;
+    }
+
+    .info-row {
+      display: flex;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(45, 45, 45, 0.08);
+    }
+
+    .info-row:last-child { border-bottom: none; }
+
+    .info-label {
+      width: 80px;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      flex-shrink: 0;
+    }
+
+    .info-value {
+      font-size: 0.8rem;
+      color: var(--charcoal);
+      line-height: 1.5;
+    }
+
+    .quote-card {
+      background: var(--blush);
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100px;
+    }
+
+    .quote-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--burgundy);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .quote-text::after {
+      content: ' ♡';
+      font-style: normal;
+      font-size: 0.875rem;
+    }
+
+    /* ===== SLIDE 3: IDENTITY ===== */
+    .identity { background: var(--cream); }
+
+    .identity-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 900px) {
+      .identity-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    .id-card {
+      padding: 1.25rem;
+      border: 1px solid rgba(45, 45, 45, 0.06);
+      background: white;
+    }
+
+    .id-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--charcoal);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .id-card-title::after {
+      content: '♡';
+      color: var(--burgundy);
+      font-size: 0.75rem;
+    }
+
+    /* Colors */
+    .colors {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .color-dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .color-dot::after {
+      content: attr(data-hex);
+      position: absolute;
+      bottom: -1.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.5rem;
+      color: rgba(45, 45, 45, 0.5);
+      white-space: nowrap;
+    }
+
+    .colors + .colors { margin-top: 1rem; }
+
+    /* Type */
+    .type-block { margin-bottom: 1.25rem; }
+    .type-block:last-child { margin-bottom: 0; }
+
+    .type-label {
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(45, 45, 45, 0.45);
+      margin-bottom: 0.35rem;
+    }
+
+    .type-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      color: var(--charcoal);
+      margin-bottom: 0.15rem;
+    }
+
+    .type-body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      color: var(--charcoal);
+    }
+
+    .type-chars {
+      font-size: 0.65rem;
+      color: rgba(45, 45, 45, 0.45);
+      margin-top: 0.2rem;
+    }
+
+    /* Icons */
+    .icons-row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .icon-item { text-align: center; flex: 1; }
+
+    .icon-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--soft-pink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.4rem;
+      font-size: 1rem;
+    }
+
+    .icon-name {
+      font-size: 0.55rem;
+      color: rgba(45, 45, 45, 0.55);
+    }
+
+    /* ===== SLIDE 4: FEED ===== */
+    .feed { background: var(--cream); }
+
+    .feed-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 1.5rem;
+    }
+
+    .feed-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--charcoal);
+    }
+
+    .feed-title::after {
+      content: ' ♡';
+      color: var(--burgundy);
+      font-size: 0.875rem;
+    }
+
+    .feed-sub {
+      font-size: 0.65rem;
+      color: rgba(45, 45, 45, 0.45);
+      letter-spacing: 0.05em;
+    }
+
+    .feed-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.4rem;
+    }
+
+    .feed-cell {
+      aspect-ratio: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feed-cell-bg {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 0.5rem;
+      position: relative;
+    }
+
+    .feed-cell-bg img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .feed-cell-bg .feed-cell-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(45, 45, 45, 0.3);
+    }
+
+    .feed-cell-icon {
+      font-size: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .feed-cell-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.6rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.9);
+      text-align: center;
+      line-height: 1.3;
+      position: relative;
+      z-index: 1;
+    }
+
+    .feed-cell:nth-child(1) .feed-cell-bg { background: linear-gradient(135deg, var(--soft-pink), var(--blush)); }
+    .feed-cell:nth-child(2) .feed-cell-bg { background: linear-gradient(135deg, var(--dusty-rose), var(--rose)); }
+    .feed-cell:nth-child(3) .feed-cell-bg { background: linear-gradient(135deg, var(--warm-beige), var(--latte)); }
+    .feed-cell:nth-child(4) .feed-cell-bg { background: linear-gradient(135deg, var(--muted-green), var(--sage)); }
+    .feed-cell:nth-child(5) .feed-cell-bg { background: linear-gradient(135deg, var(--burgundy), var(--deep-wine)); }
+    .feed-cell:nth-child(6) .feed-cell-bg { background: linear-gradient(135deg, var(--latte), var(--warm-beige)); }
+    .feed-cell:nth-child(7) .feed-cell-bg { background: linear-gradient(135deg, var(--blush), var(--soft-pink)); }
+    .feed-cell:nth-child(8) .feed-cell-bg { background: linear-gradient(135deg, var(--sage), var(--muted-green)); }
+    .feed-cell:nth-child(9) .feed-cell-bg { background: linear-gradient(135deg, var(--rose), var(--dusty-rose)); }
+
+    /* ===== SLIDE 5: HIGHLIGHTS ===== */
+    .highlights { background: var(--cream); }
+
+    .hl-grid {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .hl-item { text-align: center; width: 80px; }
+
+    .hl-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 2px solid var(--soft-pink);
+      padding: 3px;
+      margin: 0 auto 0.5rem;
+      overflow: hidden;
+    }
+
+    .hl-circle-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+
+    .hl-label {
+      font-size: 0.6rem;
+      color: var(--charcoal);
+    }
+
+    .hl-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .hl-icon-item { text-align: center; }
+
+    .hl-icon-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--soft-pink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.35rem;
+      font-size: 0.875rem;
+    }
+
+    .hl-icon-name {
+      font-size: 0.5rem;
+      color: rgba(45, 45, 45, 0.5);
+    }
+
+    /* ===== SLIDE 6: CAROUSEL ===== */
+    .carousel { background: var(--cream); }
+
+    .carousel-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .carousel-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .carousel-card {
+      aspect-ratio: 1;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .carousel-card-bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    .carousel-card-bg img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-card:nth-child(1) .carousel-card-bg { background: linear-gradient(135deg, var(--soft-pink), var(--blush)); }
+    .carousel-card:nth-child(2) .carousel-card-bg { background: linear-gradient(135deg, var(--warm-beige), var(--latte)); }
+    .carousel-card:nth-child(3) .carousel-card-bg { background: linear-gradient(135deg, var(--dusty-rose), var(--rose)); }
+    .carousel-card:nth-child(4) .carousel-card-bg { background: linear-gradient(135deg, var(--muted-green), var(--sage)); }
+
+    .carousel-card-content {
+      position: relative;
+      z-index: 1;
+      padding: 1rem;
+      background: linear-gradient(to top, rgba(45, 45, 45, 0.6), transparent);
+      width: 100%;
+    }
+
+    .carousel-card-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      font-style: italic;
+      color: white;
+      line-height: 1.4;
+    }
+
+    /* ===== SLIDE 7: COLLECTION ===== */
+    .collection { background: var(--cream); }
+
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .collection-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid rgba(45, 45, 45, 0.05);
+      overflow: hidden;
+    }
+
+    .product-img {
+      aspect-ratio: 3/4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-img img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-card:nth-child(1) .product-img { background: linear-gradient(135deg, var(--soft-pink), var(--blush)); }
+    .product-card:nth-child(2) .product-img { background: linear-gradient(135deg, var(--muted-green), var(--sage)); }
+    .product-card:nth-child(3) .product-img { background: linear-gradient(135deg, var(--warm-beige), var(--latte)); }
+    .product-card:nth-child(4) .product-img { background: linear-gradient(135deg, var(--burgundy), var(--deep-wine)); }
+    .product-card:nth-child(5) .product-img { background: linear-gradient(135deg, var(--blush), var(--rose)); }
+    .product-card:nth-child(6) .product-img { background: linear-gradient(135deg, var(--sage), var(--muted-green)); }
+
+    .product-img-icon {
+      font-size: 2rem;
+      opacity: 0.5;
+    }
+
+    .product-img-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: rgba(45, 45, 45, 0.4);
+    }
+
+    .product-info {
+      padding: 0.75rem;
+    }
+
+    .product-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--charcoal);
+      margin-bottom: 0.15rem;
+    }
+
+    .product-desc {
+      font-size: 0.6rem;
+      color: rgba(45, 45, 45, 0.5);
+    }
+
+    .product-price {
+      font-size: 0.65rem;
+      color: var(--burgundy);
+      margin-top: 0.35rem;
+    }
+
+    /* ===== SLIDE 8: DEVICE MOCKUPS ===== */
+    .mockups { background: var(--cream); }
+
+    .mockups-layout {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    /* Laptop Mockup */
+    .laptop-mockup {
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .laptop-screen {
+      background: var(--charcoal);
+      border-radius: 12px 12px 0 0;
+      padding: 8px 8px 0;
+    }
+
+    .laptop-camera {
+      width: 8px;
+      height: 8px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      margin: 6px auto 8px;
+    }
+
+    .laptop-display {
+      background: var(--soft-pink);
+      aspect-ratio: 16/10;
+      border-radius: 2px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Laptop browser chrome */
+    .browser-bar {
+      background: var(--warm-beige);
+      padding: 6px 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .browser-dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .browser-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+
+    .browser-dot:nth-child(1) { background: #FF6058; }
+    .browser-dot:nth-child(2) { background: #FFBD2E; }
+    .browser-dot:nth-child(3) { background: #28CA42; }
+
+    .browser-url {
+      flex: 1;
+      background: white;
+      border-radius: 4px;
+      padding: 3px 8px;
+      font-size: 0.45rem;
+      color: rgba(45,45,45,0.5);
+    }
+
+    /* Laptop content */
+    .laptop-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 0.5rem;
+      gap: 0.35rem;
+      background: var(--cream);
+    }
+
+    .laptop-hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    .laptop-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(253, 248, 243, 0.7);
+    }
+
+    .laptop-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(139,34,82,0.1);
+    }
+
+    .laptop-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--burgundy);
+    }
+
+    .laptop-nav-links {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .laptop-nav-link {
+      font-size: 0.4rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(45,45,45,0.5);
+    }
+
+    .laptop-hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    .laptop-hero-badge {
+      font-size: 0.35rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      border: 1px solid var(--burgundy);
+      padding: 0.15rem 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .laptop-hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--charcoal);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .laptop-hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.6rem;
+      font-style: italic;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+
+    .laptop-hero-btn {
+      font-size: 0.35rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--burgundy);
+      color: white;
+      padding: 0.2rem 0.6rem;
+    }
+
+    /* Laptop base */
+    .laptop-base {
+      background: linear-gradient(to bottom, #C0C0C0, #A8A8A8);
+      height: 14px;
+      border-radius: 0 0 4px 4px;
+    }
+
+    .laptop-notch {
+      width: 80px;
+      height: 4px;
+      background: #B0B0B0;
+      border-radius: 0 0 4px 4px;
+      margin: 0 auto;
+    }
+
+    /* Tablet Mockup */
+    .tablet-mockup {
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .tablet-frame {
+      background: var(--charcoal);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .tablet-screen {
+      background: var(--blush);
+      aspect-ratio: 4/3;
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tablet-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid rgba(139,34,82,0.1);
+    }
+
+    .tablet-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.7rem;
+      color: var(--burgundy);
+    }
+
+    .tablet-menu {
+      font-size: 0.5rem;
+      color: rgba(45,45,45,0.5);
+    }
+
+    .tablet-content {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.35rem;
+      padding: 0.5rem;
+    }
+
+    .tablet-card {
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.4rem;
+      color: white;
+      text-align: center;
+      padding: 0.25rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tablet-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .tablet-card span {
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .tablet-card:nth-child(1) { background: linear-gradient(135deg, var(--soft-pink), var(--rose)); }
+    .tablet-card:nth-child(2) { background: linear-gradient(135deg, var(--muted-green), var(--sage)); }
+    .tablet-card:nth-child(3) { background: linear-gradient(135deg, var(--warm-beige), var(--latte)); }
+    .tablet-card:nth-child(4) { background: linear-gradient(135deg, var(--burgundy), var(--deep-wine)); }
+
+    .tablet-label {
+      text-align: center;
+      margin-top: 0.75rem;
+      font-size: 0.55rem;
+      color: rgba(45,45,45,0.5);
+      letter-spacing: 0.08em;
+    }
+
+    /* Phone Mockup */
+    .phone-mockup-sm {
+      width: 100%;
+      max-width: 180px;
+    }
+
+    .phone-frame {
+      background: var(--charcoal);
+      border-radius: 24px;
+      padding: 8px;
+    }
+
+    .phone-screen-inner {
+      background: var(--cream);
+      border-radius: 18px;
+      aspect-ratio: 9/19;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .phone-notch-sm {
+      width: 60px;
+      height: 16px;
+      background: var(--charcoal);
+      border-radius: 0 0 10px 10px;
+      margin: 0 auto;
+    }
+
+    .phone-content-sm {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 0.5rem;
+      gap: 0.35rem;
+    }
+
+    .phone-story-bar {
+      display: flex;
+      gap: 0.35rem;
+      padding: 0.25rem 0;
+      overflow: hidden;
+    }
+
+    .phone-story {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid var(--burgundy);
+      padding: 2px;
+      flex-shrink: 0;
+    }
+
+    .phone-story-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+
+    .phone-story:nth-child(1) .phone-story-inner { background: var(--soft-pink); }
+    .phone-story:nth-child(2) .phone-story-inner { background: var(--warm-beige); }
+    .phone-story:nth-child(3) .phone-story-inner { background: var(--muted-green); }
+    .phone-story:nth-child(4) .phone-story-inner { background: var(--rose); }
+
+    .phone-post {
+      flex: 1;
+      background: var(--soft-pink);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .phone-post img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .phone-post-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(253, 248, 243, 0.9), rgba(253, 248, 243, 0.5));
+    }
+
+    .phone-post-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .phone-post-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--burgundy);
+      margin-bottom: 0.15rem;
+    }
+
+    .phone-post-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.4rem;
+      font-style: italic;
+      color: var(--charcoal);
+      margin-bottom: 0.25rem;
+    }
+
+    .phone-post-btn {
+      font-size: 0.3rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--burgundy);
+      color: white;
+      padding: 0.15rem 0.4rem;
+    }
+
+    .phone-bottom-bar {
+      display: flex;
+      justify-content: space-around;
+      padding: 0.35rem 0;
+      border-top: 1px solid rgba(45,45,45,0.1);
+    }
+
+    .phone-bar-icon {
+      font-size: 0.6rem;
+      opacity: 0.4;
+    }
+
+    .phone-label {
+      text-align: center;
+      margin-top: 0.75rem;
+      font-size: 0.55rem;
+      color: rgba(45,45,45,0.5);
+      letter-spacing: 0.08em;
+    }
+
+    /* ===== FOOTER ===== */
+    .doc-footer {
+      background: var(--burgundy);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+
+    .footer-thanks {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--cream);
+      margin-bottom: 0.25rem;
+    }
+
+    .footer-sub {
+      font-size: 0.65rem;
+      color: rgba(253, 248, 243, 0.65);
+      letter-spacing: 0.08em;
+    }
+
+    .footer-line {
+      width: 30px;
+      height: 1px;
+      background: rgba(253, 248, 243, 0.25);
+      margin: 1.25rem auto;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      color: var(--cream);
+      letter-spacing: 0.15em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SLIDE 1: COVER -->
+  <section class="slide cover">
+    <div class="slide-inner">
+      <div class="cover-content">
+        <div class="cover-left">
+          <div class="cover-number">1/8</div>
+          <div class="cover-badge">Campaign Portfolio</div>
+          <h1 class="cover-title">
+            Fleur
+            <em>Hijab</em>
+          </h1>
+          <p class="cover-subtitle">Wear Your Becoming</p>
+          <p class="cover-desc">
+            A campaign celebrating women who continuously evolve. The hijab becomes part of her journey rather than simply a fashion product.
+          </p>
+        </div>
+        <div class="cover-right">
+          <div class="phone-mockup">
+            <div class="phone-screen">
+              <div class="phone-notch"></div>
+              <div class="phone-content">
+                <div class="phone-logo">Fleur</div>
+                <div class="phone-tagline">"For every version of you."</div>
+                <div class="phone-image-placeholder">
+                  <img src="referenceimage/download (16).jpg" alt="Fleur Collection">
+                </div>
+                <div class="phone-cta">Discover the Collection</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cover-footer">
+        <div>
+          <div class="cover-footer-line"></div>
+          <span class="cover-footer-text">Designed for Fleur Hijab | Social Campaign</span>
+        </div>
+        <span class="cover-footer-text">Carousel 1/8</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="slide-divider"></div>
+
+  <!-- SLIDE 2: ABOUT -->
+  <section class="slide about">
+    <div class="slide-inner">
+      <div class="about-grid">
+        <div>
+          <div class="section-label">About</div>
+          <h2 class="about-title">The <em>Project</em> ♡</h2>
+          <div class="stamp">
+            <div class="stamp-text">Fleur Hijab<br>Wear Your Becoming</div>
+          </div>
+        </div>
+        <div>
+          <div class="info-card">
+            <div class="info-row">
+              <span class="info-label">CLIENT</span>
+              <span class="info-value">Fleur Hijab</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">INDUSTRY</span>
+              <span class="info-value">Fashion — Hijab</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">TYPE</span>
+              <span class="info-value">Social Campaign & Branding</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">GOAL</span>
+              <span class="info-value">Build an emotional, feminine, and empowering visual identity that celebrates the evolving journey of modern hijab-wearing women.</span>
+            </div>
+          </div>
+          <div class="quote-card">
+            <div class="quote-text">Every version of you deserves to be celebrated.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="slide-divider"></div>
+
+  <!-- SLIDE 3: IDENTITY -->
+  <section class="slide identity">
+    <div class="slide-inner">
+      <div class="section-label">Brand Identity ♡</div>
+      <div style="height: 1.5rem;"></div>
+      <div class="identity-grid">
+        <div class="id-card">
+          <div class="id-card-title">Color Palette</div>
+          <div class="colors">
+            <div class="color-dot" style="background: #FDF8F3;" data-hex="#FDF8F3"></div>
+            <div class="color-dot" style="background: #F5E6E0;" data-hex="#F5E6E0"></div>
+            <div class="color-dot" style="background: #8B2252;" data-hex="#8B2252"></div>
+            <div class="color-dot" style="background: #E8DDD3;" data-hex="#E8DDD3"></div>
+            <div class="color-dot" style="background: #A8B5A0;" data-hex="#A8B5A0"></div>
+            <div class="color-dot" style="background: #2D2D2D;" data-hex="#2D2D2D"></div>
+          </div>
+          <div class="colors">
+            <div class="color-dot" style="background: #C9A9A6;" data-hex="#C9A9A6"></div>
+            <div class="color-dot" style="background: #D4A5A5;" data-hex="#D4A5A5"></div>
+            <div class="color-dot" style="background: #9CAF88;" data-hex="#9CAF88"></div>
+            <div class="color-dot" style="background: #C4A77D;" data-hex="#C4A77D"></div>
+            <div class="color-dot" style="background: #F9E8E0;" data-hex="#F9E8E0"></div>
+            <div class="color-dot" style="background: #5C1A33;" data-hex="#5C1A33"></div>
+          </div>
+        </div>
+        <div class="id-card">
+          <div class="id-card-title">Typography</div>
+          <div class="type-block">
+            <div class="type-label">Heading Font</div>
+            <div class="type-heading">Cormorant Garamond</div>
+            <div class="type-chars">Aa Bb Cc Dd Ee Ff Gg</div>
+            <div class="type-chars">0 1 2 3 4 5 6 7 8 9</div>
+          </div>
+          <div class="type-block">
+            <div class="type-label">Body Font</div>
+            <div class="type-body">DM Sans</div>
+            <div class="type-chars">Aa Bb Cc Dd Ee Ff Gg</div>
+            <div class="type-chars">0 1 2 3 4 5 6 7 8 9</div>
+          </div>
+        </div>
+        <div class="id-card">
+          <div class="id-card-title">Highlight Icons</div>
+          <div class="icons-row">
+            <div class="icon-item">
+              <div style="width:40px;height:40px;border-radius:50%;overflow:hidden;margin:0 auto 0.4rem;">
+                <img src="referenceimage/download (16).jpg" alt="Dreamer" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="icon-name">Dreamer</div>
+            </div>
+            <div class="icon-item">
+              <div style="width:40px;height:40px;border-radius:50%;overflow:hidden;margin:0 auto 0.4rem;">
+                <img src="referenceimage/download (17).jpg" alt="Builder" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="icon-name">Builder</div>
+            </div>
+            <div class="icon-item">
+              <div style="width:40px;height:40px;border-radius:50%;overflow:hidden;margin:0 auto 0.4rem;">
+                <img src="referenceimage/download (18).jpg" alt="Explorer" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="icon-name">Explorer</div>
+            </div>
+            <div class="icon-item">
+              <div style="width:40px;height:40px;border-radius:50%;overflow:hidden;margin:0 auto 0.4rem;">
+                <img src="referenceimage/download (19).jpg" alt="Lover" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="icon-name">Lover</div>
+            </div>
+            <div class="icon-item">
+              <div style="width:40px;height:40px;border-radius:50%;overflow:hidden;margin:0 auto 0.4rem;">
+                <img src="referenceimage/download (20).jpg" alt="Muse" style="width:100%;height:100%;object-fit:cover;">
+              </div>
+              <div class="icon-name">Muse</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="slide-divider"></div>
+
+  <!-- SLIDE 4: FEED -->
+  <section class="slide feed">
+    <div class="slide-inner">
+      <div class="feed-header">
+        <div>
+          <div class="section-label">Feed Preview</div>
+          <div class="feed-title">Instagram Feed</div>
+        </div>
+        <div class="feed-sub">( 3 x 3 GRID )</div>
+      </div>
+      <div class="feed-grid">
+        <div class="feed-cell">
+          <div class="feed-cell-bg">
+            <img src="referenceimage/Welcome to Aayla Hijabs!.jpg" alt="Feed 1">
+            <div class="feed-cell-overlay"></div>
+            <div class="feed-cell-text">Welcome to Fleur Hijabs!</div>
+          </div>
+        </div>
+        <div class="feed-cell">
+          <div class="feed-cell-bg">
+            <img src="referenceimage/OLIVE is the color of the season 🫒 Honestly, we will never get sick of this shade 😂 #sorrynotsorry but we will keep bringing Olive back forever_ It's the most gorgeous tone that is neutral, but still gives you.jpg" alt="Feed 2">
+            <div class="feed-cell-overlay"></div>
+            <div class="feed-cell-text">OLIVE is the color of the season</div>
+          </div>
+        </div>
+        <div class="feed-cell">
+          <div class="feed-cell-bg">
+            <img src="referenceimage/download (17).jpg" alt="Feed 3">
+            <div class="feed-cell-overlay"></div>
+            <div class="feed-cell-text">in her moment</div>
+          </div>
+        </div>
+        <div class="feed-cell">
+          <div class="feed-cell-bg">
+            <img src="referenceimage/Our summer collection__Light, effortless and ready__#ILoveModesty #Modest #Hijab #SummerWear.jpg" alt="Feed 4">
+            <div class="feed-cell-overlay"></div>
+            <div class="feed-cell-text">Summer collection</div>
+          </div>
+        </div>
+        <div class="feed-cell">
+          <div class="feed-cell-bg">
+            <img src="referenceimage/download (18).jpg" alt="Feed 5">
+            <div class="feed-cell-overlay"></div>
+            <div class="feed-cell-text">Outfit on, volume up</div>
+          </div>
+        </div>
+        <div class="feed-cell">
+          <div class="feed-cell-bg">
+            <img src="referenceimage/Outfit on, volume up_ Let the song set your mood 🎶_Just like a good tune, Laia top with embroidered bib will strike the perfect chord of charm and ease 🩵.jpg" alt="Feed 6">
+            <div class="feed-cell-overlay"></div>
+            <div class="feed-cell-text">The perfect match</div>
+          </div>
+        </div>
+        <div class="feed-cell">
+          <div class="feed-cell-bg">
+            <img src="referenceimage/download (19).jpg" alt="Feed 7">
+            <div class="feed-cell-overlay"></div>
+            <div class="feed-cell-text">Soft hijab + coffee</div>
+          </div>
+        </div>
+        <div class="feed-cell">
+          <div class="feed-cell-bg">
+            <img src="referenceimage/download (20).jpg" alt="Feed 8">
+            <div class="feed-cell-overlay"></div>
+            <div class="feed-cell-text">Best Modest Activewear</div>
+          </div>
+        </div>
+        <div class="feed-cell">
+          <div class="feed-cell-bg">
+            <img src="referenceimage/1 brand, 10 obsessions 💗🫶🌸.jpg" alt="Feed 9">
+            <div class="feed-cell-overlay"></div>
+            <div class="feed-cell-text">1 brand, 10 obsessions</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="slide-divider"></div>
+
+  <!-- SLIDE 5: HIGHLIGHTS -->
+  <section class="slide highlights">
+    <div class="slide-inner">
+      <div style="text-align: center;">
+        <div class="section-label" style="justify-content: center;">Story Highlight Design ♡</div>
+      </div>
+      <div class="hl-grid">
+        <div class="hl-item">
+          <div class="hl-circle"><div class="hl-circle-inner" style="background: url('referenceimage/download (16).jpg') center/cover;"></div></div>
+          <div class="hl-label">Collection</div>
+        </div>
+        <div class="hl-item">
+          <div class="hl-circle"><div class="hl-circle-inner" style="background: url('referenceimage/download (17).jpg') center/cover;"></div></div>
+          <div class="hl-label">Behind The Scene</div>
+        </div>
+        <div class="hl-item">
+          <div class="hl-circle"><div class="hl-circle-inner" style="background: url('referenceimage/download (18).jpg') center/cover;"></div></div>
+          <div class="hl-label">Customer Love</div>
+        </div>
+        <div class="hl-item">
+          <div class="hl-circle"><div class="hl-circle-inner" style="background: url('referenceimage/download (19).jpg') center/cover;"></div></div>
+          <div class="hl-label">Visit Us</div>
+        </div>
+        <div class="hl-item">
+          <div class="hl-circle"><div class="hl-circle-inner" style="background: url('referenceimage/download (20).jpg') center/cover;"></div></div>
+          <div class="hl-label">New Arrival</div>
+        </div>
+      </div>
+      <div class="hl-icons">
+        <div class="hl-icon-item">
+          <div class="hl-circle" style="width:40px;height:40px;border-radius:50%;overflow:hidden;margin:0 auto 0.35rem;border:2px solid var(--soft-pink);padding:2px;">
+            <div style="width:100%;height:100%;border-radius:50%;background:url('referenceimage/download (16).jpg') center/cover;"></div>
+          </div>
+          <div class="hl-icon-name">Hijab</div>
+        </div>
+        <div class="hl-icon-item">
+          <div class="hl-circle" style="width:40px;height:40px;border-radius:50%;overflow:hidden;margin:0 auto 0.35rem;border:2px solid var(--soft-pink);padding:2px;">
+            <div style="width:100%;height:100%;border-radius:50%;background:url('referenceimage/download (17).jpg') center/cover;"></div>
+          </div>
+          <div class="hl-icon-name">Outfit</div>
+        </div>
+        <div class="hl-icon-item">
+          <div class="hl-circle" style="width:40px;height:40px;border-radius:50%;overflow:hidden;margin:0 auto 0.35rem;border:2px solid var(--soft-pink);padding:2px;">
+            <div style="width:100%;height:100%;border-radius:50%;background:url('referenceimage/download (18).jpg') center/cover;"></div>
+          </div>
+          <div class="hl-icon-name">Special</div>
+        </div>
+        <div class="hl-icon-item">
+          <div class="hl-circle" style="width:40px;height:40px;border-radius:50%;overflow:hidden;margin:0 auto 0.35rem;border:2px solid var(--soft-pink);padding:2px;">
+            <div style="width:100%;height:100%;border-radius:50%;background:url('referenceimage/download (19).jpg') center/cover;"></div>
+          </div>
+          <div class="hl-icon-name">Love Notes</div>
+        </div>
+        <div class="hl-icon-item">
+          <div class="hl-circle" style="width:40px;height:40px;border-radius:50%;overflow:hidden;margin:0 auto 0.35rem;border:2px solid var(--soft-pink);padding:2px;">
+            <div style="width:100%;height:100%;border-radius:50%;background:url('referenceimage/download (20).jpg') center/cover;"></div>
+          </div>
+          <div class="hl-icon-name">About Us</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="slide-divider"></div>
+
+  <!-- SLIDE 6: CAROUSEL -->
+  <section class="slide carousel">
+    <div class="slide-inner">
+      <div style="text-align: center;">
+        <div class="section-label" style="justify-content: center;">Carousel Preview ♡</div>
+      </div>
+      <div class="carousel-grid">
+        <div class="carousel-card">
+          <div class="carousel-card-bg">
+            <img src="referenceimage/download (16).jpg" alt="Carousel 1">
+          </div>
+          <div class="carousel-card-content">
+            <div class="carousel-card-text">All you need is a little bit of glow.</div>
+          </div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card-bg">
+            <img src="referenceimage/download (17).jpg" alt="Carousel 2">
+          </div>
+          <div class="carousel-card-content">
+            <div class="carousel-card-text">Made with the finest quality.</div>
+          </div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card-bg">
+            <img src="referenceimage/download (18).jpg" alt="Carousel 3">
+          </div>
+          <div class="carousel-card-content">
+            <div class="carousel-card-text">Crafted with love, every single day.</div>
+          </div>
+        </div>
+        <div class="carousel-card">
+          <div class="carousel-card-bg">
+            <img src="referenceimage/download (19).jpg" alt="Carousel 4">
+          </div>
+          <div class="carousel-card-content">
+            <div class="carousel-card-text">Thank you for making us part of your day.</div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 1.5rem;">
+        <p style="font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; font-style: italic; color: var(--charcoal);">
+          Designed to engage, inform, and inspire every moment. ♡
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="slide-divider"></div>
+
+  <!-- SLIDE 7: COLLECTION -->
+  <section class="slide collection">
+    <div class="slide-inner">
+      <div style="text-align: center;">
+        <div class="section-label" style="justify-content: center;">Collection Design ♡</div>
+        <div style="height: 0.35rem;"></div>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 400; color: var(--charcoal);">The Fleur Collection</h2>
+      </div>
+      <div class="collection-grid">
+        <div class="product-card">
+          <div class="product-img">
+            <img src="referenceimage/download (16).jpg" alt="The Dreamer">
+          </div>
+          <div class="product-info">
+            <div class="product-name">The Dreamer</div>
+            <div class="product-desc">Dusty Rose · Premium Chiffon</div>
+            <div class="product-price">IDR 289.000</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="referenceimage/download (17).jpg" alt="The Muse">
+          </div>
+          <div class="product-info">
+            <div class="product-name">The Muse</div>
+            <div class="product-desc">Sage Green · Silk Crepe</div>
+            <div class="product-price">IDR 349.000</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="referenceimage/download (18).jpg" alt="The Wanderer">
+          </div>
+          <div class="product-info">
+            <div class="product-name">The Wanderer</div>
+            <div class="product-desc">Warm Beige · Cotton Voile</div>
+            <div class="product-price">IDR 249.000</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="referenceimage/download (19).jpg" alt="The Builder">
+          </div>
+          <div class="product-info">
+            <div class="product-name">The Builder</div>
+            <div class="product-desc">Deep Burgundy · Premium Pashmina</div>
+            <div class="product-price">IDR 329.000</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="referenceimage/download (20).jpg" alt="The Romantic">
+          </div>
+          <div class="product-info">
+            <div class="product-name">The Romantic</div>
+            <div class="product-desc">Blush Pink · Georgette</div>
+            <div class="product-price">IDR 299.000</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="referenceimage/OLIVE is the color of the season 🫒 Honestly, we will never get sick of this shade 😂 #sorrynotsorry but we will keep bringing Olive back forever_ It's the most gorgeous tone that is neutral, but still gives you.jpg" alt="The Explorer">
+          </div>
+          <div class="product-info">
+            <div class="product-name">The Explorer</div>
+            <div class="product-desc">Muted Olive · Linen Blend</div>
+            <div class="product-price">IDR 279.000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="slide-divider"></div>
+
+  <!-- SLIDE 8: DEVICE MOCKUPS -->
+  <section class="slide mockups">
+    <div class="slide-inner">
+      <div style="text-align: center;">
+        <div class="section-label" style="justify-content: center;">Device Mockup ♡</div>
+      </div>
+
+      <div class="mockups-layout">
+        <!-- Laptop -->
+        <div class="laptop-mockup">
+          <div class="laptop-screen">
+            <div class="laptop-camera"></div>
+            <div class="laptop-display">
+              <div class="browser-bar">
+                <div class="browser-dots">
+                  <div class="browser-dot"></div>
+                  <div class="browser-dot"></div>
+                  <div class="browser-dot"></div>
+                </div>
+                <div class="browser-url">fleurhijab.com</div>
+              </div>
+                <div class="laptop-content">
+                <div class="laptop-nav">
+                  <div class="laptop-logo">Fleur</div>
+                  <div class="laptop-nav-links">
+                    <span class="laptop-nav-link">Story</span>
+                    <span class="laptop-nav-link">Collection</span>
+                    <span class="laptop-nav-link">Shop</span>
+                  </div>
+                </div>
+                <div class="laptop-hero" style="position: relative;">
+                  <img class="laptop-hero-img" src="referenceimage/download (16).jpg" alt="Laptop Hero">
+                  <div class="laptop-hero-overlay"></div>
+                  <div style="position: relative; z-index: 1;">
+                    <div class="laptop-hero-badge">Wear Your Becoming</div>
+                    <div class="laptop-hero-title">YOU ARE ALLOWED<br>TO BECOME.</div>
+                    <div class="laptop-hero-sub">"For every version of you."</div>
+                    <div class="laptop-hero-btn">Discover the Collection</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="laptop-base">
+            <div class="laptop-notch"></div>
+          </div>
+        </div>
+
+        <!-- Tablet + Phone Row -->
+        <div style="display: flex; gap: 2rem; align-items: flex-end; justify-content: center; flex-wrap: wrap;">
+          <!-- Tablet -->
+          <div class="tablet-mockup">
+            <div class="tablet-frame">
+              <div class="tablet-screen">
+                <div class="tablet-nav">
+                  <div class="tablet-logo">Fleur</div>
+                  <div class="tablet-menu">☰</div>
+                </div>
+                <div class="tablet-content">
+                  <div class="tablet-card">
+                    <img src="referenceimage/download (16).jpg" alt="Collection 1">
+                    <span>The Dreamer</span>
+                  </div>
+                  <div class="tablet-card">
+                    <img src="referenceimage/download (17).jpg" alt="Collection 2">
+                    <span>The Muse</span>
+                  </div>
+                  <div class="tablet-card">
+                    <img src="referenceimage/download (18).jpg" alt="Collection 3">
+                    <span>The Wanderer</span>
+                  </div>
+                  <div class="tablet-card">
+                    <img src="referenceimage/download (19).jpg" alt="Collection 4">
+                    <span>The Builder</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tablet-label">Tablet</div>
+          </div>
+
+          <!-- Phone -->
+          <div class="phone-mockup-sm">
+            <div class="phone-frame">
+              <div class="phone-screen-inner">
+                <div class="phone-notch-sm"></div>
+                <div class="phone-content-sm">
+                  <div class="phone-story-bar">
+                    <div class="phone-story"><div class="phone-story-inner" style="background: url('referenceimage/download (16).jpg') center/cover;"></div></div>
+                    <div class="phone-story"><div class="phone-story-inner" style="background: url('referenceimage/download (17).jpg') center/cover;"></div></div>
+                    <div class="phone-story"><div class="phone-story-inner" style="background: url('referenceimage/download (18).jpg') center/cover;"></div></div>
+                    <div class="phone-story"><div class="phone-story-inner" style="background: url('referenceimage/download (19).jpg') center/cover;"></div></div>
+                  </div>
+                  <div class="phone-post">
+                    <img src="referenceimage/Welcome to Aayla Hijabs!.jpg" alt="Phone Post">
+                    <div class="phone-post-overlay"></div>
+                    <div class="phone-post-content">
+                      <div class="phone-post-logo">Fleur</div>
+                      <div class="phone-post-text">"For every version of you."</div>
+                      <div class="phone-post-btn">Shop Now</div>
+                    </div>
+                  </div>
+                  <div class="phone-bottom-bar">
+                    <span class="phone-bar-icon">🏠</span>
+                    <span class="phone-bar-icon">🔍</span>
+                    <span class="phone-bar-icon">➕</span>
+                    <span class="phone-bar-icon">♡</span>
+                    <span class="phone-bar-icon">👤</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="phone-label">Mobile</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <p style="font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: var(--charcoal);">
+          Bringing the brand to life, consistently and beautifully across all devices. ♡
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="slide-divider"></div>
+
+  <!-- SLIDE 9: BRAND APPLICATION -->
+  <section class="slide" style="background: var(--cream);">
+    <div class="slide-inner">
+      <div style="text-align: center;">
+        <div class="section-label" style="justify-content: center;">Brand Application Mockup ♡</div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem;">
+        <div style="aspect-ratio: 1; overflow: hidden; position: relative;">
+          <img src="referenceimage/download (16).jpg" alt="Packaging" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(139,34,82,0.6), transparent); display: flex; align-items: flex-end; padding: 1rem;">
+            <div style="color: white; font-family: 'Cormorant Garamond', serif; font-size: 0.8rem; font-style: italic;">Hijab Packaging</div>
+          </div>
+        </div>
+        <div style="aspect-ratio: 1; overflow: hidden; position: relative;">
+          <img src="referenceimage/download (17).jpg" alt="Shopping Bag" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(139,34,82,0.6), transparent); display: flex; align-items: flex-end; padding: 1rem;">
+            <div style="color: white; font-family: 'Cormorant Garamond', serif; font-size: 0.8rem; font-style: italic;">Shopping Bag</div>
+          </div>
+        </div>
+        <div style="aspect-ratio: 1; overflow: hidden; position: relative;">
+          <img src="referenceimage/download (18).jpg" alt="Sticker" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(139,34,82,0.6), transparent); display: flex; align-items: flex-end; padding: 1rem;">
+            <div style="color: white; font-family: 'Cormorant Garamond', serif; font-size: 0.8rem; font-style: italic;">Sticker & Seal</div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 2rem;">
+        <p style="font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: var(--charcoal);">
+          Bringing the brand to life, consistently and beautifully. ♡
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="doc-footer">
+    <div class="footer-thanks">Thank you for watching! ♡</div>
+    <div class="footer-sub">Let's bring your brand to life beautifully.</div>
+    <div class="footer-line"></div>
+    <div class="footer-brand">FLEUR</div>
+  </footer>
+
+</body>
+</html>
