@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=10">
+    <link rel="stylesheet" href="styles.css?v=11">
     <style>
         .work-hero { padding: 8rem 0 3rem; background: var(--dark); }
         .work-hero__tag { display: inline-block; color: var(--orange); margin-bottom: 1rem; }
@@ -20,8 +20,8 @@
         .work-hero__meta-value { font-size: 0.82rem; color: var(--white); }
 
         .work-mockup { background: var(--dark-surface); padding: 3rem 0; border-top: 1px solid var(--dark-border); border-bottom: 1px solid var(--dark-border); }
-        .work-mockup__frame { max-width: 1100px; margin: 0 auto; border-radius: 12px; overflow: hidden; border: 1px solid var(--dark-border); background: var(--dark-elevated); }
-        .work-mockup__frame iframe { width: 100%; height: 70vh; min-height: 500px; border: none; display: block; }
+        .work-mockup__inner { max-width: 1200px; margin: 0 auto; border-radius: 16px; overflow: hidden; border: 1px solid var(--dark-border); background: var(--dark-elevated); }
+        .work-mockup__inner .device-showcase { padding: 3rem 1.5rem; }
 
         .work-detail { padding: 5rem 0; background: var(--dark); }
         .work-detail__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
@@ -42,7 +42,6 @@
 
         @media (max-width: 768px) {
             .work-detail__grid { grid-template-columns: 1fr; gap: 2.5rem; }
-            .work-mockup__frame iframe { height: 50vh; min-height: 350px; }
         }
     </style>
 </head>
@@ -109,8 +108,59 @@
     <!-- Mockup -->
     <section class="work-mockup">
         <div class="container">
-            <div class="work-mockup__frame">
-                <iframe src="mockup-all_sorelleskincare.html" title="Sorelle Skincare Mockups" loading="lazy"></iframe>
+            <div class="work-mockup__inner">
+                <div class="device-showcase">
+                    <div class="device-showcase__item device-showcase__laptop">
+                        <div class="preview-laptop">
+                            <div class="preview-laptop__screen">
+                                <div class="preview-sorelle">
+                                    <div class="preview-sorelle__bar">
+                                        <div class="preview-sorelle__logo"></div>
+                                        <div class="preview-sorelle__nav-links">
+                                            <span></span><span></span><span></span><span></span>
+                                        </div>
+                                        <div class="preview-sorelle__cart"></div>
+                                    </div>
+                                    <div class="preview-sorelle__hero">
+                                        <div class="preview-sorelle__title"></div>
+                                        <div class="preview-sorelle__subtitle"></div>
+                                        <div class="preview-sorelle__btn"></div>
+                                    </div>
+                                    <div class="preview-sorelle__grid">
+                                        <div class="preview-sorelle__card"><div class="preview-sorelle__card-img"></div><div><div class="preview-sorelle__card-title"></div><div class="preview-sorelle__card-price"></div></div></div>
+                                        <div class="preview-sorelle__card"><div class="preview-sorelle__card-img"></div><div><div class="preview-sorelle__card-title"></div><div class="preview-sorelle__card-price"></div></div></div>
+                                        <div class="preview-sorelle__card"><div class="preview-sorelle__card-img"></div><div><div class="preview-sorelle__card-title"></div><div class="preview-sorelle__card-price"></div></div></div>
+                                        <div class="preview-sorelle__card"><div class="preview-sorelle__card-img"></div><div><div class="preview-sorelle__card-title"></div><div class="preview-sorelle__card-price"></div></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="preview-laptop__base"></div>
+                        </div>
+                    </div>
+                    <div class="device-showcase__item device-showcase__phone">
+                        <div class="preview-phone">
+                            <div class="preview-phone__screen">
+                                <div class="preview-sorelle">
+                                    <div class="preview-sorelle__bar">
+                                        <div class="preview-sorelle__logo"></div>
+                                        <div class="preview-sorelle__nav-links">
+                                            <span></span><span></span>
+                                        </div>
+                                        <div class="preview-sorelle__cart"></div>
+                                    </div>
+                                    <div class="preview-sorelle__hero">
+                                        <div class="preview-sorelle__title"></div>
+                                        <div class="preview-sorelle__subtitle"></div>
+                                    </div>
+                                    <div class="preview-sorelle__grid">
+                                        <div class="preview-sorelle__card"><div class="preview-sorelle__card-img"></div><div><div class="preview-sorelle__card-title"></div><div class="preview-sorelle__card-price"></div></div></div>
+                                        <div class="preview-sorelle__card"><div class="preview-sorelle__card-img"></div><div><div class="preview-sorelle__card-title"></div><div class="preview-sorelle__card-price"></div></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -172,3 +222,4 @@
     </script>
 </body>
 </html>
+

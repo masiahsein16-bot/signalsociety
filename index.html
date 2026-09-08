@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=10">
+    <link rel="stylesheet" href="styles.css?v=11">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
@@ -341,21 +341,27 @@
 
                 <a href="work-sorelle-skincare.html" class="project project--wide reveal">
                     <div class="project__visual">
-                        <div class="project__preview project__preview--sorelle">
+                        <div class="project__preview">
                             <div class="preview-laptop">
                                 <div class="preview-laptop__screen">
                                     <div class="preview-sorelle">
-                                        <div class="preview-sorelle__nav"><span></span><span></span><span></span></div>
+                                        <div class="preview-sorelle__bar">
+                                            <div class="preview-sorelle__logo"></div>
+                                            <div class="preview-sorelle__nav-links">
+                                                <span></span><span></span><span></span><span></span>
+                                            </div>
+                                            <div class="preview-sorelle__cart"></div>
+                                        </div>
                                         <div class="preview-sorelle__hero">
                                             <div class="preview-sorelle__title"></div>
                                             <div class="preview-sorelle__subtitle"></div>
                                             <div class="preview-sorelle__btn"></div>
                                         </div>
                                         <div class="preview-sorelle__grid">
-                                            <div class="preview-sorelle__card"></div>
-                                            <div class="preview-sorelle__card"></div>
-                                            <div class="preview-sorelle__card"></div>
-                                            <div class="preview-sorelle__card"></div>
+                                            <div class="preview-sorelle__card"><div class="preview-sorelle__card-img"></div><div><div class="preview-sorelle__card-title"></div><div class="preview-sorelle__card-price"></div></div></div>
+                                            <div class="preview-sorelle__card"><div class="preview-sorelle__card-img"></div><div><div class="preview-sorelle__card-title"></div><div class="preview-sorelle__card-price"></div></div></div>
+                                            <div class="preview-sorelle__card"><div class="preview-sorelle__card-img"></div><div><div class="preview-sorelle__card-title"></div><div class="preview-sorelle__card-price"></div></div></div>
+                                            <div class="preview-sorelle__card"><div class="preview-sorelle__card-img"></div><div><div class="preview-sorelle__card-title"></div><div class="preview-sorelle__card-price"></div></div></div>
                                         </div>
                                     </div>
                                 </div>
@@ -372,32 +378,23 @@
 
                 <a href="work-moora-coffee.html" class="project project--tall reveal">
                     <div class="project__visual">
-                        <div class="project__preview project__preview--moora">
+                        <div class="project__preview">
                             <div class="preview-laptop">
                                 <div class="preview-laptop__screen">
                                     <div class="preview-moora">
-                                        <div class="preview-moora__sidebar">
-                                            <div class="preview-moora__dot"></div>
-                                            <div class="preview-moora__line"></div>
-                                            <div class="preview-moora__line preview-moora__line--short"></div>
-                                            <div class="preview-moora__line"></div>
-                                            <div class="preview-moora__line preview-moora__line--short"></div>
+                                        <div class="preview-moora__grid">
+                                            <div class="preview-moora__item"><div class="preview-moora__item-img">☕</div><div class="preview-moora__item-name"></div><div class="preview-moora__item-price"></div></div>
+                                            <div class="preview-moora__item"><div class="preview-moora__item-img">☕</div><div class="preview-moora__item-name"></div><div class="preview-moora__item-price"></div></div>
+                                            <div class="preview-moora__item"><div class="preview-moora__item-img">🥐</div><div class="preview-moora__item-name"></div><div class="preview-moora__item-price"></div></div>
+                                            <div class="preview-moora__item"><div class="preview-moora__item-img">☕</div><div class="preview-moora__item-name"></div><div class="preview-moora__item-price"></div></div>
+                                            <div class="preview-moora__item"><div class="preview-moora__item-img">🍵</div><div class="preview-moora__item-name"></div><div class="preview-moora__item-price"></div></div>
+                                            <div class="preview-moora__item"><div class="preview-moora__item-img">🥑</div><div class="preview-moora__item-name"></div><div class="preview-moora__item-price"></div></div>
                                         </div>
-                                        <div class="preview-moora__main">
-                                            <div class="preview-moora__topbar">
-                                                <span></span><span></span><span></span>
-                                            </div>
-                                            <div class="preview-moora__cards">
-                                                <div class="preview-moora__stat"></div>
-                                                <div class="preview-moora__stat"></div>
-                                                <div class="preview-moora__stat"></div>
-                                            </div>
-                                            <div class="preview-moora__table">
-                                                <div class="preview-moora__row"></div>
-                                                <div class="preview-moora__row"></div>
-                                                <div class="preview-moora__row"></div>
-                                                <div class="preview-moora__row"></div>
-                                            </div>
+                                        <div class="preview-moora__cart">
+                                            <label></label>
+                                            <div class="preview-moora__cart-line"></div>
+                                            <div class="preview-moora__cart-line"></div>
+                                            <div class="preview-moora__cart-total"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -414,33 +411,34 @@
 
                 <a href="work-mindpulse.html" class="project reveal">
                     <div class="project__visual">
-                        <div class="project__preview project__preview--mindpulse">
+                        <div class="project__preview">
                             <div class="preview-laptop">
                                 <div class="preview-laptop__screen">
                                     <div class="preview-mindpulse">
                                         <div class="preview-mindpulse__sidebar">
                                             <div class="preview-mindpulse__logo"></div>
+                                            <div class="preview-mindpulse__nav-item preview-mindpulse__nav-item--active"></div>
+                                            <div class="preview-mindpulse__nav-item"></div>
                                             <div class="preview-mindpulse__nav-item"></div>
                                             <div class="preview-mindpulse__nav-item"></div>
                                             <div class="preview-mindpulse__nav-item"></div>
                                         </div>
                                         <div class="preview-mindpulse__content">
-                                            <div class="preview-mindpulse__header">
-                                                <span></span><span></span>
+                                            <div class="preview-mindpulse__stats">
+                                                <div class="preview-mindpulse__stat"><div class="preview-mindpulse__stat-num"></div><div class="preview-mindpulse__stat-lbl"></div></div>
+                                                <div class="preview-mindpulse__stat"><div class="preview-mindpulse__stat-num"></div><div class="preview-mindpulse__stat-lbl"></div></div>
+                                                <div class="preview-mindpulse__stat"><div class="preview-mindpulse__stat-num"></div><div class="preview-mindpulse__stat-lbl"></div></div>
+                                                <div class="preview-mindpulse__stat"><div class="preview-mindpulse__stat-num"></div><div class="preview-mindpulse__stat-lbl"></div></div>
                                             </div>
-                                            <div class="preview-mindpulse__charts">
-                                                <div class="preview-mindpulse__chart">
-                                                    <div class="preview-mindpulse__bar" style="height:40%"></div>
-                                                    <div class="preview-mindpulse__bar" style="height:65%"></div>
-                                                    <div class="preview-mindpulse__bar" style="height:50%"></div>
-                                                    <div class="preview-mindpulse__bar" style="height:80%"></div>
-                                                    <div class="preview-mindpulse__bar" style="height:60%"></div>
-                                                </div>
-                                                <div class="preview-mindpulse__chart preview-mindpulse__chart--line">
-                                                    <svg viewBox="0 0 120 50" preserveAspectRatio="none">
-                                                        <polyline points="0,40 20,30 40,35 60,15 80,20 100,10 120,5" fill="none" stroke="#818cf8" stroke-width="2"/>
-                                                    </svg>
-                                                </div>
+                                            <div class="preview-mindpulse__chart">
+                                                <div class="preview-mindpulse__bar" style="height:35%"></div>
+                                                <div class="preview-mindpulse__bar" style="height:50%"></div>
+                                                <div class="preview-mindpulse__bar" style="height:40%"></div>
+                                                <div class="preview-mindpulse__bar" style="height:65%"></div>
+                                                <div class="preview-mindpulse__bar" style="height:55%"></div>
+                                                <div class="preview-mindpulse__bar" style="height:80%"></div>
+                                                <div class="preview-mindpulse__bar" style="height:60%"></div>
+                                                <div class="preview-mindpulse__bar" style="height:90%"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -458,7 +456,7 @@
 
                 <a href="work-cococia.html" class="project reveal">
                     <div class="project__visual">
-                        <div class="project__preview project__preview--cococia">
+                        <div class="project__preview">
                             <div class="preview-laptop">
                                 <div class="preview-laptop__screen">
                                     <div class="preview-cococia">
@@ -467,6 +465,7 @@
                                             <div class="preview-cococia__links">
                                                 <span></span><span></span><span></span>
                                             </div>
+                                            <div class="preview-cococia__btn"></div>
                                         </div>
                                         <div class="preview-cococia__hero">
                                             <div class="preview-cococia__heading"></div>
@@ -475,7 +474,7 @@
                                         </div>
                                         <div class="preview-cococia__cols">
                                             <div class="preview-cococia__col"></div>
-                                            <div class="preview-cococia__col"></div>
+                                            <div class="preview-cococia__col preview-cococia__col--mid"></div>
                                             <div class="preview-cococia__col"></div>
                                         </div>
                                     </div>
@@ -493,23 +492,29 @@
 
                 <a href="work-noora-nexus.html" class="project project--wide reveal">
                     <div class="project__visual">
-                        <div class="project__preview project__preview--noora">
+                        <div class="project__preview">
                             <div class="preview-laptop">
                                 <div class="preview-laptop__screen">
                                     <div class="preview-noora">
                                         <div class="preview-noora__topbar">
                                             <div class="preview-noora__logo"></div>
                                             <div class="preview-noora__search"></div>
+                                            <div class="preview-noora__avatar"></div>
                                         </div>
                                         <div class="preview-noora__body">
-                                            <div class="preview-noora__cards">
-                                                <div class="preview-noora__card"></div>
-                                                <div class="preview-noora__card"></div>
+                                            <div class="preview-noora__sidebar">
+                                                <div class="preview-noora__side-item preview-noora__side-item--active"></div>
+                                                <div class="preview-noora__side-item"></div>
+                                                <div class="preview-noora__side-item"></div>
+                                                <div class="preview-noora__side-item"></div>
                                             </div>
-                                            <div class="preview-noora__list">
-                                                <div class="preview-noora__item"></div>
-                                                <div class="preview-noora__item"></div>
-                                                <div class="preview-noora__item"></div>
+                                            <div class="preview-noora__main">
+                                                <div class="preview-noora__card preview-noora__card--emerald"></div>
+                                                <div class="preview-noora__list">
+                                                    <div class="preview-noora__item"></div>
+                                                    <div class="preview-noora__item"></div>
+                                                    <div class="preview-noora__item"></div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -527,29 +532,54 @@
 
                 <a href="work-fleur-hijab.html" class="project project--tall reveal">
                     <div class="project__visual">
-                        <div class="project__preview project__preview--fleur">
+                        <div class="project__preview">
                             <div class="preview-phone">
                                 <div class="preview-phone__screen">
                                     <div class="preview-fleur">
-                                        <div class="preview-fleur__post">
-                                            <div class="preview-fleur__img"></div>
-                                            <div class="preview-fleur__caption">
-                                                <span></span><span></span>
-                                            </div>
+                                        <div class="preview-fleur__stories">
+                                            <div class="preview-fleur__story"></div>
+                                            <div class="preview-fleur__story"></div>
+                                            <div class="preview-fleur__story"></div>
+                                            <div class="preview-fleur__story"></div>
+                                            <div class="preview-fleur__story"></div>
                                         </div>
-                                        <div class="preview-fleur__post">
-                                            <div class="preview-fleur__img"></div>
-                                            <div class="preview-fleur__caption">
-                                                <span></span><span></span>
-                                            </div>
+                                        <div class="preview-fleur__feed">
+                                            <div class="preview-fleur__cell"></div>
+                                            <div class="preview-fleur__cell preview-fleur__cell--rose"></div>
+                                            <div class="preview-fleur__cell preview-fleur__cell--sage"></div>
+                                            <div class="preview-fleur__cell preview-fleur__cell--wine"></div>
+                                            <div class="preview-fleur__cell"></div>
+                                            <div class="preview-fleur__cell preview-fleur__cell--rose"></div>
+                                        </div>
+                                        <div class="preview-fleur__bar">
+                                            <div class="preview-fleur__bar-logo"></div>
+                                            <div class="preview-fleur__bar-txt"></div>
+                                            <div class="preview-fleur__bar-icon"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="preview-phone preview-phone--offset">
                                 <div class="preview-phone__screen">
-                                    <div class="preview-fleur preview-fleur--story">
-                                        <div class="preview-fleur__story-img"></div>
+                                    <div class="preview-fleur">
+                                        <div class="preview-fleur__bar">
+                                            <div class="preview-fleur__bar-logo"></div>
+                                            <div class="preview-fleur__bar-txt"></div>
+                                            <div class="preview-fleur__bar-icon"></div>
+                                        </div>
+                                        <div class="preview-fleur__feed">
+                                            <div class="preview-fleur__cell preview-fleur__cell--wine"></div>
+                                            <div class="preview-fleur__cell"></div>
+                                            <div class="preview-fleur__cell preview-fleur__cell--sage"></div>
+                                            <div class="preview-fleur__cell preview-fleur__cell--rose"></div>
+                                            <div class="preview-fleur__cell preview-fleur__cell--wine"></div>
+                                            <div class="preview-fleur__cell"></div>
+                                        </div>
+                                        <div class="preview-fleur__bar">
+                                            <div class="preview-fleur__bar-logo"></div>
+                                            <div class="preview-fleur__bar-txt"></div>
+                                            <div class="preview-fleur__bar-icon"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -706,3 +736,4 @@
     <script src="script.js?v=10"></script>
 </body>
 </html>
+

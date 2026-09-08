@@ -238,85 +238,138 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .preview-phone--offset { position: absolute; right: 12%; top: 15%; transform: scale(0.85); }
 .preview-phone__screen { width: 100%; height: 100%; border-radius: 8px; overflow: hidden; }
 
-/* --- Sorelle Skincare --- */
-.preview-sorelle { background: linear-gradient(135deg, #F5F0EA, #FBF9F6); width: 100%; height: 100%; padding: 6px; }
-.preview-sorelle__nav { display: flex; gap: 3px; margin-bottom: 6px; }
-.preview-sorelle__nav span { width: 12px; height: 2px; background: #C9A96E; border-radius: 1px; }
-.preview-sorelle__nav span:first-child { width: 18px; }
-.preview-sorelle__hero { text-align: center; padding: 8px 0 6px; }
-.preview-sorelle__title { width: 70%; height: 6px; background: #2C2C2C; border-radius: 2px; margin: 0 auto 3px; }
-.preview-sorelle__subtitle { width: 50%; height: 3px; background: #C9A96E; border-radius: 2px; margin: 0 auto 4px; }
-.preview-sorelle__btn { width: 28%; height: 5px; background: #C9A96E; border-radius: 2px; margin: 0 auto; }
-.preview-sorelle__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
-.preview-sorelle__card { aspect-ratio: 3/4; background: #EDE5D8; border-radius: 3px; }
+/* --- Sorelle Skincare (cream + gold gauge e-commerce) --- */
+.preview-sorelle { background: linear-gradient(160deg, #FBF9F6 0%, #F5F0EA 55%, #F5EDD8 100%); width: 100%; height: 100%; display: flex; flex-direction: column; }
+.preview-sorelle__bar { background: #fff; border-bottom: 1px solid #EADFCB; display: flex; align-items: center; gap: 8px; padding: 5px 7px; }
+.preview-sorelle__logo { width: 11px; height: 11px; background: #C9A96E; border-radius: 3px; }
+.preview-sorelle__nav-links { flex: 1; display: flex; gap: 5px; }
+.preview-sorelle__nav-links span { width: 12px; height: 2px; background: #c9bda8; border-radius: 1px; }
+.preview-sorelle__cart { width: 8px; height: 8px; border: 1.5px solid #C9A96E; border-radius: 50%; }
+.preview-sorelle__hero { padding: 8px 7px 6px; text-align: center; }
+.preview-sorelle__title { width: 72%; height: 7px; background: #2C2C2C; border-radius: 2px; margin: 0 auto 3px; font-family: var(--mono); }
+.preview-sorelle__subtitle { width: 55%; height: 3px; background: #C9A96E; border-radius: 2px; margin: 0 auto 4px; }
+.preview-sorelle__btn { width: 30%; height: 5px; background: #2C2C2C; border-radius: 2px; margin: 0 auto; }
+.preview-sorelle__grid { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 5px; padding: 0 7px 7px; }
+.preview-sorelle__card { background: #fff; border-radius: 4px; box-shadow: 0 1px 3px rgba(44,44,44,0.08); overflow: hidden; }
+.preview-sorelle__card-img { width: 100%; aspect-ratio: 1/1; background: #F5F0EA; }
+.preview-sorelle__card-img + div { padding: 3px 4px; }
+.preview-sorelle__card-title { width: 70%; height: 3px; background: #2C2C2C; border-radius: 1px; margin-bottom: 2px; }
+.preview-sorelle__card-price { width: 40%; height: 3px; background: #C9A96E; border-radius: 1px; }
 
-/* --- Moora Coffee --- */
+/* --- Moora Coffee (warm dark POS: product grid + cart) --- */
 .preview-moora { background: #1a1410; width: 100%; height: 100%; display: flex; }
-.preview-moora__sidebar { width: 28%; background: #14100c; padding: 6px 4px; border-right: 1px solid #2a2015; }
-.preview-moora__dot { width: 10px; height: 10px; background: #C89660; border-radius: 50%; margin: 0 auto 6px; }
-.preview-moora__line { height: 2px; background: #2a2015; border-radius: 1px; margin-bottom: 4px; }
-.preview-moora__line--short { width: 60%; }
-.preview-moora__main { flex: 1; padding: 6px; }
-.preview-moora__topbar { display: flex; gap: 3px; margin-bottom: 6px; }
-.preview-moora__topbar span { height: 3px; background: #2a2015; border-radius: 1px; flex: 1; }
-.preview-moora__topbar span:first-child { flex: 2; }
-.preview-moora__cards { display: flex; gap: 3px; margin-bottom: 6px; }
-.preview-moora__stat { flex: 1; height: 18px; background: #2a2015; border-radius: 2px; }
-.preview-moora__table { display: flex; flex-direction: column; gap: 3px; }
-.preview-moora__row { height: 5px; background: #2a2015; border-radius: 1px; }
-.preview-moora__row:first-child { background: #C89660; opacity: 0.3; }
+.preview-moora__grid { flex: 1; padding: 5px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; align-content: start; }
+.preview-moora__item { background: #fff; border-radius: 3px; padding: 2px; text-align: center; }
+.preview-moora__item-img { font-size: 0; width: 12px; height: 12px; margin: 0 auto 2px; border-radius: 3px; background: linear-gradient(135deg, #8E5F34, #B07A42); overflow: hidden; }
+.preview-moora__item:nth-child(3n) .preview-moora__item-img { background: linear-gradient(135deg, #7A6B4A, #B7A57A); }
+.preview-moora__item:nth-child(2n) .preview-moora__item-img { background: linear-gradient(135deg, #5C3A1E, #C89660); }
+.preview-moora__item:nth-child(4n) .preview-moora__item-img { background: linear-gradient(135deg, #B07A42, #8E5F34); }
+.preview-moora__item-name { width: 70%; height: 2px; background: #2A2A2A; border-radius: 1px; margin: 2px auto 1px; }
+.preview-moora__item-price { width: 50%; height: 2px; background: #8E5F34; border-radius: 1px; margin: 0 auto; }
+.preview-moora__cart { width: 34%; background: #fff; border-left: 1px solid #eee; padding: 5px; display: flex; flex-direction: column; }
+.preview-moora__cart label { font-size: 5px; font-weight: 700; color: #2A2A2A; margin-bottom: 3px; }
+.preview-moora__cart-line { height: 3px; background: #F5EDE0; border-radius: 1px; margin-bottom: 3px; }
+.preview-moora__cart-total { border-top: 1px solid #eee; margin-top: auto; padding-top: 4px; height: 4px; background: #B07A42; border-radius: 2px; }
 
-/* --- MindPulse --- */
+/* --- MindPulse (dark SaaS dashboard with indigo) --- */
 .preview-mindpulse { background: #09090b; width: 100%; height: 100%; display: flex; }
-.preview-mindpulse__sidebar { width: 22%; background: #111; padding: 6px 4px; border-right: 1px solid #27272a; }
-.preview-mindpulse__logo { width: 12px; height: 12px; background: #6366f1; border-radius: 3px; margin: 0 auto 8px; }
-.preview-mindpulse__nav-item { height: 2px; background: #27272a; border-radius: 1px; margin-bottom: 4px; }
-.preview-mindpulse__nav-item:first-of-type { background: #6366f1; opacity: 0.4; }
-.preview-mindpulse__content { flex: 1; padding: 6px; }
-.preview-mindpulse__header { display: flex; gap: 4px; margin-bottom: 6px; }
-.preview-mindpulse__header span { height: 3px; background: #27272a; border-radius: 1px; }
-.preview-mindpulse__header span:first-child { width: 40%; background: #fafafa; opacity: 0.3; }
-.preview-mindpulse__charts { display: flex; gap: 4px; }
-.preview-mindpulse__chart { flex: 1; background: #111; border-radius: 3px; padding: 4px; display: flex; align-items: flex-end; gap: 2px; }
-.preview-mindpulse__bar { flex: 1; background: #6366f1; border-radius: 1px 1px 0 0; min-height: 2px; }
-.preview-mindpulse__chart--line { align-items: stretch; }
-.preview-mindpulse__chart--line svg { width: 100%; height: 100%; }
+.preview-mindpulse__sidebar { width: 24%; background: #0c0c0e; padding: 6px 4px; border-right: 1px solid #1e1e21; }
+.preview-mindpulse__logo { width: 12px; height: 12px; background: linear-gradient(135deg, #6366f1, #818cf8); border-radius: 3px; margin: 0 auto 7px; }
+.preview-mindpulse__nav-item { height: 2px; background: #1e1e21; border-radius: 1px; margin-bottom: 4px; }
+.preview-mindpulse__nav-item--active { background: rgba(99,102,241,0.45); }
+.preview-mindpulse__content { flex: 1; padding: 6px; display: flex; flex-direction: column; }
+.preview-mindpulse__stats { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; margin-bottom: 5px; }
+.preview-mindpulse__stat { background: #111113; border: 1px solid #1e1e21; border-radius: 4px; padding: 3px; }
+.preview-mindpulse__stat-num { width: 55%; height: 5px; background: #fafafa; border-radius: 1px; margin-bottom: 2px; opacity: 0.9; }
+.preview-mindpulse__stat-lbl { width: 70%; height: 2px; background: #27272a; border-radius: 1px; }
+.preview-mindpulse__chart { flex: 1; background: #111113; border: 1px solid #1e1e21; border-radius: 4px; padding: 4px; display: flex; align-items: flex-end; gap: 2px; }
+.preview-mindpulse__bar { flex: 1; background: rgba(99,102,241,0.4); border-radius: 1px 1px 0 0; min-height: 2px; }
 
-/* --- Cococia --- */
-.preview-cococia { background: linear-gradient(135deg, #0f172a, #1e293b); width: 100%; height: 100%; padding: 6px; }
-.preview-cococia__nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
-.preview-cococia__logo { width: 14px; height: 14px; background: linear-gradient(135deg, #4ade80, #22d3ee); border-radius: 3px; }
-.preview-cococia__links { display: flex; gap: 4px; }
-.preview-cococia__links span { width: 10px; height: 2px; background: #475569; border-radius: 1px; }
-.preview-cococia__hero { padding: 6px 0 8px; }
-.preview-cococia__heading { width: 60%; height: 5px; background: rgba(255,255,255,0.4); border-radius: 2px; margin-bottom: 4px; }
-.preview-cococia__text { width: 80%; height: 2px; background: #475569; border-radius: 1px; margin-bottom: 3px; }
-.preview-cococia__text--short { width: 50%; }
-.preview-cococia__cols { display: flex; gap: 4px; }
-.preview-cococia__col { flex: 1; height: 28px; background: rgba(74,222,128,0.08); border: 1px solid rgba(74,222,128,0.15); border-radius: 3px; }
+/* --- Cococia (slate navy corporate, green/cyan accent) --- */
+.preview-cococia { background: #0f172a; width: 100%; height: 100%; display: flex; flex-direction: column; }
+.preview-cococia__nav { display: flex; align-items: center; gap: 7px; padding: 6px 7px; border-bottom: 1px solid #1e293b; }
+.preview-cococia__logo { width: 12px; height: 12px; background: linear-gradient(135deg, #4ade80, #22d3ee); border-radius: 3px; }
+.preview-cococia__links { flex: 1; display: flex; gap: 4px; }
+.preview-cococia__links span { width: 12px; height: 2px; background: #475569; border-radius: 1px; }
+.preview-cococia__btn { width: 16px; height: 5px; background: #22d3ee; border-radius: 2px; }
+.preview-cococia__hero { flex: 1; padding: 10px 7px; }
+.preview-cococia__heading { width: 65%; height: 6px; background: rgba(74,222,128,0.7); border-radius: 2px; margin-bottom: 4px; }
+.preview-cococia__text { width: 88%; height: 2.5px; background: #334155; border-radius: 1px; margin-bottom: 3px; }
+.preview-cococia__text--short { width: 55%; }
+.preview-cococia__cols { display: flex; gap: 5px; padding: 6px 7px; border-top: 1px solid #1e293b; }
+.preview-cococia__col { flex: 1; height: 26px; background: rgba(74,222,128,0.06); border: 1px solid rgba(74,222,128,0.14); border-radius: 4px; }
+.preview-cococia__col--mid { background: rgba(34,211,238,0.06); border-color: rgba(34,211,238,0.14); }
 
-/* --- Noora Nexus --- */
-.preview-noora { background: #09090b; width: 100%; height: 100%; padding: 6px; }
-.preview-noora__topbar { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
-.preview-noora__logo { width: 10px; height: 10px; background: #10b981; border-radius: 50%; }
-.preview-noora__search { flex: 1; height: 6px; background: #1f1f1f; border-radius: 3px; }
-.preview-noora__body { display: flex; gap: 4px; }
-.preview-noora__cards { display: flex; flex-direction: column; gap: 4px; width: 40%; }
-.preview-noora__card { height: 22px; background: #1a1a1a; border: 1px solid #27272a; border-radius: 3px; }
-.preview-noora__card:first-child { background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.2); }
-.preview-noora__list { flex: 1; display: flex; flex-direction: column; gap: 3px; }
-.preview-noora__item { height: 5px; background: #1a1a1a; border-radius: 1px; }
-.preview-noora__item:first-child { background: #10b981; opacity: 0.2; }
+/* --- Noora Nexus (dark ERP, emerald accent) --- */
+.preview-noora { background: #09090b; width: 100%; height: 100%; display: flex; flex-direction: column; }
+.preview-noora__topbar { display: flex; align-items: center; gap: 6px; padding: 5px 7px; border-bottom: 1px solid #1f1f23; }
+.preview-noora__logo { width: 9px; height: 9px; background: #10b981; border-radius: 2px; }
+.preview-noora__search { flex: 1; height: 5px; background: #1f1f23; border-radius: 3px; }
+.preview-noora__avatar { width: 8px; height: 8px; background: #27272a; border-radius: 50%; }
+.preview-noora__body { flex: 1; display: flex; gap: 5px; padding: 6px 7px; }
+.preview-noora__sidebar { width: 30%; display: flex; flex-direction: column; gap: 4px; }
+.preview-noora__side-item { height: 5px; background: #1f1f23; border-radius: 2px; }
+.preview-noora__side-item--active { background: #10b981; opacity: 0.5; }
+.preview-noora__main { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.preview-noora__card { flex: 1; background: #1f1f23; border: 1px solid #27272a; border-radius: 4px; }
+.preview-noora__card--emerald { background: rgba(16,185,129,0.08); border-color: rgba(16,185,129,0.2); }
+.preview-noora__list { flex: 1; display: flex; flex-direction: column; gap: 3px; justify-content: flex-end; }
+.preview-noora__item { height: 4px; background: #1f1f23; border-radius: 1px; }
 
-/* --- Fleur Hijab --- */
-.preview-fleur { background: #FDF8F3; width: 100%; height: 100%; padding: 4px; display: flex; flex-direction: column; gap: 3px; }
-.preview-fleur__post { flex: 1; border-radius: 3px; overflow: hidden; }
-.preview-fleur__img { width: 100%; height: 70%; background: linear-gradient(135deg, #E8DDD3, #F5E6E0); }
-.preview-fleur__caption { padding: 2px 3px; }
-.preview-fleur__caption span { display: block; height: 2px; background: #D4A5A5; border-radius: 1px; margin-bottom: 1px; }
-.preview-fleur__caption span:first-child { width: 60%; background: #8B2252; opacity: 0.4; }
-.preview-fleur--story { justify-content: center; align-items: center; }
-.preview-fleur__story-img { width: 80%; height: 70%; background: linear-gradient(135deg, #8B2252, #5C1A33); border-radius: 3px; }
+/* --- Fleur Hijab (cream + burgundy instagram feed) --- */
+.preview-fleur { background: #FDF8F3; width: 100%; height: 100%; padding: 3px; display: flex; flex-direction: column; gap: 3px; }
+.preview-fleur__feed { flex: 1; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; }
+.preview-fleur__cell { background: linear-gradient(135deg, #F5E6E0, #E8DDD3); border-radius: 2px; position: relative; }
+.preview-fleur__cell--rose { background: linear-gradient(135deg, #D4A5A5, #C9A9A6); }
+.preview-fleur__cell--sage { background: linear-gradient(135deg, #9CAF88, #A8B5A0); }
+.preview-fleur__cell--wine { background: linear-gradient(135deg, #8B2252, #5C1A33); }
+.preview-fleur__cell::after { content: ''; position: absolute; left: 3px; right: 3px; bottom: 3px; height: 3px; background: rgba(253,248,243,0.85); border-radius: 1px; }
+.preview-fleur__stories { display: flex; gap: 3px; padding: 3px 2px 0; }
+.preview-fleur__story { width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid #8B2252; background: #F5E6E0; }
+.preview-fleur__bar { display: flex; align-items: center; gap: 4px; padding: 3px 4px; }
+.preview-fleur__bar-logo { width: 8px; height: 8px; border-radius: 2px; background: #8B2252; }
+.preview-fleur__bar-txt { width: 40px; height: 2px; background: #D4A5A5; border-radius: 1px; }
+.preview-fleur__bar-icon { width: 6px; height: 6px; background: #D4A5A5; border-radius: 50%; margin-left: auto; }
+
+/* ========================================
+   Device Showcase — Work detail pages
+   Reuses the project previews above. Laptop + phone, no labels.
+   ======================================== */
+.device-showcase { display: flex; align-items: center; justify-content: center; gap: clamp(2.5rem, 6vw, 6rem); flex-wrap: wrap; padding: 1.5rem 0 2rem; }
+.device-showcase__item { flex-shrink: 0; overflow: hidden; }
+
+.device-showcase__laptop { width: 560px; height: 372px; display: flex; align-items: center; justify-content: center; }
+.device-showcase__laptop .preview-laptop { width: 320px; max-width: none; transform: scale(1.75); transform-origin: center; }
+
+.device-showcase__phone { width: 180px; height: 348px; display: flex; align-items: center; justify-content: center; }
+.device-showcase__phone .preview-phone { transform: scale(1.7); transform-origin: center; }
+
+/* Phone adaptations — same UI, mobile arrangement */
+.device-showcase__phone .preview-moora { flex-direction: column; }
+.device-showcase__phone .preview-moora__grid { grid-template-columns: 1fr 1fr; }
+.device-showcase__phone .preview-moora__cart { width: auto; border-left: none; border-top: 1px solid #ece5da; }
+.device-showcase__phone .preview-moora__cart-total { margin-top: auto; }
+.device-showcase__phone .preview-mindpulse__sidebar { display: none; }
+.device-showcase__phone .preview-cococia__cols { display: none; }
+.device-showcase__phone .preview-noora__sidebar { display: none; }
+
+@media (max-width: 1024px) {
+    .device-showcase__laptop { width: 448px; height: 298px; }
+    .device-showcase__laptop .preview-laptop { transform: scale(1.4); }
+    .device-showcase__phone { width: 156px; height: 300px; }
+    .device-showcase__phone .preview-phone { transform: scale(1.47); }
+}
+
+@media (max-width: 768px) {
+    .device-showcase { flex-direction: column; gap: 2rem; }
+    .device-showcase__laptop { width: 336px; height: 224px; }
+    .device-showcase__laptop .preview-laptop { transform: scale(1.05); }
+}
+
+@media (max-width: 480px) {
+    .device-showcase__laptop { width: 288px; height: 192px; }
+    .device-showcase__laptop .preview-laptop { transform: scale(0.9); }
+}
 
 /* ========================================
    FAQ
