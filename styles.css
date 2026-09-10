@@ -208,24 +208,49 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
    ======================================== */
 .projects { background: var(--blue); color: var(--white); }
 .projects .section-sub { color: rgba(255, 255, 255, 0.7); }
-.projects__grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 280px; gap: 1rem; }
+.projects__grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 320px; gap: 1rem; }
 .project { display: block; border-radius: 10px; overflow: hidden; transition: transform 0.4s ease; position: relative; }
 .project:hover { transform: translateY(-4px); }
 .project--wide { grid-column: span 2; }
 .project--tall { grid-row: span 2; }
-.project__visual { width: 100%; height: 100%; overflow: hidden; border-radius: 10px; position: relative; background: rgba(0, 0, 0, 0.2); }
-.project__img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.project__visual { width: 100%; height: 100%; overflow: hidden; border-radius: 10px; position: relative; background: rgba(0, 0, 0, 0.2); display: flex; align-items: center; justify-content: center; }
+.project__img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; position: absolute; inset: 0; }
 .project:hover .project__img { transform: scale(1.05); }
-.project__info { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.25rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); border-radius: 0 0 10px 10px; }
+.project__info { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.25rem; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); border-radius: 0 0 10px 10px; z-index: 2; }
 .project__tag { display: block; color: rgba(255, 255, 255, 0.5); margin-bottom: 0.35rem; }
 .project__name { font-family: var(--mono); font-size: 0.88rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.2rem; color: var(--white); text-transform: uppercase; }
 .project__type { font-size: 0.68rem; color: rgba(255, 255, 255, 0.55); }
+
+/* Project card device mockups inside grid */
+.project__devices { display: flex; align-items: center; justify-content: center; gap: 1rem; width: 100%; height: 100%; padding: 1.5rem; position: relative; z-index: 1; }
+.project__devices .preview-laptop { width: 55%; max-width: 220px; }
+.project__devices .preview-phone { width: 55px; height: 110px; }
+.project__devices .preview-phone .preview-phone__screen { border-radius: 6px; }
+.project__devices .preview-laptop__screen { border-width: 1.5px; }
+.project__devices .preview-laptop__base { height: 5px; }
+.project__devices .preview-laptop__base::before { width: 40px; height: 2px; }
+
+/* Project card image overlay (Fleur Hijab style) */
+.project__img-overlay { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; padding: 1rem; position: relative; z-index: 1; }
+.project__img-overlay img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px; }
+
+/* Responsive grid */
+@media (max-width: 1024px) {
+    .projects__grid { grid-auto-rows: 260px; }
+}
+@media (max-width: 768px) {
+    .projects__grid { grid-template-columns: 1fr; grid-auto-rows: auto; }
+    .project--wide { grid-column: span 1; }
+    .project--tall { grid-row: span 1; }
+    .project__visual { min-height: 240px; }
+    .project__devices .preview-laptop { width: 65%; max-width: 260px; }
+    .project__devices .preview-phone { width: 65px; height: 130px; }
+}
 
 /* ========================================
    Project Preview — Faithful Device Mockups
    Tiny renders of each project's real UI, scaled inside device frames.
    ======================================== */
-.project__visual { display: flex; align-items: center; justify-content: center; }
 
 /* Laptop frame */
 .preview-laptop { position: relative; width: 80%; max-width: 320px; }
@@ -430,7 +455,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 /* ========================================
    Device Showcase — Work detail pages
-   Laptop + phone, no labels.
+   Laptop + phone, with real images.
    ======================================== */
 .device-showcase { display: flex; align-items: center; justify-content: center; gap: clamp(2.5rem, 6vw, 6rem); flex-wrap: wrap; padding: 1.5rem 0 2rem; }
 .device-showcase__item { flex-shrink: 0; overflow: hidden; }
@@ -440,6 +465,19 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 .device-showcase__phone { width: 180px; height: 348px; display: flex; align-items: center; justify-content: center; }
 .device-showcase__phone .preview-phone { transform: scale(1.7); transform-origin: center; }
+
+/* Real image device showcase */
+.device-showcase--images { gap: clamp(2rem, 5vw, 5rem); }
+.device-showcase--images .preview-laptop__screen { padding: 0; border: none; background: #111; }
+.device-showcase--images .preview-laptop__screen img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.device-showcase--images .preview-phone__screen { padding: 0; border: none; }
+.device-showcase--images .preview-phone__screen img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.device-showcase--images .preview-laptop { border: none; background: none; }
+.device-showcase--images .preview-laptop__base { display: none; }
+
+/* Fleur Hijab — single image, no device frames */
+.device-showcase--single { padding: 2rem; }
+.device-showcase--single img { max-width: 100%; max-height: 400px; object-fit: contain; border-radius: 8px; }
 
 /* Phone adaptations — same real UI, mobile arrangement */
 .device-showcase__phone .preview-moora { flex-direction: column; }

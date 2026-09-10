@@ -83,27 +83,22 @@ document.querySelectorAll('.faq-item__q').forEach(btn => {
     });
 });
 
-// Contact Form
+// Contact Form → Email redirect
 const contactForm = document.getElementById('contactForm');
 const submitBtn = document.getElementById('submitBtn');
 const formMessage = document.getElementById('formMessage');
 if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
+    contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const btnText = submitBtn.querySelector('.btn__text');
-        const btnLoading = submitBtn.querySelector('.btn__loading');
-        btnText.style.display = 'none'; btnLoading.style.display = 'inline'; submitBtn.disabled = true;
-        formMessage.textContent = ''; formMessage.className = 'form__message';
-        const formData = { name: contactForm.name.value.trim(), email: contactForm.email.value.trim(), company: contactForm.company.value.trim(), service: contactForm.service.value, message: contactForm.message.value.trim() };
-        try {
-            if (!supabase) throw new Error('Supabase not initialized');
-            const { error } = await supabase.from('contact_submissions').insert([formData]);
-            if (error) throw error;
-            formMessage.textContent = "Thank you! We'll be in touch soon."; formMessage.classList.add('form__message--success'); contactForm.reset();
-        } catch (err) {
-            console.error('Supabase error:', err);
-            formMessage.textContent = 'Something went wrong. Please try again or email us directly.'; formMessage.classList.add('form__message--error');
-        } finally { btnText.style.display = 'inline'; btnLoading.style.display = 'none'; submitBtn.disabled = false; }
+        const name = contactForm.name.value.trim();
+        const email = contactForm.email.value.trim();
+        const company = contactForm.company.value.trim();
+        const service = contactForm.service.value;
+        const message = contactForm.message.value.trim();
+        const subject = encodeURIComponent(`Project Inquiry from ${name}${company ? ' — ' + company : ''}`);
+        const body = encodeURIComponent(`Hi Signal Society,\n\nMy name is ${name}${company ? ' from ' + company : ''}.\n\nService interested in: ${service || 'Not specified'}\n\n${message}\n\nBest regards,\n${name}\n${email}`);
+        window.location.href = `mailto:signalssoc@gmail.com?subject=${subject}&body=${body}`;
+        formMessage.textContent = 'Opening your email client...'; formMessage.classList.add('form__message--success');
     });
 }
 
