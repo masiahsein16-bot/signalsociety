@@ -73,40 +73,61 @@ document.querySelectorAll('.services__grid, .projects__grid, .faq__grid').forEac
 });
 
 // FAQ Accordion
-document.querySelectorAll('.faq-item__q').forEach(btn => {
+document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-item__q');
+    const body = item.querySelector('.faq-item__body');
+    if (!btn || !body) return;
     btn.addEventListener('click', () => {
-        const item = btn.closest('.faq-item');
         const wasActive = item.classList.contains('active');
-        document.querySelectorAll('.faq-item.active').forEach(i => i.classList.remove('active'));
-        if (!wasActive) item.classList.add('active');
-        btn.setAttribute('aria-expanded', !wasActive);
+        document.querySelectorAll('.faq-item.active').forEach(i => {
+            i.classList.remove('active');
+            i.querySelector('.faq-item__q')?.setAttribute('aria-expanded', 'false');
+        });
+        if (!wasActive) {
+            item.classList.add('active');
+            btn.setAttribute('aria-expanded', 'true');
+        }
     });
 });
 
-// Contact Form → Email redirect
+// Contact Form → Web3Forms auto-send
 const contactForm = document.getElementById('contactForm');
 const submitBtn = document.getElementById('submitBtn');
 const formMessage = document.getElementById('formMessage');
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const name = contactForm.name.value.trim();
-        const email = contactForm.email.value.trim();
-        const company = contactForm.company.value.trim();
-        const service = contactForm.service.value;
-        const message = contactForm.message.value.trim();
-        const subject = encodeURIComponent(`Project Inquiry from ${name}${company ? ' — ' + company : ''}`);
-        const body = encodeURIComponent(`Hi Signal Society,\n\nMy name is ${name}${company ? ' from ' + company : ''}.\n\nService interested in: ${service || 'Not specified'}\n\n${message}\n\nBest regards,\n${name}\n${email}`);
-        window.location.href = `mailto:signalssoc@gmail.com?subject=${subject}&body=${body}`;
+        const data = new FormData(contactForm);
+        data.append('access_key', '25baa88b-0069-44ce-828c-c8b059d3c0b9');
+        data.append('subject', `Project Inquiry from ${contactForm.name.value.trim()}`);
+        data.append('from_name', contactForm.name.value.trim());
+        data.append('replyto', contactForm.email.value.trim());
+
         submitBtn.disabled = true;
-        submitBtn.querySelector('.btn__text').textContent = 'Message sent ✓';
-        formMessage.innerHTML = '<strong>Your message has been sent to signalssoc@gmail.com.</strong> Please wait — we\'ll get back to you by email shortly.';
-        formMessage.classList.add('form__message--success');
-        contactForm.reset();
-        setTimeout(() => {
-            submitBtn.disabled = false;
-            submitBtn.querySelector('.btn__text').innerHTML = 'Send message <span class="arrow">→</span>';
-        }, 5000);
+        submitBtn.querySelector('.btn__text').textContent = 'Sending...';
+
+        try {
+            const res = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: data
+            });
+            const json = await res.json();
+            if (json.success) {
+                formMessage.innerHTML = '<strong>Message sent successfully.</strong> We\'ll get back to you shortly.';
+                formMessage.classList.add('form__message--success');
+                formMessage.classList.remove('form__message--error');
+                contactForm.reset();
+            } else {
+                throw new Error(json.message || 'Submission failed');
+            }
+        } catch (err) {
+            formMessage.innerHTML = '<strong>Something went wrong.</strong> Please try again or email us directly at signalssoc@gmail.com.';
+            formMessage.classList.add('form__message--error');
+            formMessage.classList.remove('form__message--success');
+        }
+
+        submitBtn.disabled = false;
+        submitBtn.querySelector('.btn__text').innerHTML = 'Send message <span class="arrow">→</span>';
     });
 }
 
