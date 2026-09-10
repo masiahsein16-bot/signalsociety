@@ -98,7 +98,15 @@ if (contactForm) {
         const subject = encodeURIComponent(`Project Inquiry from ${name}${company ? ' — ' + company : ''}`);
         const body = encodeURIComponent(`Hi Signal Society,\n\nMy name is ${name}${company ? ' from ' + company : ''}.\n\nService interested in: ${service || 'Not specified'}\n\n${message}\n\nBest regards,\n${name}\n${email}`);
         window.location.href = `mailto:signalssoc@gmail.com?subject=${subject}&body=${body}`;
-        formMessage.textContent = 'Opening your email client...'; formMessage.classList.add('form__message--success');
+        submitBtn.disabled = true;
+        submitBtn.querySelector('.btn__text').textContent = 'Message sent ✓';
+        formMessage.innerHTML = '<strong>Your message has been sent to signalssoc@gmail.com.</strong> Please wait — we\'ll get back to you by email shortly.';
+        formMessage.classList.add('form__message--success');
+        contactForm.reset();
+        setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.querySelector('.btn__text').innerHTML = 'Send message <span class="arrow">→</span>';
+        }, 5000);
     });
 }
 
