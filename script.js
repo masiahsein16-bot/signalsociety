@@ -82,10 +82,13 @@ document.querySelectorAll('.faq-item').forEach(item => {
         document.querySelectorAll('.faq-item.active').forEach(i => {
             i.classList.remove('active');
             i.querySelector('.faq-item__q')?.setAttribute('aria-expanded', 'false');
+            const b = i.querySelector('.faq-item__body');
+            if (b) b.style.maxHeight = '';
         });
         if (!wasActive) {
             item.classList.add('active');
             btn.setAttribute('aria-expanded', 'true');
+            body.style.maxHeight = body.scrollHeight + 'px';
         }
     });
 });
@@ -97,37 +100,36 @@ const formMessage = document.getElementById('formMessage');
 if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const data = new FormData(contactForm);
-        data.append('access_key', '25baa88b-0069-44ce-828c-c8b059d3c0b9');
-        data.append('subject', `Project Inquiry from ${contactForm.name.value.trim()}`);
-        data.append('from_name', contactForm.name.value.trim());
-        data.append('replyto', contactForm.email.value.trim());
+        const formData = new FormData(contactForm);
 
         submitBtn.disabled = true;
         submitBtn.querySelector('.btn__text').textContent = 'Sending...';
+        formMessage.innerHTML = '';
+        formMessage.className = 'form__message';
 
         try {
             const res = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                body: data
+                body: formData
             });
             const json = await res.json();
             if (json.success) {
+                submitBtn.querySelector('.btn__text').textContent = 'Sent ✓';
                 formMessage.innerHTML = '<strong>Message sent successfully.</strong> We\'ll get back to you shortly.';
                 formMessage.classList.add('form__message--success');
-                formMessage.classList.remove('form__message--error');
                 contactForm.reset();
+                setTimeout(() => {
+                    submitBtn.querySelector('.btn__text').innerHTML = 'Send message <span class="arrow">→</span>';
+                }, 5000);
             } else {
                 throw new Error(json.message || 'Submission failed');
             }
         } catch (err) {
-            formMessage.innerHTML = '<strong>Something went wrong.</strong> Please try again or email us directly at signalssoc@gmail.com.';
+            submitBtn.querySelector('.btn__text').innerHTML = 'Send message <span class="arrow">→</span>';
+            formMessage.innerHTML = '<strong>Something went wrong.</strong> Please email us directly at <a href="mailto:signalssoc@gmail.com" style="color:#4ade80;text-decoration:underline">signalssoc@gmail.com</a>.';
             formMessage.classList.add('form__message--error');
-            formMessage.classList.remove('form__message--success');
         }
-
         submitBtn.disabled = false;
-        submitBtn.querySelector('.btn__text').innerHTML = 'Send message <span class="arrow">→</span>';
     });
 }
 

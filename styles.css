@@ -551,7 +551,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .faq-item__icon { font-size: 1.1rem; font-weight: 300; transition: transform 0.3s ease; flex-shrink: 0; margin-left: 1rem; }
 .faq-item.active .faq-item__icon { transform: rotate(45deg); }
 .faq-item__body { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), padding 0.4s ease; }
-.faq-item.active .faq-item__body { max-height: 300px; padding-bottom: 1.25rem; }
+.faq-item.active .faq-item__body { max-height: 800px; padding-bottom: 1.25rem; }
 .faq-item__body p { font-size: 0.8rem; color: rgba(255, 255, 255, 0.45); line-height: 1.75; padding-left: 3rem; }
 .faq-item__body strong { color: var(--white); font-weight: 600; }
 
