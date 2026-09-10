@@ -9,8 +9,8 @@ window.addEventListener('error', () => { document.getElementById('pageLoader')?.
 // Supabase
 const SUPABASE_URL = 'https://iemdkhpvatoewujqlbbh.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImllbWRraHB2YXRvZXd1anFsYmJoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc5MDE2MjUsImV4cCI6MjEwMzQ3NzYyNX0.EIzkjs9Md72aKzowpIHiLKj7eR7rxbv4noNS_fzzoBE';
-let supabase = null;
-try { if (window.supabase) supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); } catch (e) { console.warn('Supabase init failed:', e); }
+let supabaseClient = null;
+try { if (window.supabase) supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); } catch (e) { console.warn('Supabase init failed:', e); }
 
 // Cursor Glow
 const cursorGlow = document.getElementById('cursorGlow');
