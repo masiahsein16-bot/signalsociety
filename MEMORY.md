@@ -8,27 +8,25 @@ Signal Society is a digital infrastructure agency/consultancy. The website serve
 2. **Signal Build** — Websites & Digital Experiences (websites, landing pages)
 3. **Signal Operate** — ERP, POS & Business Systems (custom tools, management systems)
 
-## Design Language (v7)
-- Dark tech / terminal aesthetic
-- Monospace everything (Space Mono)
-- Black backgrounds only, no beige/white/cream
-- Minimalist separators (| and ·) instead of em-dashes
-- Professional but casual UX copy
+## Design Language (v8 — light editorial)
+- Light premium aesthetic: white / off-white + deep black + blue gradients
+- Headlines + technical labels: Space Mono
+- Body, nav, buttons, descriptions: Montserrat (readable)
+- Blue-dominant gradient system (atmospheric orbs, gradient text accents, gradient cards/CTA)
 - BEM CSS methodology
 - Smooth animations (IntersectionObserver)
 
-## Color Palette (Strict)
-- `--blue: #1A1AFF` — Primary accent
-- `--orange: #FF6600` — Secondary accent
-- `--dark: #0A0A0A` — Primary background
-- `--dark-surface: #111111` — Section backgrounds
-- `--dark-elevated: #1a1a1a` — Elevated surfaces
-- `--dark-border: #1f1f1f` — Border color
-- `--gray: #6B6B6B` — Muted text
-- `--gray-light: #999999` — Secondary text
-- `--white: #FFFFFF` — Primary text
+## Color Palette (v8 light)
+- `--white: #FFFFFF`, `--off-white: #F7F8FA`, `--soft-gray: #EEF1F5`
+- `--black: #080808`, `--navy: #10162F`
+- `--blue: #2457FF`, `--blue-electric: #397BFF`, `--blue-light: #8EC5FF`, `--blue-very-light: #EAF4FF`
+- Dark `#080808` section reserved for Why bands only
 
-**BANNED colors:** beige, cream, off-white, sand, any light background
+## Site Architecture (multi-page, static)
+- `/`, `/about/`, `/services/`, `/services/signal-grow|build|operate/`
+- `/work/` + 6 detail pages, `/why-us/`, `/faqs/`, `/contact/`
+- `/process/` — How We Work: 6 progress steps (Discovery → Proposal → 50% kickoff → Build → Launch → Ownership), vanilla scroll-driven horizontal rail
+- Legacy dark single-page design lives in `main` history (up to commit a6ca1a1); light redesign snapshot also saved on branch `redesign/light-v8`
 
 ## Brand Identity
 - Clean, minimal, tech-forward

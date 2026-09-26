@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <title>Signal Society</title>
+  <g fill="#2457FF">
+    <circle cx="81.8" cy="91.1" r="10.5"/>
+    <circle cx="66.6" cy="97.4" r="11.5"/>
+    <circle cx="50.2" cy="96.7" r="11"/>
+    <circle cx="35.6" cy="89.1" r="9.5"/>
+    <circle cx="25.6" cy="76.1" r="8"/>
+    <circle cx="22" cy="60" r="7"/>
+    <circle cx="25.6" cy="43.9" r="6.5"/>
+    <circle cx="35.6" cy="30.9" r="6"/>
+    <circle cx="50.2" cy="23.3" r="5"/>
+    <circle cx="66.6" cy="22.6" r="4.2"/>
+    <circle cx="81.8" cy="28.9" r="3.4"/>
+    <circle cx="92.9" cy="41" r="2.8"/>
+  </g>
+</svg>

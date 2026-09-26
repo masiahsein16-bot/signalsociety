@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <style>
+      @keyframes expand {
+        0% { r: 24; opacity: 0.6; stroke-width: 1.5; }
+        100% { r: 200; opacity: 0; stroke-width: 0.3; }
+      }
+      .ring { fill: none; animation: expand 4s ease-out infinite; }
+      .ring--1 { stroke: #FF6600; animation-delay: 0s; }
+      .ring--2 { stroke: #1A1AFF; animation-delay: 0.8s; }
+      .ring--3 { stroke: #1A1AFF; animation-delay: 1.6s; }
+      .ring--4 { stroke: #FF6600; animation-delay: 2.4s; opacity: 0.3; }
+      .ring--5 { stroke: #1A1AFF; animation-delay: 3.2s; }
+      .dot { fill: #FF6600; }
+    </style>
+  </defs>
+  <circle class="dot" cx="200" cy="200" r="6"/>
+  <circle class="ring ring--1" cx="200" cy="200" r="24"/>
+  <circle class="ring ring--2" cx="200" cy="200" r="24"/>
+  <circle class="ring ring--3" cx="200" cy="200" r="24"/>
+  <circle class="ring ring--4" cx="200" cy="200" r="24"/>
+  <circle class="ring ring--5" cx="200" cy="200" r="24"/>
+</svg>

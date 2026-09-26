@@ -9,5 +9,8 @@
   },
   "keywords": [],
   "author": "Signal Society",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "sharp": "^0.35.4"
+  }
 }

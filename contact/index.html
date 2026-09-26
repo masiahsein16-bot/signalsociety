@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start a Project — Signal Society</title>
+<meta name="description" content="Got a project in mind? Let's build it. Tell us what you're working on. We'll figure out the best way to help.">
+<link rel="icon" type="image/svg+xml" href="/logosignalsociety/logosignalsociety-signal.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=26">
+</head>
+<body class="page-contact">
+<header class="site-header" id="siteHeader"><div class="site-header__inner">
+<a href="/" class="brand"><img src="/logosignalsociety/logosignalsociety-signal.svg" alt="Signal Society" class="brand__logo"><span class="brand__text">Signal Society</span></a>
+<nav class="site-header__nav">
+<a href="/" class="site-header__link">Home</a>
+<a href="/about/" class="site-header__link">About</a>
+<a href="/services/" class="site-header__link">Services</a>
+<a href="/work/" class="site-header__link">Work</a>
+<a href="/process/" class="site-header__link">Process</a>
+<a href="/why-us/" class="site-header__link">Why Us</a>
+<a href="/faqs/" class="site-header__link">FAQs</a>
+</nav>
+<a href="/contact/" class="btn btn--blue site-header__cta">Start a project →</a>
+<button class="menu-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span></button>
+</div></header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true"><div class="mobile-menu__inner">
+<a href="/" class="mobile-menu__link">Home</a>
+<a href="/about/" class="mobile-menu__link">About</a>
+<a href="/services/" class="mobile-menu__link">Services</a>
+<a href="/work/" class="mobile-menu__link">Work</a>
+<a href="/process/" class="mobile-menu__link">Process</a>
+<a href="/why-us/" class="mobile-menu__link">Why Us</a>
+<a href="/faqs/" class="mobile-menu__link">FAQs</a>
+<a href="/contact/" class="btn btn--blue btn--large">Start a project →</a></div></div>
+<main>
+<section class="page-hero page-hero--tint"><div class="hero-atmos" aria-hidden="true"><div class="hero-atmos__grid"></div><div class="hero-atmos__orb hero-atmos__orb--1"></div><div class="hero-atmos__orb hero-atmos__orb--2"></div></div>
+<div class="container" style="position:relative;z-index:1">
+<nav class="breadcrumb mono-label"><a href="/">Home</a><span class="sep">/</span><span>Contact</span></nav>
+<span class="eyebrow reveal">Start a project</span>
+<h1 class="display reveal" style="margin:1rem 0;font-size:clamp(2.2rem,5.5vw,4.4rem)">Got a project<br>in mind?<br>Let's build it.</h1>
+<p class="lead reveal">Tell us what you're working on. We'll figure out the best way to help.</p>
+</div></section>
+<section class="section" style="padding-top:3.5rem"><div class="container"><div class="two-col">
+<div class="reveal">
+<span class="eyebrow">Contact</span>
+<h2 class="h2" style="margin:1rem 0;font-size:clamp(1.3rem,2.5vw,1.8rem)">Let's build something.</h2>
+<div class="meta-row" style="border:none;padding:0;margin:1.5rem 0">
+<div class="meta-row__item"><span class="meta-row__label">Email</span><a class="meta-row__value" href="mailto:signalssoc@gmail.com" style="color:var(--blue);font-weight:700">signalssoc@gmail.com</a></div>
+<div class="meta-row__item"><span class="meta-row__label">Phone</span><a class="meta-row__value" href="tel:+628214642769">+62 821-4642-769</a></div>
+<div class="meta-row__item"><span class="meta-row__label">Base</span><span class="meta-row__value">Indonesia</span></div>
+</div>
+<p class="lead">Prefer social? <a href="https://instagram.com/signal.soc" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">Instagram →</a></p>
+</div>
+<div class="reveal"><form class="form-card contact-form" id="contactForm">
+<input type="hidden" name="access_key" value="25baa88b-0069-44ce-828c-c8b059d3c0b9">
+<input type="checkbox" name="botcheck" style="display:none">
+<div class="form__row">
+<div class="form__group"><label class="mono-label form__label" for="name">Name</label><input class="form__input" type="text" id="name" name="name" placeholder="Your name" required></div>
+<div class="form__group"><label class="mono-label form__label" for="email">Email</label><input class="form__input" type="email" id="email" name="email" placeholder="you@company.com" required></div>
+</div>
+<div class="form__group"><label class="mono-label form__label" for="company">Company</label><input class="form__input" type="text" id="company" name="company" placeholder="Your company name"></div>
+<div class="form__group"><label class="mono-label form__label" for="service">How can we help?</label>
+<select class="form__input form__select" id="service" name="service"><option value="" disabled selected>Pick a service</option><option value="signal-grow">Signal Grow</option><option value="signal-build">Signal Build</option><option value="signal-operate">Signal Operate</option><option value="multiple">Not sure yet. Let's figure it out.</option></select></div>
+<div class="form__group"><label class="mono-label form__label" for="budget">Budget</label>
+<select class="form__input form__select" id="budget" name="budget"><option value="" disabled selected>Pick a range</option><option value="1-10">Rp 1 – 10 juta</option><option value="10-50">Rp 10 – 50 juta</option><option value="50-100">Rp 50 – 100 juta</option><option value="100plus">Di atas Rp 100 juta</option></select></div>
+<div class="form__group"><label class="mono-label form__label" for="message">Tell us about your project</label><textarea class="form__input form__textarea" id="message" name="message" placeholder="What are you looking to build?" rows="5" required></textarea></div>
+<button type="submit" class="btn btn--blue btn--large btn--full" id="submitBtn"><span class="btn__text">Send message <span class="arrow">→</span></span></button>
+<div class="form__message" id="formMessage" role="status"></div>
+</form></div>
+</div></div></section>
+</main>
+<footer class="footer"><div class="container"><div class="footer__grid"><div><a href="/" class="brand"><img src="/logosignalsociety/logosignalsociety-signal.svg" alt="Signal Society" class="brand__logo"><span class="brand__text">Signal Society</span></a><p class="footer__tagline">Infrastructure behind your growth.</p></div><div><span class="mono-label footer__heading">Navigation</span><a href="/about/" class="footer__link">About</a><a href="/services/" class="footer__link">Services</a><a href="/work/" class="footer__link">Work</a><a href="/why-us/" class="footer__link">Why Us</a><a href="/faqs/" class="footer__link">FAQs</a><a href="/process/" class="footer__link">Process</a><a href="/contact/" class="footer__link">Contact</a></div><div><span class="mono-label footer__heading">Social</span><a href="https://instagram.com/signal.soc" target="_blank" rel="noopener" class="footer__link">Instagram</a></div><div><span class="mono-label footer__heading">Contact</span><a href="mailto:signalssoc@gmail.com" class="footer__link">signalssoc@gmail.com</a><a href="tel:+628214642769" class="footer__link">+62 821-4642-769</a><span class="footer__link">Indonesia</span></div></div><div class="footer__bottom"><p class="mono-label">© 2026 Signal Society. All rights reserved.</p></div></div></footer>
+<script src="/script.js?v=25"></script>
+</body>
+</html>

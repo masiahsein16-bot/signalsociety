@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="400" height="320">
+  <defs>
+    <style>
+      @keyframes ringPulse { 0% { opacity: 0.6; transform: scale(1); } 100% { opacity: 0; transform: scale(1.4); } }
+      @keyframes nodeGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+      @keyframes satOrbit { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
+      @keyframes connPulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+      @keyframes twinkle { 0%, 100% { opacity: 0; transform: scale(0.5); } 50% { opacity: 1; transform: scale(1.5); } }
+      
+      .ring { fill: none; animation: ringPulse 2.5s ease-out infinite; transform-origin: center; transform-box: fill-box; }
+      .ring--1 { stroke: #FF6600; stroke-width: 2; animation-delay: 0s; }
+      .ring--2 { stroke: #1A1AFF; stroke-width: 1; animation-delay: 0.5s; }
+      .ring--3 { stroke: #FF6600; stroke-width: 0.6; animation-delay: 1s; }
+      .ring--4 { stroke: #1A1AFF; stroke-width: 0.3; animation-delay: 1.5s; }
+      
+      .node-c { fill: #FF6600; animation: nodeGlow 2s ease-in-out infinite; }
+      
+      .sat { animation: satOrbit 2s ease-in-out infinite; }
+      .sat--1 { fill: #1A1AFF; animation-delay: 0s; }
+      .sat--2 { fill: #FF6600; animation-delay: 0.3s; }
+      .sat--3 { fill: #1A1AFF; animation-delay: 0.6s; }
+      .sat--4 { fill: #FF6600; animation-delay: 0.9s; }
+      .sat--5 { fill: #1A1AFF; animation-delay: 1.2s; }
+      .sat--6 { fill: #FF6600; animation-delay: 1.5s; }
+      
+      .conn { animation: connPulse 2s ease-in-out infinite; }
+      .conn--1 { stroke: #1A1AFF; stroke-width: 0.8; animation-delay: 0s; }
+      .conn--2 { stroke: #FF6600; stroke-width: 0.8; animation-delay: 0.3s; }
+      .conn--3 { stroke: #1A1AFF; stroke-width: 0.6; animation-delay: 0.6s; }
+      .conn--4 { stroke: #FF6600; stroke-width: 0.6; animation-delay: 0.9s; }
+      .conn--5 { stroke: #1A1AFF; stroke-width: 0.6; animation-delay: 1.2s; }
+      .conn--6 { stroke: #FF6600; stroke-width: 0.8; animation-delay: 1.5s; }
+      
+      .twinkle { animation: twinkle 2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+      .twinkle--1 { fill: #fff; animation-delay: 0s; }
+      .twinkle--2 { fill: #FF6600; animation: twinkle 2.5s ease-in-out 0.5s infinite; }
+      .twinkle--3 { fill: #1A1AFF; animation: twinkle 1.8s ease-in-out 1s infinite; }
+      .twinkle--4 { fill: #fff; animation: twinkle 2.2s ease-in-out 1.5s infinite; }
+    </style>
+  </defs>
+  
+  <!-- Central hub rings -->
+  <circle class="ring ring--1" cx="200" cy="160" r="24"/>
+  <circle class="ring ring--2" cx="200" cy="160" r="50"/>
+  <circle class="ring ring--3" cx="200" cy="160" r="80"/>
+  <circle class="ring ring--4" cx="200" cy="160" r="115"/>
+  
+  <!-- Hub center -->
+  <circle class="node-c" cx="200" cy="160" r="6"/>
+  
+  <!-- Orbiting satellites -->
+  <circle class="sat sat--1" cx="200" cy="80" r="4"/>
+  <circle class="sat sat--2" cx="280" cy="120" r="3"/>
+  <circle class="sat sat--3" cx="300" cy="200" r="3"/>
+  <circle class="sat sat--4" cx="240" cy="260" r="4"/>
+  <circle class="sat sat--5" cx="120" cy="240" r="3"/>
+  <circle class="sat sat--6" cx="100" cy="140" r="3"/>
+  
+  <!-- Connection lines -->
+  <line class="conn conn--1" x1="200" y1="160" x2="200" y2="80"/>
+  <line class="conn conn--2" x1="200" y1="160" x2="280" y2="120"/>
+  <line class="conn conn--3" x1="200" y1="160" x2="300" y2="200"/>
+  <line class="conn conn--4" x1="200" y1="160" x2="240" y2="260"/>
+  <line class="conn conn--5" x1="200" y1="160" x2="120" y2="240"/>
+  <line class="conn conn--6" x1="200" y1="160" x2="100" y2="140"/>
+  
+  <!-- Twinkle stars -->
+  <circle class="twinkle twinkle--1" cx="50" cy="60" r="1"/>
+  <circle class="twinkle twinkle--2" cx="350" cy="80" r="1.5"/>
+  <circle class="twinkle twinkle--3" cx="370" cy="280" r="1"/>
+  <circle class="twinkle twinkle--4" cx="30" cy="270" r="1.5"/>
+</svg>

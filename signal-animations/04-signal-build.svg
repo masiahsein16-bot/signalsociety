@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="400" height="320">
+  <defs>
+    <style>
+      @keyframes bracketPulse { 0%, 100% { opacity: 0.15; } 50% { opacity: 0.35; } }
+      @keyframes flowMove { 0% { opacity: 0.3; transform: translateX(-10px); } 50% { opacity: 1; transform: translateX(10px); } 100% { opacity: 0.3; transform: translateX(-10px); } }
+      @keyframes ringPulse { 0% { opacity: 0.6; transform: scale(1); } 100% { opacity: 0; transform: scale(1.4); } }
+      @keyframes nodeGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+      
+      .bracket { font-family: monospace; font-size: 80px; animation: bracketPulse 3s ease-in-out infinite; }
+      .bracket--l { fill: #1A1AFF; animation-delay: 0s; }
+      .bracket--r { fill: #1A1AFF; animation-delay: 1.5s; }
+      
+      .circuit { opacity: 0.3; }
+      .circuit line { stroke-width: 1; }
+      .circuit-v { stroke-width: 0.5; }
+      
+      .flow { animation: flowMove 2s ease-in-out infinite; }
+      .flow--1 { fill: #1A1AFF; animation-delay: 0s; }
+      .flow--2 { fill: #FF6600; animation-delay: 0.5s; }
+      .flow--3 { fill: #1A1AFF; animation-delay: 1s; }
+      .flow--4 { fill: #FF6600; animation-delay: 1.5s; }
+      
+      .ring { fill: none; animation: ringPulse 2.5s ease-out infinite; transform-origin: center; transform-box: fill-box; }
+      .ring--1 { stroke: #FF6600; stroke-width: 1; animation-delay: 0s; }
+      .ring--2 { stroke: #1A1AFF; stroke-width: 0.5; animation-delay: 0.5s; }
+      
+      .node-c { fill: #FF6600; animation: nodeGlow 2s ease-in-out infinite; }
+      .node-sm { animation: nodeGlow 2s ease-in-out infinite; }
+    </style>
+  </defs>
+  
+  <!-- Code brackets -->
+  <text class="bracket bracket--l" x="60" y="180">&lt;</text>
+  <text class="bracket bracket--r" x="280" y="180">/&gt;</text>
+  
+  <!-- Circuit board lines -->
+  <g class="circuit">
+    <line x1="120" y1="80" x2="280" y2="80" stroke="#1A1AFF"/>
+    <line x1="120" y1="120" x2="220" y2="120" stroke="#FF6600"/>
+    <line x1="150" y1="160" x2="280" y2="160" stroke="#1A1AFF"/>
+    <line x1="120" y1="200" x2="250" y2="200" stroke="#FF6600"/>
+    <line x1="140" y1="240" x2="280" y2="240" stroke="#1A1AFF"/>
+    <!-- Vertical connectors -->
+    <line class="circuit-v" x1="180" y1="80" x2="180" y2="120" stroke="#1A1AFF"/>
+    <line class="circuit-v" x1="220" y1="120" x2="220" y2="160" stroke="#FF6600"/>
+    <line class="circuit-v" x1="250" y1="200" x2="250" y2="240" stroke="#1A1AFF"/>
+  </g>
+  
+  <!-- Active node -->
+  <circle class="node-c" cx="200" cy="160" r="8"/>
+  <circle class="ring ring--1" cx="200" cy="160" r="18"/>
+  <circle class="ring ring--2" cx="200" cy="160" r="32"/>
+  
+  <!-- Data flow dots -->
+  <circle class="flow flow--1" cx="140" cy="80" r="2"/>
+  <circle class="flow flow--2" cx="260" cy="120" r="2"/>
+  <circle class="flow flow--3" cx="180" cy="200" r="2"/>
+  <circle class="flow flow--4" cx="240" cy="240" r="2"/>
+  
+  <!-- Corner nodes -->
+  <circle class="node-sm" cx="120" cy="80" r="3" fill="#1A1AFF"/>
+  <circle class="node-sm" cx="280" cy="80" r="3" fill="#1A1AFF"/>
+  <circle class="node-sm" cx="280" cy="240" r="3" fill="#1A1AFF"/>
+  <circle class="node-sm" cx="120" cy="240" r="3" fill="#FF6600"/>
+</svg>

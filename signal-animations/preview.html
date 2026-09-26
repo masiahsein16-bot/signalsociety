@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signal Animations - Preview & Record</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      background: #0A0A0A; 
+      color: #fff; 
+      font-family: 'Space Mono', monospace;
+      padding: 2rem;
+    }
+    h1 { margin-bottom: 1rem; font-size: 1.5rem; }
+    .grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 2rem;
+    }
+    .card {
+      background: #111;
+      border: 1px solid #1f1f1f;
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .card h2 { font-size: 0.9rem; margin-bottom: 1rem; color: #FF6600; }
+    .anim-wrap {
+      background: repeating-conic-gradient(#1a1a1a 0% 25%, #0a0a0a 0% 50%) 50% / 20px 20px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1;
+      overflow: hidden;
+    }
+    .anim-wrap img { width: 100%; height: 100%; }
+    .btn {
+      margin-top: 1rem;
+      background: #FF6600;
+      color: #000;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.8rem;
+    }
+    .btn:hover { background: #ff8533; }
+  </style>
+</head>
+<body>
+  <h1>Signal Animations Collection</h1>
+  <p style="margin-bottom: 2rem; color: #666;">Preview all animations. Use screen recorder to capture as MP4 with transparency.</p>
+  
+  <div class="grid">
+    <div class="card">
+      <h2>01 - Hero Signal</h2>
+      <div class="anim-wrap">
+        <img src="01-hero-signal.svg" alt="Hero signal">
+      </div>
+    </div>
+    <div class="card">
+      <h2>02 - About Signal</h2>
+      <div class="anim-wrap">
+        <img src="02-about-signal.svg" alt="About signal">
+      </div>
+    </div>
+    <div class="card">
+      <h2>03 - Signal Grow</h2>
+      <div class="anim-wrap">
+        <img src="03-signal-grow.svg" alt="Signal grow">
+      </div>
+    </div>
+    <div class="card">
+      <h2>04 - Signal Build</h2>
+      <div class="anim-wrap">
+        <img src="04-signal-build.svg" alt="Signal build">
+      </div>
+    </div>
+    <div class="card">
+      <h2>05 - Signal Operate</h2>
+      <div class="anim-wrap">
+        <img src="05-signal-operate.svg" alt="Signal operate">
+      </div>
+    </div>
+    <div class="card">
+      <h2>06 - Logo Reveal</h2>
+      <div class="anim-wrap">
+        <img src="06-logo-reveal.svg" alt="Logo reveal">
+      </div>
+    </div>
+  </div>
+  
+  <div style="margin-top: 2rem; padding: 1.5rem; background: #111; border-radius: 12px; border: 1px solid #1f1f1f;">
+    <h2 style="color: #FF6600; margin-bottom: 1rem;">How to Record as MP4</h2>
+    <ol style="color: #999; line-height: 1.8; padding-left: 1.2rem;">
+      <li>Open this file in Chrome</li>
+      <li>Use OBS Studio or ScreenFlow to record</li>
+      <li>Set background to green screen</li>
+      <li>Record each animation (pause between)</li>
+      <li>In video editor, apply chroma key to remove green</li>
+      <li>Export as MP4 with alpha channel (ProRes 4444 or H.264 with transparency)</li>
+    </ol>
+    <p style="color: #666; margin-top: 1rem; font-size: 0.85rem;">
+      Alternative: Use <a href="https://github.com/nickvdyck/webscreenrecorder" style="color: #FF6600;">webscreenrecorder</a> or 
+      <a href="https://www.electronjs.org/apps" style="color: #FF6600;">Electron screen recorder</a> for automated capture.
+    </p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="400" height="320">
+  <defs>
+    <style>
+      @keyframes barGrow { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; } }
+      @keyframes lineDraw { 0% { stroke-dashoffset: 400; } 100% { stroke-dashoffset: 0; } }
+      @keyframes dotPulse { 0%, 100% { r: 3; opacity: 0.5; } 50% { r: 6; opacity: 1; } }
+      @keyframes ringPulse { 0% { opacity: 0.6; transform: scale(1); } 100% { opacity: 0; transform: scale(1.4); } }
+      @keyframes sparkle { 0%, 100% { opacity: 0; transform: scale(0); } 50% { opacity: 1; transform: scale(1.5); } }
+      
+      .bar { rx: 4; animation: barGrow 3s ease-in-out infinite; }
+      .bar--1 { fill: #1A1AFF; animation-delay: 0s; }
+      .bar--2 { fill: #1A1AFF; animation-delay: 0.3s; }
+      .bar--3 { fill: #FF6600; animation-delay: 0.6s; }
+      .bar--4 { fill: #FF6600; animation-delay: 0.9s; }
+      .bar--5 { fill: #FF6600; animation-delay: 1.2s; }
+      .bar--6 { fill: #FF6600; animation-delay: 1.5s; }
+      
+      .growth-line { fill: none; stroke: #FF6600; stroke-width: 2; stroke-dasharray: 400; animation: lineDraw 3s ease-in-out infinite; }
+      
+      .dot { animation: dotPulse 2s ease-in-out infinite; }
+      .dot--1 { fill: #1A1AFF; animation-delay: 0s; }
+      .dot--2 { fill: #FF6600; animation-delay: 0.5s; }
+      .dot--3 { fill: #FF6600; animation-delay: 1s; }
+      
+      .ring { fill: none; stroke: #FF6600; animation: ringPulse 2.5s ease-out infinite; transform-origin: center; transform-box: fill-box; }
+      .ring--1 { stroke-width: 1; animation-delay: 0s; }
+      .ring--2 { stroke-width: 0.5; animation-delay: 0.5s; }
+      
+      .sparkle { fill: #fff; animation: sparkle 2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+      .sparkle--1 { animation-delay: 0s; }
+      .sparkle--2 { fill: #FF6600; animation: sparkle 2.5s ease-in-out 0.7s infinite; }
+      .sparkle--3 { fill: #1A1AFF; animation: sparkle 1.8s ease-in-out 1.3s infinite; }
+    </style>
+  </defs>
+  
+  <!-- Growth bars -->
+  <rect class="bar bar--1" x="40" y="240" width="30" height="60"/>
+  <rect class="bar bar--2" x="90" y="200" width="30" height="100"/>
+  <rect class="bar bar--3" x="140" y="160" width="30" height="140"/>
+  <rect class="bar bar--4" x="190" y="120" width="30" height="180"/>
+  <rect class="bar bar--5" x="240" y="80" width="30" height="220"/>
+  <rect class="bar bar--6" x="290" y="50" width="30" height="250"/>
+  
+  <!-- Growth line -->
+  <polyline class="growth-line" points="55,235 105,195 155,155 205,115 255,75 305,45"/>
+  
+  <!-- Signal dots on line -->
+  <circle class="dot dot--1" cx="55" cy="235" r="4"/>
+  <circle class="dot dot--2" cx="155" cy="155" r="4"/>
+  <circle class="dot dot--3" cx="305" cy="45" r="6"/>
+  
+  <!-- Signal rings on top dot -->
+  <circle class="ring ring--1" cx="305" cy="45" r="12"/>
+  <circle class="ring ring--2" cx="305" cy="45" r="24"/>
+  
+  <!-- Sparkles -->
+  <circle class="sparkle sparkle--1" cx="320" cy="30" r="1.5"/>
+  <circle class="sparkle sparkle--2" cx="280" cy="40" r="1"/>
+  <circle class="sparkle sparkle--3" cx="310" cy="60" r="1"/>
+</svg>
