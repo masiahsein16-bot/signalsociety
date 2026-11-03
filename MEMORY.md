@@ -8,26 +8,19 @@ Signal Society is a digital infrastructure agency/consultancy. The website serve
 2. **Signal Build** — Websites & Digital Experiences (websites, landing pages)
 3. **Signal Operate** — ERP, POS & Business Systems (custom tools, management systems)
 
-## Design Language (v9 — "Signal over Noise", current)
-- Void #0A0910 stage + white/paper pages; Signal Violet #7A33FF used sparingly as the one accent (Violet 400 #9A66FF for violet text on dark)
-- Fonts: Archivo (display, expanded width 112–125) + Instrument Sans (body, labels in caps). No monospace or script faces
-- Logo: Signal Ring (12-dot ring, constant gap, geometric size ramp) — `logosignalsociety/signal-ring*.svg`, favicons, lockups
-- Square edges (4px controls, 0 panels); only dots are round. No glass tiles, twinkles or blue gradients
-- Legacy token names (--blue, --black …) kept and remapped so inline styles keep working; HTML body markup and script.js unchanged from v8
-- Previous light v8 site preserved on branch `backup/website-lama-v8`
-
-## Design Language (v8 — light editorial, superseded)
-- Light premium aesthetic: white / off-white + deep black + blue gradients
+## Design Language (v8 — light editorial)
+- Light premium aesthetic: white / off-white + deep black + purple gradients
 - Headlines + technical labels: Space Mono
 - Body, nav, buttons, descriptions: Montserrat (readable)
-- Blue-dominant gradient system (atmospheric orbs, gradient text accents, gradient cards/CTA)
+- Purple-dominant gradient system (atmospheric orbs, gradient text accents, gradient cards/CTA)
 - BEM CSS methodology
 - Smooth animations (IntersectionObserver)
 
 ## Color Palette (v8 light)
 - `--white: #FFFFFF`, `--off-white: #F7F8FA`, `--soft-gray: #EEF1F5`
 - `--black: #080808`, `--navy: #10162F`
-- `--blue: #2457FF`, `--blue-electric: #397BFF`, `--blue-light: #8EC5FF`, `--blue-very-light: #EAF4FF`
+- Palette is purple since Nov 2026 (token names kept): `--blue: #7A33FF`, `--blue-electric: #9A66FF`, `--blue-light: #C4A8FF`, `--blue-very-light: #F4EFFF`, `--navy: #1C0F3A`
+- Original blue v8 palette preserved on branch `backup/website-lama-v8`; v9 redesign on `redesign/signal-v9`
 - Dark `#080808` section reserved for Why bands only
 
 ## Site Architecture (multi-page, static)

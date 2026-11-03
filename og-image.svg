@@ -5,12 +5,12 @@
       <stop offset="100%" stop-color="#0A0A0A"/>
     </radialGradient>
     <radialGradient id="glow1" cx="75%" cy="30%" r="35%">
-      <stop offset="0%" stop-color="#1A1AFF" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="#1A1AFF" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#7A33FF" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#7A33FF" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="glow2" cx="25%" cy="70%" r="30%">
-      <stop offset="0%" stop-color="#FF6600" stop-opacity="0.08"/>
-      <stop offset="100%" stop-color="#FF6600" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#9A66FF" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#9A66FF" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
@@ -31,15 +31,15 @@
 
   <!-- Signal rings -->
   <g transform="translate(950, 280)">
-    <circle r="8" fill="#FF6600"/>
-    <circle r="35" fill="none" stroke="#1A1AFF" stroke-width="1" opacity="0.5"/>
-    <circle r="70" fill="none" stroke="#FF6600" stroke-width="0.8" opacity="0.3"/>
-    <circle r="110" fill="none" stroke="#1A1AFF" stroke-width="0.6" opacity="0.2"/>
-    <circle r="155" fill="none" stroke="#FF6600" stroke-width="0.4" opacity="0.1"/>
+    <circle r="8" fill="#9A66FF"/>
+    <circle r="35" fill="none" stroke="#7A33FF" stroke-width="1" opacity="0.5"/>
+    <circle r="70" fill="none" stroke="#9A66FF" stroke-width="0.8" opacity="0.3"/>
+    <circle r="110" fill="none" stroke="#7A33FF" stroke-width="0.6" opacity="0.2"/>
+    <circle r="155" fill="none" stroke="#9A66FF" stroke-width="0.4" opacity="0.1"/>
   </g>
 
   <!-- Logo mark -->
-  <rect x="100" y="180" width="40" height="40" rx="6" fill="#1A1AFF"/>
+  <rect x="100" y="180" width="40" height="40" rx="6" fill="#7A33FF"/>
   <text x="120" y="207" font-family="'Space Mono', monospace" font-size="22" font-weight="700" fill="#fff" text-anchor="middle">S</text>
 
   <!-- Brand name -->
@@ -47,12 +47,12 @@
 
   <!-- Headline -->
   <text x="100" y="290" font-family="'Space Mono', monospace" font-size="48" font-weight="700" fill="#fff" letter-spacing="-0.02em">WE BUILD THE</text>
-  <text x="100" y="345" font-family="'Space Mono', monospace" font-size="48" font-weight="700" fill="#FF6600" letter-spacing="-0.02em">INFRASTRUCTURE</text>
+  <text x="100" y="345" font-family="'Space Mono', monospace" font-size="48" font-weight="700" fill="#9A66FF" letter-spacing="-0.02em">INFRASTRUCTURE</text>
   <text x="100" y="400" font-family="'Space Mono', monospace" font-size="48" font-weight="700" fill="#fff" letter-spacing="-0.02em">BEHIND YOUR GROWTH.</text>
 
   <!-- Subline -->
   <text x="100" y="445" font-family="'Space Mono', monospace" font-size="14" fill="#999999">Digital Infrastructure for Growing Businesses</text>
 
   <!-- Bottom accent line -->
-  <rect x="100" y="480" width="80" height="2" fill="#FF6600" rx="1"/>
+  <rect x="100" y="480" width="80" height="2" fill="#9A66FF" rx="1"/>
 </svg>

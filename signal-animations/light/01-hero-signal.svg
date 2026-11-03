@@ -6,12 +6,12 @@
         100% { transform: scale(8.2); opacity: 0; }
       }
       .ring { fill: none; animation: expand 4s ease-out infinite; transform-origin: center; transform-box: fill-box; }
-      .ring--1 { stroke: #7A70FF; animation-delay: 0s; }
-      .ring--2 { stroke: #2457FF; animation-delay: 0.8s; }
-      .ring--3 { stroke: #2457FF; animation-delay: 1.6s; }
-      .ring--4 { stroke: #7A70FF; animation-delay: 2.4s; opacity: 0.3; }
-      .ring--5 { stroke: #2457FF; animation-delay: 3.2s; }
-      .dot { fill: #7A70FF; }
+      .ring--1 { stroke: #B48CFF; animation-delay: 0s; }
+      .ring--2 { stroke: #7A33FF; animation-delay: 0.8s; }
+      .ring--3 { stroke: #7A33FF; animation-delay: 1.6s; }
+      .ring--4 { stroke: #B48CFF; animation-delay: 2.4s; opacity: 0.3; }
+      .ring--5 { stroke: #7A33FF; animation-delay: 3.2s; }
+      .dot { fill: #B48CFF; }
     </style>
   </defs>
   <circle class="dot" cx="200" cy="200" r="6"/>

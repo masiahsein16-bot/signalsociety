@@ -8,28 +8,28 @@
       @keyframes sparkle { 0%, 100% { opacity: 0; transform: scale(0); } 50% { opacity: 1; transform: scale(1.5); } }
       
       .bar { rx: 4; animation: barGrow 3s ease-in-out infinite; }
-      .bar--1 { fill: #2457FF; animation-delay: 0s; }
-      .bar--2 { fill: #2457FF; animation-delay: 0.3s; }
-      .bar--3 { fill: #7A70FF; animation-delay: 0.6s; }
-      .bar--4 { fill: #7A70FF; animation-delay: 0.9s; }
-      .bar--5 { fill: #7A70FF; animation-delay: 1.2s; }
-      .bar--6 { fill: #7A70FF; animation-delay: 1.5s; }
+      .bar--1 { fill: #7A33FF; animation-delay: 0s; }
+      .bar--2 { fill: #7A33FF; animation-delay: 0.3s; }
+      .bar--3 { fill: #B48CFF; animation-delay: 0.6s; }
+      .bar--4 { fill: #B48CFF; animation-delay: 0.9s; }
+      .bar--5 { fill: #B48CFF; animation-delay: 1.2s; }
+      .bar--6 { fill: #B48CFF; animation-delay: 1.5s; }
       
-      .growth-line { fill: none; stroke: #7A70FF; stroke-width: 2; stroke-dasharray: 400; animation: lineDraw 3s ease-in-out infinite; }
+      .growth-line { fill: none; stroke: #B48CFF; stroke-width: 2; stroke-dasharray: 400; animation: lineDraw 3s ease-in-out infinite; }
       
       .dot { animation: dotPulse 2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
-      .dot--1 { fill: #2457FF; animation-delay: 0s; }
-      .dot--2 { fill: #7A70FF; animation-delay: 0.5s; }
-      .dot--3 { fill: #7A70FF; animation-delay: 1s; }
+      .dot--1 { fill: #7A33FF; animation-delay: 0s; }
+      .dot--2 { fill: #B48CFF; animation-delay: 0.5s; }
+      .dot--3 { fill: #B48CFF; animation-delay: 1s; }
       
-      .ring { fill: none; stroke: #7A70FF; animation: ringPulse 2.5s ease-out infinite; transform-origin: center; transform-box: fill-box; }
+      .ring { fill: none; stroke: #B48CFF; animation: ringPulse 2.5s ease-out infinite; transform-origin: center; transform-box: fill-box; }
       .ring--1 { stroke-width: 1; animation-delay: 0s; }
       .ring--2 { stroke-width: 0.5; animation-delay: 0.5s; }
       
-      .sparkle { fill: #397BFF; animation: sparkle 2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+      .sparkle { fill: #9A66FF; animation: sparkle 2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
       .sparkle--1 { animation-delay: 0s; }
-      .sparkle--2 { fill: #7A70FF; animation: sparkle 2.5s ease-in-out 0.7s infinite; }
-      .sparkle--3 { fill: #2457FF; animation: sparkle 1.8s ease-in-out 1.3s infinite; }
+      .sparkle--2 { fill: #B48CFF; animation: sparkle 2.5s ease-in-out 0.7s infinite; }
+      .sparkle--3 { fill: #7A33FF; animation: sparkle 1.8s ease-in-out 1.3s infinite; }
     </style>
   </defs>
   
