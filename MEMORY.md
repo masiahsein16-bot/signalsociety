@@ -8,7 +8,15 @@ Signal Society is a digital infrastructure agency/consultancy. The website serve
 2. **Signal Build** — Websites & Digital Experiences (websites, landing pages)
 3. **Signal Operate** — ERP, POS & Business Systems (custom tools, management systems)
 
-## Design Language (v8 — light editorial)
+## Design Language (v9 — "Signal over Noise", current)
+- Void #0A0910 stage + white/paper pages; Signal Violet #7A33FF used sparingly as the one accent (Violet 400 #9A66FF for violet text on dark)
+- Fonts: Archivo (display, expanded width 112–125) + Instrument Sans (body, labels in caps). No monospace or script faces
+- Logo: Signal Ring (12-dot ring, constant gap, geometric size ramp) — `logosignalsociety/signal-ring*.svg`, favicons, lockups
+- Square edges (4px controls, 0 panels); only dots are round. No glass tiles, twinkles or blue gradients
+- Legacy token names (--blue, --black …) kept and remapped so inline styles keep working; HTML body markup and script.js unchanged from v8
+- Previous light v8 site preserved on branch `backup/website-lama-v8`
+
+## Design Language (v8 — light editorial, superseded)
 - Light premium aesthetic: white / off-white + deep black + blue gradients
 - Headlines + technical labels: Space Mono
 - Body, nav, buttons, descriptions: Montserrat (readable)
